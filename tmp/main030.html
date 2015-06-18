@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+<title>關於離線聖經系統</title><meta http-equiv="Content-Type" content="text/html; charset=big5"></head>
+<body alink="#0000ff" background="back5.jpg" link="#ff0000" text="#200020" vlink="#800080">
+<center><font color="#ff0000" size="6">關於離線聖經系統</font></center>
+<p>這個系統是用 Javascript 寫的，因此它有幾個特性，</p>
+<ol>
+<li>要在瀏覽器中執行。</li>
+<li>一開始載入的時間比較長，因為需要將聖經的經文全部載入。</li>
+<li>搜尋的速度比較慢，因為 Javascript 的執行速度有點慢。</li>
+</ol>
+<p>
+0.30版主要改變的部份有：
+<ol>
+<li>增加 infix 運算式的輸入方式，例如輸入「保羅|巴拿巴*!(的|了)」可找到 38 節經文。還是可以選擇用 postfix 的方式來輸入的。關於 postfix 與 infix 的差別可以參考我從上課講義中抽出來的說明：<a href="postfix.odp">odp</a>檔或 <a href="postfix.pdf">pdf檔</a>。</li>
+<li>輸入搜尋字串時，運算子與運算元之間可以不加空格。其實是我自己加了 infix 的輸入方式之後，覺得括號前後還需要加空格實在很麻煩，所以就在程式裡面自行在運算子前後加上空格，之後再將多餘的空格去掉。</li>
+<li>搜尋時加上範圍的選擇。這是一位網友的建議，只是我自己沒有測試得很詳細，有發現問題時，麻煩再跟我反應一下。</li>
+<li>將搜尋結果輸出的經文數調整到 2000 節。這個部份應該再來想想要怎麼將所有的結果都輸出比較好。</li>
+<li>將命令那個畫面變長一點，從 70 點增加到 100 點。</li>
+<li>之前有改過的，用 * 與 &amp; 代表 and、用 + 與 | 代表 or、用 ! 與 - 代表 not。</li>
+</ol>
+</p>
+
+<p>目前尚未解決的部份，按上一頁之後很容易當掉，似乎都必須重新載入才能使用，這個問題我暫時無法解決，希望以後能夠找到解決的方法。
+</p>
+
+<p>
+其餘的部份麻煩請參考之前寫的說明：<a href="main020.html">0.20 版的說明</a>與 <a href="main010.html">0.10 版的說明</a>。
+</p>
+
+<p>這個程式還有很多需要加強與改善的地方，若您對這個程式有任何的建議，歡迎您到<a href="http://springbible.fhl.net/welcome.html">我的聖經網站(springbible)</a>上反應，或者也可以到<a href="http://blog.xuite.net/springman/bible">我的部落格</a>上反應，謝謝您的使用，願上帝的恩典伴隨著您。 </p>
+</body></html>

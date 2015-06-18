@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.btn {
+    padding: 6px 10px;
+    cursor: pointer;
+    color: $theme-white;
+    border: none;
+    border-radius: $radius-2px;
+    background: #000;
+}
+
+.btn-genernal {
+    font-size: 0.75rem;
+}

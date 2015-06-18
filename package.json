@@ -1,0 +1,14 @@
+{
+  "name": "gulp-build",
+  "version": "0.0.1",
+  "description": "The build process of my website with Gulp.js",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.10.0",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-util": "^3.0.4",
+    "jshint": "^2.7.0",
+    "jshint-stylish": "^1.0.1"
+  }
+}
