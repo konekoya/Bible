@@ -1,10 +1,11 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
-    stylish = require('jshint-stylish')
+    stylish = require('jshint-stylish'),
     gutil = require('gulp-util'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    sass = require('gulp-ruby-sass');
+    sass = require('gulp-ruby-sass'),
+    sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('js', function() {
     return gulp.src('./js/*.js')
@@ -16,7 +17,9 @@ gulp.task('js', function() {
 });
 
 gulp.task('sass', function() {
-    return sass('./scss/style.scss', {style: 'compressed'})
+    return sass('./scss/style.scss', {style: 'expanded'}, {sourcemap: true})
+        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('build/css'));
 });
 

@@ -18,8 +18,9 @@
 .logo {
     font-size: 1.5em;
     padding: 10px 0;
-    margin: 0 auto 6px;
+    margin: 0 20px 6px;
     color: $theme-white;
+    float: left;
 }
 
 .form-elem {
@@ -27,13 +28,18 @@
     margin-right: 0.625rem;
 }
 
+.chapter-body {
+  float: left;
+  padding: 10px 0;
+  width: 100%;
+}
 .book-selector {
-    width: 45%;
+    width: 30%;
     float: left;
 }
 
 .chapter-selector {
-    width: 25%;
+    width: 45%;
     float: left;
 }
 

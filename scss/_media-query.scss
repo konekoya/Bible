@@ -1,16 +1,18 @@
 @charset "UTF-8";
 
-// Chapter navigation
-.main-chapter-nav {
-    margin-bottom: 12px;
+@media screen and (min-width: $screen-md) {
+  body {
+    margin-top: 5.5rem;
+  }
+  .toolbar {
+    padding: 0.5em;
+  }
+  .logo {
+    float: left;
+    width: 12%;
+  }
+  .chapter-body {
+    float: left;
+    width: 80%;
+  }
 }
-
-.sub-chapter-nav {
-    margin-top: 15px;
-}
-
-.prev-btn,
-.next-btn {
-    display: inline-block;
-}
-
