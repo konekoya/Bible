@@ -7,8 +7,13 @@
     border: none;
     border-radius: $radius-2px;
     background: #000;
+    font-size: 13px;
 }
 
 .btn-genernal {
     font-size: 0.75rem;
+}
+
+.btn-large {
+  padding: 14px 16px;
 }

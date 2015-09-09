@@ -7,7 +7,7 @@ function init() {
         html = document.documentElement,
         body = doc.body;
 
-        
+
      function fontSizeControl () {
        var defaultFontSize = 24,
            toolBar = doc.querySelector( ".toolbar" ),
@@ -40,7 +40,7 @@ function init() {
          function checkFontSize() {
            if( content.style.fontSize ) {
                var fontSize = parseInt( content.style.fontSize, 10);
-               
+
                if( this.dataset.fontSize === "smaller") {
                    content.style.fontSize = ( fontSize - 2 ) + "px";
                    setItem( fontSize - 2 );
@@ -65,7 +65,7 @@ function init() {
 
 
      fontSizeControl();
-     
+
      // jQuery-free scroll to top snippet
      function scrollTo ( element, to, duration ) {
          if ( duration < 0 ) {
@@ -87,23 +87,9 @@ function init() {
        scrollTo( doc.body, 0, 300 );
      }
 
-     function fadeEffect() {
-       var topButton = doc.querySelector( ".top" ),
-           scrollY = doc.body.scrollTop;
-
-       if( scrollY === 0 ) {
-           topButton.classList.remove( "fadeIn" );
-           topButton.classList.add( "fadeOut" );
-       } else if ( scrollY > 50 ) {
-           topButton.classList.remove( "fadeOut" );
-           topButton.classList.add( "fadeIn" );
-       }
-     }
-
      var scrollme = doc.querySelector( ".top" );
      scrollme.addEventListener( "click", runScroll, false );
-     window.addEventListener( "scroll", fadeEffect, false);
-
+    //  window.addEventListener( "scroll", fadeEffect, false);
 
     // Detect and scroll to the top when user change chapter
      function scrollTopWhenHashChange() {
@@ -114,7 +100,7 @@ function init() {
        };
      }
 
-     scrollTopWhenHashChange();    
+     scrollTopWhenHashChange();
 }
 
 
