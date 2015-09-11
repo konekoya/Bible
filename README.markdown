@@ -3,6 +3,4 @@
 <span>The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html </span>
 
 <h1>TODO<h1/>
-<ul>
-  <li>Toggle black screen.</li>
-</ul>
+Toggle black screen.
