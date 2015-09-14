@@ -38,7 +38,7 @@ function readchapter(opstr, bnum, cnum) {
       bnum++;
       cnum = 0;
   }
-  var line1 = chapter_lines[book_chapters[bnum]+cnum];  
+  var line1 = chapter_lines[book_chapters[bnum]+cnum];
   var line2 = chapter_lines[book_chapters[bnum]+cnum+1];
   var tempNode1, tempNode2;
   var value1 = 1;
@@ -76,21 +76,21 @@ function readchapter(opstr, bnum, cnum) {
       out3.appendChild(tempNode1);
       tempNode1.setAttribute("value", value1++);
   }
-  temp1 = '<a href="" class="prev-btn  btn  btn-genernal" onClick="readchapter(\'' + opstr + '\', nowbook,--nowchapter); return false;">上一章</a>\n';
-  temp2 = '<a href="" class="next-btn  btn  btn-genernal" onClick="readchapter(\'' + opstr + '\', nowbook,++nowchapter); return false;">下一章</a>\n';
+  temp1 = '<a href="" class="prev-btn  btn  btn-genernal  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,--nowchapter); return false;">上一章</a>\n';
+  temp2 = '<a href="" class="next-btn  btn  btn-genernal  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,++nowchapter); return false;">下一章</a>\n';
 
   nowbook = bnum;
   nowchapter = cnum;
 
   var ua = navigator.userAgent.toLowerCase();
-  
+
   tempNode1 = document.getElementById("link2");
   tempNode1.innerHTML = "";
   tempNode1.innerHTML += temp1;
   tempNode1.innerHTML += temp2;
   location.hash = '#top';
   location = location;
-  
+
     location.hash = '#' + bnum + '_' + cnum;
 
 }
@@ -99,9 +99,9 @@ function readchapter(opstr, bnum, cnum) {
 //將運算子 ch 的兩旁加上空格
 function replacing (s1, ch) {
   var ss = s1;
-  while (ss.indexOf(ch) != -1) 
+  while (ss.indexOf(ch) != -1)
      ss = ss.replace(ch, " § ");
-  while (ss.indexOf("§") != -1) 
+  while (ss.indexOf("§") != -1)
      ss = ss.replace(/§/, ch);
   return ss;
 }
@@ -116,7 +116,7 @@ function validate(entry, begin1, end1) {
 
   while (entry.indexOf("  ") != -1)  //這裡是要清掉多餘的空格 2007/11/8
      entry = entry.replace(/  /, " ");
-  
+
   if (entry.charAt(0) == "+") {
     entry = entry.substring(1,entry.length);
     searchType = SEARCHALL;
@@ -139,7 +139,7 @@ function validate(entry, begin1, end1) {
   convertString(entry, begin1, end1);
   }
 
-// 將搜尋字串切割成合適的 tokens 
+// 將搜尋字串切割成合適的 tokens
 function convertString(reentry, begin1, end1) {
   var searchArray = reentry.split(" ");
   allowAny(searchArray, begin1, end1);
@@ -162,17 +162,17 @@ function evaluate(convert) {
 		if(stack[top-1] && stack[top]) stack[top-1] = true;
 		else stack[top-1] = false;
 		top--;
-	     } 
+	     }
 	     else if(((convert[i].charAt(0) == "+") || (convert[i].charAt(0) == "|")) && (top >= 1)) {
 		if(stack[top-1] || stack[top]) stack[top-1] = true;
 		else stack[top-1] = false;
 	        top--;
 	   }
   }
-  for(i = top;i > 0;i--) 
+  for(i = top;i > 0;i--)
      if(stack[i-1] && stack[i]) stack[i-1] = true;
      else stack[i-1] = false;
-  
+
   return stack[0];
 }
 
@@ -190,7 +190,7 @@ function postfix(t) {
 	   break;
      if(j == 9) pp[k++] = t[i];
      else if (j == 8) {
-	while((top > 0) && (stack[top] != 7)) 
+	while((top > 0) && (stack[top] != 7))
 	   pp[k++] = operators[stack[top--]];
 	if(stack[top] == 7) top--;
      } else {
@@ -258,8 +258,8 @@ function allowAny(t, begin1, end1) {
 
     var index1 = 0;
     compareElement = compareElement.substring(compareElement.indexOf(" ")+1, compareElement.length);
-    for (j = opnum-1; j >= 0; j--) { 
-      if (compareElement.indexOf(operand[j]) == -1) 
+    for (j = opnum-1; j >= 0; j--) {
+      if (compareElement.indexOf(operand[j]) == -1)
 	      index1 += 0;
       else
 	      index1 += 1;
@@ -311,7 +311,7 @@ function verifyManage(operand, resultSet) {
 // Define a function that indicates that the returned no results
 function noMatch() {
   var out, out2, out3;
-  
+
   out3 = document.getElementById("nothing");
   out3.innerHTML =  '<HR NOSHADE WIDTH=100%>"' + document.search.query.value +
     '" returned no results.<HR NOSHADE WIDTH=100%></TD></TR></TABLE>';
@@ -406,4 +406,3 @@ function formatResults(operand, results, reference, offset) {
 
       f.chap.options[0].selected = s1;
   }
- 
