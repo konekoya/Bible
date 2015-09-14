@@ -2,30 +2,32 @@
 
 // Top bar -- Logo, chapter select and font size control panel
 .toolbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0 1em .625em 1em;
-    background: $theme-dark-blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 1em 0.625em;
+  background: $theme-dark-blue;
 
-    a {
-        font-size: 1em;
-        color: $theme-white;
-    }
+  a {
+    font-size: 1em;
+    color: $theme-white;
+  }
 }
 
 .logo {
-    font-size: 1.5em;
-    padding: 10px 0;
-    margin: 0 20px 6px 0;
-    color: $theme-white;
-    float: left;
+  font-size: 1.5em;
+  padding: 10px 0 0;
+  margin: 0 20px 0 0;
+  color: $theme-white;
+  text-align: center;
 }
 
 .form-elem {
-    height: 30px;
-    margin-right: 0.625rem;
+  height: 30px;
+  margin-right: 0.625rem;
+  margin-bottom: 8px;
+  width: 100%;;
 }
 
 .chapter-body {
@@ -33,28 +35,24 @@
   padding: 10px 0;
   width: 100%;
 }
+
 .book-selector {
-    width: 30%;
-    float: left;
 }
 
 .chapter-selector {
-    width: 45%;
-    float: left;
 }
 
 .read-on {
-    margin-right: 0;
-    width: 20%;
-    background-color: $theme-red;
+  margin-right: 0;
+  background-color: $theme-red;
 }
 
 .font-size-control {
-    float: right;
-    display: none;
+  float: right;
+  display: none;
 
-    .heading {
-        font-size: 0.8125rem;
-        color: $theme-white;
-    }
+  .heading {
+    font-size: 0.8125rem;
+    color: $theme-white;
+  }
 }

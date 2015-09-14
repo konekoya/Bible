@@ -1,19 +1,46 @@
 @charset "UTF-8";
 
+@media screen and (min-width: $screen-sm) {
+  .logo {
+
+  }
+  .form-elem {
+    float: left;
+    margin-bottom: 0;
+  }
+  .book-selector {
+    width: 30%;
+  }
+
+  .chapter-selector {
+    width: 45%;
+  }
+
+  .read-on {
+    width: 20%;
+    margin-right: 0;
+    background-color: #da213b;
+  }
+}
+
 @media screen and (min-width: $screen-md) {
   body {
     margin-top: 5.5rem;
   }
+
   .toolbar {
     padding: 0.5em;
   }
+
   .logo {
     padding-left: 10px;
     float: left;
   }
+
   .read-on {
     width: 100px;
   }
+
   .chapter-body {
     float: left;
     width: 80%;

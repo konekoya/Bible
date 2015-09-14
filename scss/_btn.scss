@@ -6,12 +6,17 @@
     color: $theme-white;
     border: none;
     border-radius: $radius-2px;
-    background: #000;
+    background: $theme-black;
     font-size: 13px;
+    display: inline-block;
 }
 
 .btn-genernal {
     font-size: 0.75rem;
+    &:hover {
+      color: $theme-white;
+      background-color: $theme-blue;
+    }
 }
 
 .btn-large {
