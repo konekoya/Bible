@@ -3,9 +3,9 @@
 
 
 function init() {
-    var doc = document,
-        html = document.documentElement,
-        body = doc.body;
+    var doc = document;
+    var html = document.documentElement;
+    var body = doc.body;
 
 
      function fontSizeControl () {
@@ -101,6 +101,21 @@ function init() {
      }
 
      scrollTopWhenHashChange();
+
+     function toggleLight() {
+       var el = doc.querySelector('.toggle-light');
+       var div = doc.createElement('div');
+       div.className = 'cover';
+
+       if (el) {
+         el.addEventListener('click', function(e) {
+           console.log('clicked');
+           body.appendChild(div);
+         }, false);
+       }
+     }
+
+     toggleLight();
 }
 
 
