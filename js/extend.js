@@ -106,12 +106,24 @@ function init() {
        var el = doc.querySelector('.toggle-light');
        var div = doc.createElement('div');
        div.className = 'cover';
+       div.innerHTML = '<span class="cover-txt">Press ESC key to leave</span>';
 
        if (el) {
          el.addEventListener('click', function(e) {
-           console.log('clicked');
            body.appendChild(div);
          }, false);
+
+         div.addEventListener('click', function(e) {
+           body.removeChild(this);
+         }, false);
+
+         doc.onkeydown = function(e) {
+           if (e.keyCode === 27) {
+             body.removeChild(div);
+           }
+         };
+
+
        }
      }
 
