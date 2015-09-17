@@ -105,6 +105,7 @@ function init() {
      function toggleLight() {
        var el = doc.querySelector('.toggle-light');
        var div = doc.createElement('div');
+       var coverTxt = null;
        div.className = 'cover';
        div.innerHTML = '<span class="cover-txt">Press ESC key to leave</span>';
 
@@ -113,6 +114,8 @@ function init() {
            body.appendChild(div);
          }, false);
 
+
+         // close / remove the cover with mouse click esc key
          div.addEventListener('click', function(e) {
            body.removeChild(this);
          }, false);
@@ -123,7 +126,21 @@ function init() {
            }
          };
 
+         //  hide cover text
+         window.setTimeout(function() {
+           coverTxt = doc.querySelector('.cover-txt');
+           if (coverTxt) {
+             coverTxt.className += ' fadeOut';
 
+             //  detect mouse movement and show the cover text again
+             doc.onmousemove = function() {
+               if (coverTxt.classList.contains('fadeOut')) {
+                 coverTxt.classList.remove('fadeOut');
+                 coverTxt.classList.add('fadeIn');
+               }
+             };
+           }
+         }, 7000);
        }
      }
 
