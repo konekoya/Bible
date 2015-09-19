@@ -11,3 +11,5 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - music option?
 - create a github page for this project
 - different theme?
+- fallback for font awesome when there's no internet connection
+
