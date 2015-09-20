@@ -7,7 +7,6 @@ function init() {
     var html = document.documentElement;
     var body = doc.body;
 
-
      function fontSizeControl () {
        var defaultFontSize = 24,
            toolBar = doc.querySelector( ".toolbar" ),
@@ -89,7 +88,6 @@ function init() {
 
      var scrollme = doc.querySelector( ".top" );
      scrollme.addEventListener( "click", runScroll, false );
-    //  window.addEventListener( "scroll", fadeEffect, false);
 
     // Detect and scroll to the top when user change chapter
      function scrollTopWhenHashChange() {
@@ -130,17 +128,20 @@ function init() {
          window.setTimeout(function() {
            coverTxt = doc.querySelector('.cover-txt');
            if (coverTxt) {
-             coverTxt.className += ' fadeOut';
+             coverTxt.classList.add('fadeOut');
+             body.classList.add('no-cursor');
 
              //  detect mouse movement and show the cover text again
              doc.onmousemove = function() {
                if (coverTxt.classList.contains('fadeOut')) {
                  coverTxt.classList.remove('fadeOut');
                  coverTxt.classList.add('fadeIn');
+                 body.classList.remove('no-cursor');
                }
              };
            }
          }, 7000);
+
        }
      }
 
