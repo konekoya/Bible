@@ -5,7 +5,6 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODO
-- is that possible to hide your mouse cursor under certain conditions?
 - improvement on how to show and hide cover text when switch to black screen mode
 - music option?
 - create a github page for this project
@@ -15,3 +14,5 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - add search functionality
 - remove read button and change the select to activate when user finish selecting
 - better layout solution for mobile devices
+- favicon for this project
+- tooltip, and I think we should do a tooltip project...
