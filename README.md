@@ -9,7 +9,7 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - music option?
 - create a github page for this project
 - different theme?
-- fallback for font awesome when there's no internet connection
+- fallback for font awesome when there's no internet connection - need to fix font awesome path problem
 - place setting icon on the nav bar, the machenism should work like YourVersion
 - add search functionality
 - remove read button and change the select to activate when user finish selecting

@@ -17,9 +17,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('sass', function() {
-    return sass('./scss/style.scss', {style: 'expanded'}, {sourcemap: true})
-        .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write())
+    return sass(['./font/font-awesome/scss/font-awesome.scss', './scss/style.scss'], {style: 'expanded'})
         .pipe(gulp.dest('build/css'));
 });
 
