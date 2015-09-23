@@ -18,7 +18,7 @@ gulp.task('js', function() {
 
 gulp.task('sass', function() {
     // need to study the docs for loadpath or search how to use font awesome in gulp
-    return sass(['./font/font-awesome/scss/font-awesome.scss', './scss/style.scss'], {style: 'expanded'})
+    return sass(['./scss/style.scss', './scss/font-awesome/scss/font-awesome.scss'], {style: 'expanded'})
         .pipe(gulp.dest('build/css'));
 
 });
