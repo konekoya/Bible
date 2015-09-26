@@ -16,3 +16,6 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - better layout solution for mobile devices
 - favicon for this project
 - tooltip, and I think we should do a tooltip project...
+- better UI and ways to select chapter
+- zen reading mode
+- chapter field(select) should reflect the current chapter even when user has changed the chapter 
