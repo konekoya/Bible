@@ -1,0 +1,22 @@
+{
+  "name": "Bible",
+  "version": "0.0.0",
+  "homepage": "https://github.com/konekoya/Bible",
+  "authors": [
+    "Konekoya <tank158r5155@yahoo.com.tw>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#~4.4.0"
+  }
+}
