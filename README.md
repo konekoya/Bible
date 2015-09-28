@@ -4,8 +4,7 @@ This is an application that you can use even when you don't have the Internet co
 
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
-#TODO
-- improvement on how to show and hide cover text when switch to black screen mode
+#TODOs
 - music option?
 - create a github page for this project
 - different theme?
@@ -16,6 +15,6 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - better layout solution for mobile devices
 - favicon for this project
 - tooltip, and I think we should do a tooltip project...
-- better UI and ways to select chapter
+- better UI and how to select/change between chapters
 - zen reading mode
-- chapter field(select) should reflect the current chapter even when user has changed the chapter 
+- chapter field(select) should reflect the current chapter even when user has changed the chapter

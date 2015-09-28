@@ -6,6 +6,12 @@ function init() {
     var doc = document;
     var html = document.documentElement;
     var body = doc.body;
+    var CONS = {
+      fadeIn: 'fade-in',
+      fadeOut: 'fade-out',
+      noCursor: 'no-cursor',
+      hasCover: 'has-cover'
+    };
 
      function fontSizeControl () {
        var defaultFontSize = 24,
@@ -107,40 +113,59 @@ function init() {
        div.className = 'cover';
        div.innerHTML = '<span class="cover-txt">Press ESC key to leave</span>';
 
-       if (el) {
-         el.addEventListener('click', function(e) {
-           body.appendChild(div);
-         }, false);
-
-
-         // close / remove the cover with mouse click esc key
-         div.addEventListener('click', function(e) {
-           body.removeChild(this);
-         }, false);
-
-         doc.onkeydown = function(e) {
-           if (e.keyCode === 27) {
-             body.removeChild(div);
-           }
-         };
-
-         //  hide cover text
+       function toggleTxt(speed) {
+         //  hide cover text with css transition
          window.setTimeout(function() {
            coverTxt = doc.querySelector('.cover-txt');
            if (coverTxt) {
-             coverTxt.classList.add('fadeOut');
-             body.classList.add('no-cursor');
+             coverTxt.classList.add(CONS.fadeOut);
+             body.classList.add(CONS.noCursor);
 
              //  detect mouse movement and show the cover text again
              doc.onmousemove = function() {
-               if (coverTxt.classList.contains('fadeOut')) {
-                 coverTxt.classList.remove('fadeOut');
-                 coverTxt.classList.add('fadeIn');
-                 body.classList.remove('no-cursor');
+               if (coverTxt.classList.contains(CONS.fadeOut)) {
+                 coverTxt.classList.remove(CONS.fadeOut);
+                 coverTxt.classList.add(CONS.fadeIn);
+                 body.classList.remove(CONS.noCursor);
                }
              };
            }
          }, 7000);
+       }
+
+       function removeCover(coverEl) {
+         body.removeChild(coverEl);
+         body.classList.remove(CONS.hasCover);
+       }
+
+       function addCover(coverEl) {
+         body.appendChild(coverEl);
+         body.classList.add(CONS.hasCover);
+       }
+
+       if (el) {
+         el.addEventListener('click', function(e) {
+           addCover(div);
+         }, false);
+
+         // close / remove the cover with mouse click esc key
+         div.addEventListener('click', function(e) {
+           removeCover(this);
+         }, false);
+
+         doc.onkeydown = function(e) {
+           if (e.keyCode === 27) {
+             removeCover(div);
+           }
+         };
+
+         window.setInterval(function() {
+           if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
+             toggleTxt(7000);
+           }
+         }, 7000);
+
+
 
        }
      }
