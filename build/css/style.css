@@ -146,6 +146,17 @@ button {
 
 .chapter-nav {
   float: left;
+  margin-right: 1rem;
+}
+
+.setting-wrap {
+  float: left;
+  line-height: 30px;
+}
+
+.setting-btn {
+  padding: 13px 17px;
+  font-size: 16px;
 }
 
 .top {
