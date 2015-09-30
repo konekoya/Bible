@@ -159,6 +159,23 @@ button {
   font-size: 16px;
 }
 
+.setting-panel {
+  color: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #293f62;
+  padding: 20px;
+  visibility: hidden;
+  transition: .3s all;
+}
+
+.has-settings .setting-panel {
+  visibility: visible;
+  bottom: 70px;
+}
+
 .top {
   float: right;
   cursor: pointer;

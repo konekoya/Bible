@@ -23,3 +23,23 @@
   padding: 13px 17px;
   font-size: 16px;
 }
+
+.setting-panel {
+  color: $theme-white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: lighten($theme-dark-blue, 10%);
+  padding: 20px;
+  visibility: hidden;
+  transition: .3s all;
+}
+
+.has-settings {
+  .setting-panel {
+    visibility: visible;
+    bottom: 70px;
+  }
+
+}
