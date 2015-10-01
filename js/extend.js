@@ -176,7 +176,6 @@ function init() {
 
     if (btn) {
       btn.addEventListener('click', function() {
-        console.log('hey')
         body.classList.toggle(CONS.hasSettings);
 
       }, false);
