@@ -183,6 +183,21 @@ function init() {
   }
 
   setSettings();
+
+  function changeFontSize() {
+    // $('input').on('change', function () {
+    //     var v = $(this).val();
+    //     $('div').css('font-size', v + 'px')
+    //     $('span').html(v);
+    // });
+    var range = doc.querySelector('.setting-fontsize-range');
+    range.addEventListener('change', function() {
+      console.log(this.value)
+    }, false);
+  }
+
+  changeFontSize();
+
 }
 
 
