@@ -20,3 +20,6 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
 - if needed, loading graphic
 - fix classlist error when exit the black screen mode
+- Google font fallback
+- rewrite the code with OOP method
+- rewrite the core
