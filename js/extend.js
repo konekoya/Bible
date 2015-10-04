@@ -11,7 +11,8 @@ function init() {
     fadeOut: 'fade-out',
     noCursor: 'no-cursor',
     hasCover: 'has-cover',
-    hasSettings: 'has-settings'
+    hasSettings: 'has-settings',
+    lowLight: 'low-light-theme'
   };
 
   function fontSizeControl() {
@@ -185,13 +186,28 @@ function init() {
   setSettings();
 
   function changeFontSize() {
+    var nothing = doc.getElementById('nothing');
     var range = doc.querySelector('.setting-fontsize-range');
+    var currentSize = doc.querySelector('.setting-current-size');
+
     range.addEventListener('change', function() {
-      console.log(this.value)
+      currentSize.textContent = this.value + 'px';
+      nothing.style.fontSize = this.value + 'px';
     }, false);
   }
 
   changeFontSize();
+
+  function switchTheme() {
+    var switchLink = doc.querySelector('.setting-low-light');
+    if (switchLink) {
+      if (!body.classList.contains(CONS.lowLight)) {
+        body.classList.add(CONS.lowLight);
+      }
+    }
+  }
+
+  switchTheme();
 
 }
 
