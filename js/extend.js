@@ -172,8 +172,15 @@ function init() {
 
   toggleLight();
 
-  function setSettings() {
-    var btn = doc.querySelector('.setting-btn');
+  var SettingPanel = function(options) {
+    this.toggle = options.toggle;
+    this.content = options.content;
+  };
+
+  SettingPanel.prototype.togglePanel = function() {
+    if (typeof this.toggle === 'string') {
+      var btn = doc.querySelector(this.toggle);
+    }
 
     if (btn) {
       btn.addEventListener('click', function() {
@@ -181,9 +188,16 @@ function init() {
 
       }, false);
     }
-  }
+  };
 
-  setSettings();
+  SettingPanel.prototype.changeFontSize = function() {
+    
+  };
+
+  SettingPanel.prototype.initialize = function() {
+    this.togglePanel();
+  };
+
 
   function changeFontSize() {
     var nothing = doc.getElementById('nothing');
@@ -209,7 +223,14 @@ function init() {
 
   switchTheme();
 
+  var settingPanel = new SettingPanel({
+    toggle: '.setting-btn',
+    content: '#nothing'
+  });
+  settingPanel.initialize();
+
 }
+
 
 window.addEventListener('load', function() {
   init();
