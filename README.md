@@ -5,11 +5,10 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- music option?
+- place setting icon on the nav bar, the mechanism should work like YourVersion and remember to
+use localStorage for font size setting
 - create a github page for this project
-- different theme?
 - need to fix font awesome path problem with gulp
-- place setting icon on the nav bar, the mechanism should work like YourVersion
 - add search functionality
 - remove read button and change the select to activate when user finish selecting
 - better layout solution for mobile devices
@@ -21,5 +20,7 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - if needed, loading graphic
 - fix classlist error when exit the black screen mode
 - Google font fallback
-- rewrite the code with OOP method
-- rewrite the core
+- refactorying the code with OOP method
+- rewrite the JS core
+- music option?
+- different theme?
