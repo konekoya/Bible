@@ -6,6 +6,7 @@ function init() {
   var doc = document;
   var html = document.documentElement;
   var body = doc.body;
+
   var CONS = {
     fadeIn: 'fade-in',
     fadeOut: 'fade-out',
@@ -172,16 +173,10 @@ function init() {
 
   toggleLight();
 
-  var SettingPanel = function(options) {
-    this.toggle = options.toggle;
-    this.content = options.content;
-  };
+  var SettingPanel = function(options) {};
 
   SettingPanel.prototype.togglePanel = function() {
-    if (typeof this.toggle === 'string') {
-      var btn = doc.querySelector(this.toggle);
-    }
-
+    var btn = doc.querySelector('.setting-btn');
     if (btn) {
       btn.addEventListener('click', function() {
         body.classList.toggle(CONS.hasSettings);
@@ -191,15 +186,6 @@ function init() {
   };
 
   SettingPanel.prototype.changeFontSize = function() {
-    
-  };
-
-  SettingPanel.prototype.initialize = function() {
-    this.togglePanel();
-  };
-
-
-  function changeFontSize() {
     var nothing = doc.getElementById('nothing');
     var range = doc.querySelector('.setting-fontsize-range');
     var currentSize = doc.querySelector('.setting-current-size');
@@ -208,26 +194,26 @@ function init() {
       currentSize.textContent = this.value + 'px';
       nothing.style.fontSize = this.value + 'px';
     }, false);
-  }
+    
+  };
 
-  changeFontSize();
-
-  function switchTheme() {
+  SettingPanel.prototype.switchTheme = function() {
     var switchLink = doc.querySelector('.setting-low-light');
     if (switchLink) {
       if (!body.classList.contains(CONS.lowLight)) {
         body.classList.add(CONS.lowLight);
       }
     }
-  }
+  };
 
-  switchTheme();
+  SettingPanel.prototype.initialize = function() {
+    this.togglePanel();
+    this.changeFontSize();
+    this.switchTheme();
+  };
 
-  var settingPanel = new SettingPanel({
-    toggle: '.setting-btn',
-    content: '#nothing'
-  });
-  settingPanel.initialize();
+  var panel = new SettingPanel();
+  panel.initialize();
 
 }
 
