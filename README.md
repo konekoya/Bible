@@ -20,7 +20,7 @@ use localStorage for font size setting
 - if needed, loading graphic
 - fix classlist error when exit the black screen mode
 - Google font fallback
-- refactorying the code with OOP method
+- refactoring the code with OOP method
 - rewrite the JS core
 - music option?
 - different theme?
