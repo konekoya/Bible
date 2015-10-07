@@ -205,7 +205,7 @@ function init() {
     range.addEventListener('change', function() {
       currentSize.textContent = this.value + 'px';
       nothing.style.fontSize = this.value + 'px';
-      window.localStorage.setItem('font-size', value);
+      window.localStorage.setItem('font-size', this.value);
     }, false);
 
   };
