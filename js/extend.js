@@ -16,63 +16,63 @@ function init() {
     lowLight: 'low-light-theme'
   };
 
-  function fontSizeControl() {
-    var defaultFontSize = 24,
-      toolBar = doc.querySelector(".toolbar"),
-      content = doc.querySelector("#nothing"),
-      control = toolBar.querySelector(".font-size-control"),
-      buttons = control.querySelectorAll("button"),
-      buttonsLen = buttons.length,
-      readOnBtn = doc.querySelector(".read-on");
-
-    // Use local storage to set font size information
-    function setItem(value) {
-      window.localStorage.setItem("font-size", value);
-    }
-
-    // Set font size according to user's preference in the local storage
-    function setFontSize() {
-      readOnBtn.addEventListener("click", function() {
-        if (window.localStorage.getItem("font-size")) {
-          var fontSizeState = parseInt(localStorage.getItem("font-size"), 10);
-          content.style.fontSize = fontSizeState + "px";
-        } else {
-          content.style.fontSize = defaultFontSize + "px";
-        }
-      });
-    }
-
-    // Change font size and save the current font size information into local storage
-    function changeFontSize() {
-
-      function checkFontSize() {
-        if (content.style.fontSize) {
-          var fontSize = parseInt(content.style.fontSize, 10);
-
-          if (this.dataset.fontSize === "smaller") {
-            content.style.fontSize = (fontSize - 2) + "px";
-            setItem(fontSize - 2);
-          } else if (this.dataset.fontSize === "bigger") {
-            content.style.fontSize = (fontSize + 2) + "px";
-            setItem(fontSize + 2);
-          } else {
-            content.style.fontSize = defaultFontSize + "px";
-            setItem(defaultFontSize);
-          }
-        }
-      }
-
-      for (var i = 0; i < buttonsLen; i++) {
-        buttons[i].addEventListener("click", checkFontSize);
-      }
-    }
-
-    setFontSize(defaultFontSize);
-    changeFontSize();
-  }
-
-
-  fontSizeControl();
+  // function fontSizeControl() {
+  //   var defaultFontSize = 24,
+  //     toolBar = doc.querySelector(".toolbar"),
+  //     content = doc.querySelector("#nothing"),
+  //     control = toolBar.querySelector(".font-size-control"),
+  //     buttons = control.querySelectorAll("button"),
+  //     buttonsLen = buttons.length,
+  //     readOnBtn = doc.querySelector(".read-on");
+  //
+  //   // Use local storage to set font size information
+  //   function setItem(value) {
+  //     window.localStorage.setItem("font-size", value);
+  //   }
+  //
+  //   // Set font size according to user's preference in the local storage
+  //   function setFontSize() {
+  //     readOnBtn.addEventListener("click", function() {
+  //       if (window.localStorage.getItem("font-size")) {
+  //         var fontSizeState = parseInt(localStorage.getItem("font-size"), 10);
+  //         content.style.fontSize = fontSizeState + "px";
+  //       } else {
+  //         content.style.fontSize = defaultFontSize + "px";
+  //       }
+  //     });
+  //   }
+  //
+  //   // Change font size and save the current font size information into local storage
+  //   function changeFontSize() {
+  //
+  //     function checkFontSize() {
+  //       if (content.style.fontSize) {
+  //         var fontSize = parseInt(content.style.fontSize, 10);
+  //
+  //         if (this.dataset.fontSize === "smaller") {
+  //           content.style.fontSize = (fontSize - 2) + "px";
+  //           setItem(fontSize - 2);
+  //         } else if (this.dataset.fontSize === "bigger") {
+  //           content.style.fontSize = (fontSize + 2) + "px";
+  //           setItem(fontSize + 2);
+  //         } else {
+  //           content.style.fontSize = defaultFontSize + "px";
+  //           setItem(defaultFontSize);
+  //         }
+  //       }
+  //     }
+  //
+  //     for (var i = 0; i < buttonsLen; i++) {
+  //       buttons[i].addEventListener("click", checkFontSize);
+  //     }
+  //   }
+  //
+  //   setFontSize(defaultFontSize);
+  //   changeFontSize();
+  // }
+  //
+  //
+  // fontSizeControl();
 
   // jQuery-free scroll to top snippet
   function scrollTo(element, to, duration) {
@@ -173,7 +173,10 @@ function init() {
 
   toggleLight();
 
-  var SettingPanel = function(options) {};
+  // setting panel constructor
+  var SettingPanel = function(options) {
+
+  };
 
   SettingPanel.prototype.togglePanel = function() {
     var btn = doc.querySelector('.setting-btn');
@@ -185,6 +188,15 @@ function init() {
     }
   };
 
+  SettingPanel.prototype.setDefaultFontSize = function() {
+    var currentSize = window.localStorage.getItem('font-size');
+    var nothing = doc.querySelector('#nothing');
+
+    if (nothing) {
+      nothing.style.fontSize = currentSize;
+    }
+  };
+
   SettingPanel.prototype.changeFontSize = function() {
     var nothing = doc.getElementById('nothing');
     var range = doc.querySelector('.setting-fontsize-range');
@@ -193,8 +205,9 @@ function init() {
     range.addEventListener('change', function() {
       currentSize.textContent = this.value + 'px';
       nothing.style.fontSize = this.value + 'px';
+      window.localStorage.setItem('font-size', value);
     }, false);
-    
+
   };
 
   SettingPanel.prototype.switchTheme = function() {
@@ -209,6 +222,7 @@ function init() {
   SettingPanel.prototype.initialize = function() {
     this.togglePanel();
     this.changeFontSize();
+    this.setDefaultFontSize();
     this.switchTheme();
   };
 
