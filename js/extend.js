@@ -175,7 +175,6 @@ function init() {
 
   // setting panel constructor
   var SettingPanel = function(options) {
-
   };
 
   SettingPanel.prototype.togglePanel = function() {
@@ -189,12 +188,14 @@ function init() {
   };
 
   SettingPanel.prototype.setDefaultFontSize = function() {
-    var currentSize = window.localStorage.getItem('font-size');
-    var nothing = doc.querySelector('#nothing');
+    var storeFontSize = window.localStorage.getItem('font-size');
+    var nothing = doc.getElementById('nothing');
+    var range = doc.querySelector('.setting-fontsize-range');
+    var currentSize = doc.querySelector('.setting-current-size');
 
-    if (nothing) {
-      nothing.style.fontSize = currentSize;
-    }
+    nothing.style.fontSize = storeFontSize;
+    range.value = storeFontSize;
+    currentSize.textContent = storeFontSize + 'px';
   };
 
   SettingPanel.prototype.changeFontSize = function() {
