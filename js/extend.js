@@ -175,7 +175,9 @@ function init() {
 
   // setting panel constructor
   var SettingPanel = function(options) {
-
+    if (this === window) {
+        return new SettingPanel(options);
+    }
   };
 
   SettingPanel.prototype.togglePanel = function() {
