@@ -175,6 +175,12 @@ function init() {
 
   // setting panel constructor
   var SettingPanel = function(options) {
+<<<<<<< HEAD
+=======
+    if (this === window) {
+        return new SettingPanel(options);
+    }
+>>>>>>> refs/remotes/origin/master
   };
 
   SettingPanel.prototype.togglePanel = function() {
