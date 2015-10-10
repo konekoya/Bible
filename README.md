@@ -5,8 +5,7 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- place setting icon on the nav bar, the mechanism should work like YourVersion and remember to
-use localStorage for font size setting
+- place setting icon on the nav bar, the mechanism should work like YourVersion
 - create a github page for this project
 - need to fix font awesome path problem with gulp
 - add search functionality
@@ -24,3 +23,4 @@ use localStorage for font size setting
 - rewrite the JS core
 - music option?
 - different theme?
+- cross-browser testing
