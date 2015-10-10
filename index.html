@@ -265,12 +265,14 @@
     </div>
   </div>
   <div class="setting-panel">
-    <h3>Your settings</h3>
-    <div class="setting-fontsize">
-      <input class="setting-fontsize-range" type="range" min="10" max="40">
-      <span class="setting-current-size">20px</span>
+    <div class="range">
+      <h4 class="range-title">Font size</h4>
+      <div class="range-control">
+        <input class="range-slide" type="range" min="10" max="40">
+        <span class="range-size">20px</span>
+      </div>
     </div>
-    <ul class="setting-list">
+    <ul class="setting-list  list-unstyled">
       <li class="setting-item">
         <a class="setting-low-light" href="#">Low Light</a>
         <span class="setting-desc">Light text on a dark background</span>
@@ -283,12 +285,12 @@
       <a class="next  btn  btn-genernal  btn-large" href="" onclick="readchapter(' ', nowbook,++nowchapter); return false;">後一章</a>
     </div>
     <div class="setting-wrap">
-      <button class="setting-btn btn btn-genernal">
-        <i class="fa fa-cog"></i>
+      <button class="setting-btn  btn  btn-genernal">
+        <i class="fa  fa-cog"></i>
       </button>
     </div>
     <button class="top  btn  btn-genernal  btn-large">
-      <i class="fa fa-chevron-up"></i> Top
+      <i class="fa  fa-chevron-up"></i> Top
     </button>
   </div>
   <script src="build/js/app.js"></script>

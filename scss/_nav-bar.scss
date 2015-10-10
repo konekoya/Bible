@@ -1,45 +1,13 @@
 @charset "UTF-8";
-
 .nav-bar {
-    background: $theme-dark-blue;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 1rem 2rem;
-    width: 100%;
+  background: $theme-dark-blue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  width: 100%;
 }
-
 .chapter-nav {
   float: left;
   margin-right: 1rem;
-}
-
-.setting-wrap {
-  float: left;
-  line-height: 30px;
-}
-
-.setting-btn {
-  padding: 13px 17px;
-  font-size: 16px;
-}
-
-.setting-panel {
-  color: $theme-white;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: lighten($theme-dark-blue, 10%);
-  padding: 20px;
-  visibility: hidden;
-  transition: .3s all;
-}
-
-.has-settings {
-  .setting-panel {
-    visibility: visible;
-    bottom: 70px;
-  }
-
 }

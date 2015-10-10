@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.setting-wrap {
+  float: left;
+  line-height: 30px;
+}
+.setting-btn {
+  padding: 13px 17px;
+  font-size: 16px;
+}
+.setting-panel {
+  color: $theme-white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: lighten($theme-dark-blue, 10%);
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: $fast all;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 70px;
+  }
+  .range {
+    margin-bottom: 20px;
+  }
+  .range-slide {
+    display: inline-block;
+    width: 80%;
+    margin-right: 10px;
+  }
+  .range-size {
+    display: inline-block;
+  }
+}

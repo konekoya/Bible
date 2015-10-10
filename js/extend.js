@@ -12,67 +12,9 @@ function init() {
     fadeOut: 'fade-out',
     noCursor: 'no-cursor',
     hasCover: 'has-cover',
-    hasSettings: 'has-settings',
-    lowLight: 'low-light-theme'
+    lowLight: 'low-light-theme',
+    show: 'show'
   };
-
-  // function fontSizeControl() {
-  //   var defaultFontSize = 24,
-  //     toolBar = doc.querySelector(".toolbar"),
-  //     content = doc.querySelector("#nothing"),
-  //     control = toolBar.querySelector(".font-size-control"),
-  //     buttons = control.querySelectorAll("button"),
-  //     buttonsLen = buttons.length,
-  //     readOnBtn = doc.querySelector(".read-on");
-  //
-  //   // Use local storage to set font size information
-  //   function setItem(value) {
-  //     window.localStorage.setItem("font-size", value);
-  //   }
-  //
-  //   // Set font size according to user's preference in the local storage
-  //   function setFontSize() {
-  //     readOnBtn.addEventListener("click", function() {
-  //       if (window.localStorage.getItem("font-size")) {
-  //         var fontSizeState = parseInt(localStorage.getItem("font-size"), 10);
-  //         content.style.fontSize = fontSizeState + "px";
-  //       } else {
-  //         content.style.fontSize = defaultFontSize + "px";
-  //       }
-  //     });
-  //   }
-  //
-  //   // Change font size and save the current font size information into local storage
-  //   function changeFontSize() {
-  //
-  //     function checkFontSize() {
-  //       if (content.style.fontSize) {
-  //         var fontSize = parseInt(content.style.fontSize, 10);
-  //
-  //         if (this.dataset.fontSize === "smaller") {
-  //           content.style.fontSize = (fontSize - 2) + "px";
-  //           setItem(fontSize - 2);
-  //         } else if (this.dataset.fontSize === "bigger") {
-  //           content.style.fontSize = (fontSize + 2) + "px";
-  //           setItem(fontSize + 2);
-  //         } else {
-  //           content.style.fontSize = defaultFontSize + "px";
-  //           setItem(defaultFontSize);
-  //         }
-  //       }
-  //     }
-  //
-  //     for (var i = 0; i < buttonsLen; i++) {
-  //       buttons[i].addEventListener("click", checkFontSize);
-  //     }
-  //   }
-  //
-  //   setFontSize(defaultFontSize);
-  //   changeFontSize();
-  // }
-  //
-  //
-  // fontSizeControl();
 
   // jQuery-free scroll to top snippet
   function scrollTo(element, to, duration) {
@@ -176,59 +118,72 @@ function init() {
   // setting panel constructor
   var SettingPanel = function(options) {
     if (this === window) {
-        return new SettingPanel(options);
+      return new SettingPanel(options);
     }
   };
 
-  SettingPanel.prototype.togglePanel = function() {
-    var btn = doc.querySelector('.setting-btn');
-    if (btn) {
-      btn.addEventListener('click', function() {
-        body.classList.toggle(CONS.hasSettings);
+  SettingPanel.prototype = {
+    togglePanel: function() {
+      var btn = doc.querySelector('.setting-btn');
+      var panel = doc.querySelector('.setting-panel');
+      if (btn && panel) {
+        btn.addEventListener('click', function(e) {
+          panel.classList.toggle(CONS.show);
+          e.stopPropagation();
+        }, false);
 
-      }, false);
-    }
-  };
+        panel.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
 
-  SettingPanel.prototype.setDefaultFontSize = function() {
-    var storeFontSize = window.localStorage.getItem('font-size');
-    var nothing = doc.getElementById('nothing');
-    var range = doc.querySelector('.setting-fontsize-range');
-    var currentSize = doc.querySelector('.setting-current-size');
-
-    nothing.style.fontSize = storeFontSize;
-    range.value = storeFontSize;
-    currentSize.textContent = storeFontSize + 'px';
-  };
-
-  SettingPanel.prototype.changeFontSize = function() {
-    var nothing = doc.getElementById('nothing');
-    var range = doc.querySelector('.setting-fontsize-range');
-    var currentSize = doc.querySelector('.setting-current-size');
-
-    range.addEventListener('change', function() {
-      currentSize.textContent = this.value + 'px';
-      nothing.style.fontSize = this.value + 'px';
-      window.localStorage.setItem('font-size', this.value);
-    }, false);
-
-  };
-
-  SettingPanel.prototype.switchTheme = function() {
-    var switchLink = doc.querySelector('.setting-low-light');
-    if (switchLink) {
-      if (!body.classList.contains(CONS.lowLight)) {
-        body.classList.add(CONS.lowLight);
+        document.addEventListener('click', function(e) {
+          if (panel.classList.contains(CONS.show)) {
+              panel.classList.remove(CONS.show);
+          }
+        });
       }
+    },
+
+    setDefaultFontSize: function() {
+      var storeFontSize = window.localStorage.getItem('font-size');
+      var nothing = doc.getElementById('nothing');
+      var range = doc.querySelector('.range-slide');
+      var rangeSize = doc.querySelector('.range-size');
+
+      nothing.style.fontSize = storeFontSize;
+      range.value = storeFontSize;
+      rangeSize.textContent = storeFontSize + 'px';
+    },
+
+    changeFontSize: function() {
+      var nothing = doc.getElementById('nothing');
+      var range = doc.querySelector('.range-slide');
+      var rangeSize = doc.querySelector('.range-size');
+
+      range.addEventListener('change', function() {
+        rangeSize.textContent = this.value + 'px';
+        nothing.style.fontSize = this.value + 'px';
+        window.localStorage.setItem('font-size', this.value);
+      }, false);
+    },
+
+    switchTheme: function() {
+      var switchLink = doc.querySelector('.setting-low-light');
+      if (switchLink) {
+        if (!body.classList.contains(CONS.lowLight)) {
+          body.classList.add(CONS.lowLight);
+        }
+      }
+    },
+
+    initialize: function() {
+      this.togglePanel();
+      this.changeFontSize();
+      this.setDefaultFontSize();
+      this.switchTheme();
     }
   };
 
-  SettingPanel.prototype.initialize = function() {
-    this.togglePanel();
-    this.changeFontSize();
-    this.setDefaultFontSize();
-    this.switchTheme();
-  };
 
   var panel = new SettingPanel();
   panel.initialize();
