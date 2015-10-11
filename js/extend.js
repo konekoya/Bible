@@ -6,6 +6,7 @@ function init() {
   var doc = document;
   var html = document.documentElement;
   var body = doc.body;
+  var nothing = doc.getElementById('nothing');
 
   var CONS = {
     fadeIn: 'fade-in',
@@ -120,6 +121,8 @@ function init() {
     if (this === window) {
       return new SettingPanel(options);
     }
+    this.range = doc.querySelector(options.range);
+    this.rangeSize = doc.querySelector(options.rangeSize);
   };
 
   SettingPanel.prototype = {
@@ -146,22 +149,16 @@ function init() {
 
     setDefaultFontSize: function() {
       var storeFontSize = window.localStorage.getItem('font-size');
-      var nothing = doc.getElementById('nothing');
-      var range = doc.querySelector('.range-slide');
-      var rangeSize = doc.querySelector('.range-size');
 
       nothing.style.fontSize = storeFontSize;
-      range.value = storeFontSize;
-      rangeSize.textContent = storeFontSize + 'px';
+      this.range.value = storeFontSize;
+      this.rangeSize.textContent = storeFontSize + 'px';
     },
 
     changeFontSize: function() {
-      var nothing = doc.getElementById('nothing');
-      var range = doc.querySelector('.range-slide');
-      var rangeSize = doc.querySelector('.range-size');
-
-      range.addEventListener('change', function() {
-        rangeSize.textContent = this.value + 'px';
+      var that = this;
+      this.range.addEventListener('change', function() {
+        that.rangeSize.textContent = this.value + 'px';
         nothing.style.fontSize = this.value + 'px';
         window.localStorage.setItem('font-size', this.value);
       }, false);
@@ -169,6 +166,7 @@ function init() {
 
     switchTheme: function() {
       var switchLink = doc.querySelector('.setting-low-light');
+
       if (switchLink) {
         if (!body.classList.contains(CONS.lowLight)) {
           body.classList.add(CONS.lowLight);
@@ -185,7 +183,10 @@ function init() {
   };
 
 
-  var panel = new SettingPanel();
+  var panel = new SettingPanel({
+    range: '.range-slide',
+    rangeSize: '.range-size'
+  });
   panel.initialize();
 
 }

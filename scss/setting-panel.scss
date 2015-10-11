@@ -10,7 +10,7 @@
 }
 .setting-panel {
   color: $theme-white;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   background: lighten($theme-dark-blue, 10%);
