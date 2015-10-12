@@ -23,3 +23,5 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - music option?
 - different theme?
 - cross-browser testing
+- add sourcemap and livereload in gulp.js
+- toggle verse number
