@@ -370,3 +370,14 @@ select {
     width: 80%;
   }
 }
+.low-light-theme {
+  background-color: #000;
+  color: #fff;
+}
+
+#nothing {
+  color: #fff;
+}
+#nothing a {
+  color: #fff;
+}

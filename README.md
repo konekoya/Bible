@@ -5,6 +5,7 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
+- check items in setting panel
 - create a github page for this project
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
