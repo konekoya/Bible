@@ -285,7 +285,7 @@ input[type="range"]:focus::-ms-fill-upper {
   background: #367ebd;
 }
 
-#nothing {
+.content-container {
   font-size: 24px;
   color: #000;
 }
@@ -374,10 +374,9 @@ select {
   background-color: #000;
   color: #fff;
 }
-
-#nothing {
+.low-light-theme .content-container {
   color: #fff;
 }
-#nothing a {
+.low-light-theme .content-container a {
   color: #fff;
 }

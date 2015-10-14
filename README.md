@@ -9,6 +9,7 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - create a github page for this project
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
+- page navigation on left and right side of the browsers
 - add search functionality
 - remove read button and change the select to activate when user finish selecting
 - better layout solution for mobile devices

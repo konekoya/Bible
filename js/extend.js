@@ -14,7 +14,8 @@ function init() {
     noCursor: 'no-cursor',
     hasCover: 'has-cover',
     lowLight: 'low-light-theme',
-    show: 'show'
+    show: 'show',
+    fontSize: 'font-size'
   };
 
   // jQuery-free scroll to top snippet
@@ -148,7 +149,14 @@ function init() {
     },
 
     setDefaultFontSize: function() {
-      var storeFontSize = window.localStorage.getItem('font-size');
+      var storeFontSize = -1;
+
+      if (window.localStorage.getItem(CONS.fontSize)) {
+        storeFontSize = window.localStorage.getItem(CONS.fontSize);
+      } else {
+        storeFontSize = 24;
+        window.localStorage.setItem(CONS.fontSize, 24);
+      }
 
       nothing.style.fontSize = storeFontSize;
       this.range.value = storeFontSize;
@@ -160,17 +168,26 @@ function init() {
       this.range.addEventListener('change', function() {
         that.rangeSize.textContent = this.value + 'px';
         nothing.style.fontSize = this.value + 'px';
-        window.localStorage.setItem('font-size', this.value);
+        window.localStorage.setItem(CONS.fontSize, this.value);
       }, false);
     },
 
     switchTheme: function() {
       var switchLink = doc.querySelector('.setting-low-light');
+      var currentTheme = '';
+
+      if (window.localStorage.getItem('theme')) {
+        currentTheme = window.localStorage.getItem('theme');
+      } else {
+        currentTheme = 'default-theme';
+        window.localStorage.setItem('theme', 'default-theme');
+      }
 
       if (switchLink) {
-        if (!body.classList.contains(CONS.lowLight)) {
-          body.classList.add(CONS.lowLight);
-        }
+        switchLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          body.classList.toggle(CONS.lowLight);
+        }, false);
       }
     },
 

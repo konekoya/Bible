@@ -3,11 +3,10 @@
 .low-light-theme {
   background-color: $theme-black;
   color: $theme-white;
-}
-
-#nothing {
-  color: $theme-white;
-  a {
+  .content-container {
     color: $theme-white;
+    a {
+      color: $theme-white;
+    }
   }
 }

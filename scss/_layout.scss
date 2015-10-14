@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // Content body
-#nothing {
+.content-container {
     font-size: 24px;
-    color: #000;
+    color: $theme-black;
 }
