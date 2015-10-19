@@ -1,6 +1,5 @@
 // Authored by Joshua Lin
-// Staring from 2014.11.20
-
+// Staring this project from 2014.11.20
 
 function init() {
   var doc = document;

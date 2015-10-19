@@ -5,7 +5,7 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- use toggle button for setting panel, check out this pen http://codepen.io/mallendeo/pen/eLIiG/
+- use toggle button for setting panel - clean up the css and make the button a bit smaller
 - create a github page for this project
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
