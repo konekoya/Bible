@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
-@import "./base/variables";
-@import "./base/reset";
-@import "./base/general";
-@import "./base/helpers";
-@import "./base/animation";
+@import "base/variables";
+@import "base/reset";
+@import "base/general";
+@import "base/helpers";
+@import "base/animation";
 
-@import "./components/btn";
-@import "./components/toggle-btn";
-@import "./components/range";
-@import "./components/back-to-top";
-@import "./components/nav-bar";
-@import "./components/tool-bar";
-@import "./components/tooltip";
-@import "./components/setting-panel";
+@import "components/btn";
+@import "components/toggle-btn";
+@import "components/range";
+@import "components/back-to-top";
+@import "components/nav-bar";
+@import "components/tool-bar";
+@import "components/tooltip";
+@import "components/setting-panel";
 
-@import "./layout";
-@import "./media-query";
-@import "./low-light-theme";
+@import "layout";
+@import "media-query";
+@import "low-light-theme";

@@ -17,7 +17,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('sass', function() {
-    return sass('./scss/style.scss', { style: 'expanded'})
+    return sass('./scss/', { style: 'expanded'})
         .pipe(gulp.dest('build/css'));
 
 });

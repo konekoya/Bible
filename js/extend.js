@@ -141,7 +141,7 @@ function init() {
 
         document.addEventListener('click', function(e) {
           if (panel.classList.contains(CONS.show)) {
-              panel.classList.remove(CONS.show);
+            panel.classList.remove(CONS.show);
           }
         });
       }
@@ -172,22 +172,32 @@ function init() {
     },
 
     switchTheme: function() {
-      var switchLink = doc.querySelector('.setting-low-light');
+      var switchLink = doc.querySelector('.toggle-theme .toggle');
       var currentTheme = '';
 
       if (window.localStorage.getItem('theme')) {
         currentTheme = window.localStorage.getItem('theme');
+        if (currentTheme === 'default-theme') {
+          switchLink.checked = false;
+        } else {
+          switchLink.checked = true;
+          body.classList.add(CONS.lowLight);
+        }
       } else {
         currentTheme = 'default-theme';
         window.localStorage.setItem('theme', 'default-theme');
+        switchLink.checked = false;
       }
 
-      if (switchLink) {
-        switchLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          body.classList.toggle(CONS.lowLight);
-        }, false);
-      }
+      switchLink.addEventListener('click', function() {
+        if (this.checked === true) {
+          body.classList.add(CONS.lowLight);
+          window.localStorage.setItem('theme', 'low-light-theme');
+        } else {
+          body.classList.remove(CONS.lowLight);
+          window.localStorage.setItem('theme', 'default-theme');
+        }
+      }, false);
     },
 
     initialize: function() {

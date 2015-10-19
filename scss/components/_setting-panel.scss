@@ -18,6 +18,7 @@
   visibility: hidden;
   opacity: 0;
   transition: $fast all;
+  width: 350px;
   &.show {
     visibility: visible;
     opacity: 1;

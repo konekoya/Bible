@@ -103,16 +103,6 @@ select {
   display: none;
 }
 
-.toggle,
-.toggle:after,
-.toggle:before,
-.toggle *,
-.toggle *:after,
-.toggle *:before,
-.toggle + .toggle-btn {
-  box-sizing: border-box;
-}
-
 .toggle::-moz-selection,
 .toggle:after::-moz-selection,
 .toggle:before::-moz-selection,
@@ -137,7 +127,7 @@ select {
   outline: 0;
   display: block;
   width: 4em;
-  height: 2em;
+  height: 1.5em;
   position: relative;
   cursor: pointer;
   -webkit-user-select: none;
@@ -151,7 +141,7 @@ select {
   position: relative;
   display: block;
   content: "";
-  width: 50%;
+  width: 35%;
   height: 100%;
 }
 
@@ -164,7 +154,7 @@ select {
 }
 
 .toggle:checked + .toggle-btn:after {
-  left: 50%;
+  left: 65%;
 }
 
 .toggle-default + .toggle-btn {
@@ -173,7 +163,6 @@ select {
   padding: 2px;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
-  border: 1px solid #e8eae9;
 }
 
 .toggle-default + .toggle-btn:after {
@@ -413,6 +402,7 @@ input[type="range"]:focus::-ms-fill-upper {
   visibility: hidden;
   opacity: 0;
   transition: 0.3s all;
+  width: 350px;
 }
 .setting-panel.show {
   visibility: visible;
