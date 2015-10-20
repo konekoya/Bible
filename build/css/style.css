@@ -159,7 +159,7 @@ select {
 }
 
 .toggle-default + .toggle-btn {
-  background: #fbfbfb;
+  background-color: #1a283e;
   border-radius: 2em;
   padding: 2px;
   -webkit-transition: all .4s ease;
@@ -168,7 +168,7 @@ select {
 
 .toggle-default + .toggle-btn:after {
   border-radius: 2em;
-  background: #fbfbfb;
+  background: #fff;
   -webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
   transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
@@ -187,7 +187,7 @@ select {
 }
 
 .toggle-default:checked + .toggle-btn {
-  background: #86d993;
+  background: #da213b;
 }
 
 .toggle-default:checked + .toggle-btn:active {
