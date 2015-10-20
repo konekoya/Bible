@@ -266,7 +266,7 @@
   </div>
   <div class="setting-panel">
     <div class="range">
-      <h4 class="range-title">Font size</h4>
+      <h4 class="range-title setting-title">Font size</h4>
       <div class="range-control">
         <input class="range-slide" type="range" min="10" max="40">
         <span class="range-size">20px</span>
@@ -274,10 +274,16 @@
     </div>
     <ul class="setting-list  list-unstyled">
       <li class="setting-item toggle-theme">
-        <!-- <a class="setting-low-light" href="#">Low Light</a> -->
-        <!-- <span class="setting-desc">Light text on a dark background</span> -->
-          <input class='toggle toggle-default' id='toggle-btn' type='checkbox'>
-          <label class='toggle-btn' for='toggle-btn'></label>
+        <h4 class="theme-title setting-title" href="#">Low Light</h4>
+        <input class='toggle toggle-default' id='toggle-theme-btn' type='checkbox'>
+        <label class='toggle-btn' for='toggle-theme-btn'></label>
+        <span class="setting-desc">Light text on a dark background</span>
+      </li>
+      <li class="setting-item toggle-verse-number">
+        <h4 class="verse-title setting-title" href="#">Toggle verse number</h4>
+        <input class='toggle toggle-default' id='toggle-verse-number-btn' type='checkbox'>
+        <label class='toggle-btn' for='toggle-verse-number-btn'></label>
+        <span class="setting-desc">Verse number off</span>
       </li>
     </ul>
   </div>

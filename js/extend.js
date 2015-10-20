@@ -121,8 +121,8 @@ function init() {
     if (this === window) {
       return new SettingPanel(options);
     }
-    this.range = doc.querySelector(options.range);
-    this.rangeSize = doc.querySelector(options.rangeSize);
+    this.range = doc.querySelector(options.els.range);
+    this.rangeSize = doc.querySelector(options.els.rangeSize);
   };
 
   SettingPanel.prototype = {
@@ -200,18 +200,25 @@ function init() {
       }, false);
     },
 
+    toggleVerseNumber: function() {
+      console.log('hey');
+    },
+
     initialize: function() {
       this.togglePanel();
       this.changeFontSize();
       this.setDefaultFontSize();
       this.switchTheme();
+      this.toggleVerseNumber();
     }
   };
 
 
   var panel = new SettingPanel({
-    range: '.range-slide',
-    rangeSize: '.range-size'
+    els: {
+      range: '.range-slide',
+      rangeSize: '.range-size'
+    }
   });
   panel.initialize();
 
