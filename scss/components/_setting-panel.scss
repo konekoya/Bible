@@ -7,6 +7,9 @@
 .setting-btn {
   padding: 13px 17px;
   font-size: 16px;
+  &.show {
+    background-color: $theme-blue;
+  }
 }
 .setting-panel {
   color: $theme-white;
@@ -14,7 +17,6 @@
   left: 0;
   bottom: 0;
   background: lighten($theme-dark-blue, 10%);
-  padding: 20px;
   visibility: hidden;
   opacity: 0;
   transition: $fast all;
@@ -25,7 +27,7 @@
     bottom: 70px;
   }
   .range {
-    margin-bottom: 20px;
+    padding: 18px 20px;
   }
   .range-slide {
     display: inline-block;
@@ -38,7 +40,10 @@
 }
 
 .setting-item {
-  margin-bottom: 15px;
+  padding: 18px 20px;
+  &:nth-child(odd) {
+    background-color: lighten($theme-dark-blue, 15%);
+  }
   .toggle-btn {
     display: inline-block;
     vertical-align: top;

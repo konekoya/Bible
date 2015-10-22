@@ -392,6 +392,9 @@ input[type="range"]:focus::-ms-fill-upper {
   padding: 13px 17px;
   font-size: 16px;
 }
+.setting-btn.show {
+  background-color: #1142aa;
+}
 
 .setting-panel {
   color: #fff;
@@ -399,7 +402,6 @@ input[type="range"]:focus::-ms-fill-upper {
   left: 0;
   bottom: 0;
   background: #293f62;
-  padding: 20px;
   visibility: hidden;
   opacity: 0;
   transition: 0.3s all;
@@ -411,7 +413,7 @@ input[type="range"]:focus::-ms-fill-upper {
   bottom: 70px;
 }
 .setting-panel .range {
-  margin-bottom: 20px;
+  padding: 18px 20px;
 }
 .setting-panel .range-slide {
   display: inline-block;
@@ -423,7 +425,10 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .setting-item {
-  margin-bottom: 15px;
+  padding: 18px 20px;
+}
+.setting-item:nth-child(odd) {
+  background-color: #314b74;
 }
 .setting-item .toggle-btn {
   display: inline-block;
@@ -441,7 +446,7 @@ input[type="range"]:focus::-ms-fill-upper {
 
 .no-verse-number > ol {
   list-style: none;
-  margin: 0;
+  margin-left: 0;
   padding: 0;
 }
 

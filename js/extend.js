@@ -129,9 +129,11 @@ function init() {
     togglePanel: function() {
       var btn = doc.querySelector('.setting-btn');
       var panel = doc.querySelector('.setting-panel');
+
       if (btn && panel) {
         btn.addEventListener('click', function(e) {
           panel.classList.toggle(CONS.show);
+          btn.classList.toggle(CONS.show);
           e.stopPropagation();
         }, false);
 
@@ -142,6 +144,7 @@ function init() {
         document.addEventListener('click', function(e) {
           if (panel.classList.contains(CONS.show)) {
             panel.classList.remove(CONS.show);
+            btn.classList.remove(CONS.show);
           }
         });
       }
@@ -204,11 +207,31 @@ function init() {
     toggleVerseNumber: function() {
       var toggleBtn = doc.querySelector('.toggle-verse-number .toggle');
       var div = null;
+      var state = '';
+
+      if (window.localStorage.getItem('verse-number')) {
+        currentState = window.localStorage.getItem('verse-number');
+        if (currentState === 'on') {
+          toggleBtn.checked = true;
+        } else {
+          toggleBtn.checked = false;
+        }
+      } else {
+        currentState = 'on';
+        window.localStorage.setItem('verse-number', 'on');
+        toggleBtn.checked = true;
+      }
 
       toggleBtn.addEventListener('click', function(e) {
         div = doc.querySelector('#nothing > div');
         if (div) {
-          div.classList.toggle('no-verse-number');
+          if (this.checked === true) {
+            div.classList.remove('no-verse-number');
+            window.localStorage.setItem('verse-number', 'on');
+          } else {
+            div.classList.add('no-verse-number');
+            window.localStorage.setItem('verse-number', 'off');
+          }
         }
       }, false)
 
@@ -232,7 +255,7 @@ function init() {
   });
 
   panel.initialize();
-  
+
 }
 
 window.addEventListener('load', function() {

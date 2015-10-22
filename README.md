@@ -10,7 +10,7 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
 - fix theme switch issue with Ordered list
-- toggle verse number
+- toggle verse number - event delegation?
 - page navigation on left and right side of the browsers
 - add search functionality
 - remove read button and change the select to activate when user finish selecting
