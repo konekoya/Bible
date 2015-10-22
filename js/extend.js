@@ -164,6 +164,7 @@ function init() {
 
     changeFontSize: function() {
       var that = this;
+
       this.range.addEventListener('change', function() {
         that.rangeSize.textContent = this.value + 'px';
         nothing.style.fontSize = this.value + 'px';
@@ -201,7 +202,16 @@ function init() {
     },
 
     toggleVerseNumber: function() {
-      console.log('hey');
+      var toggleBtn = doc.querySelector('.toggle-verse-number .toggle');
+      var div = null;
+
+      toggleBtn.addEventListener('click', function(e) {
+        div = doc.querySelector('#nothing > div');
+        if (div) {
+          div.classList.toggle('no-verse-number');
+        }
+      }, false)
+
     },
 
     initialize: function() {
@@ -220,10 +230,10 @@ function init() {
       rangeSize: '.range-size'
     }
   });
+
   panel.initialize();
-
+  
 }
-
 
 window.addEventListener('load', function() {
   init();

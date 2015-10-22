@@ -439,6 +439,12 @@ input[type="range"]:focus::-ms-fill-upper {
   color: #000;
 }
 
+.no-verse-number > ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (min-width: 460px) {
   .form-elem {
     float: left;

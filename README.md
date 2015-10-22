@@ -6,6 +6,7 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 
 #TODOs
 - create a github page for this project
+- handle Gulp errors...
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
 - fix theme switch issue with Ordered list
