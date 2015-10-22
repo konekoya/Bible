@@ -5,11 +5,11 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- use toggle button for setting panel - clean up the css and make the button a bit smaller
 - create a github page for this project
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
 - fix theme switch issue with Ordered list
+- toggle verse number
 - page navigation on left and right side of the browsers
 - add search functionality
 - remove read button and change the select to activate when user finish selecting
@@ -24,7 +24,5 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - refactoring the code with OOP method
 - rewrite the JS core
 - music option?
-- different theme?
 - cross-browser testing
 - add sourcemap and livereload in gulp.js
-- toggle verse number
