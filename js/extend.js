@@ -139,14 +139,14 @@ function init() {
 
         panel.addEventListener('click', function(e) {
           e.stopPropagation();
-        });
+        }, false);
 
         document.addEventListener('click', function(e) {
           if (panel.classList.contains(CONS.show)) {
             panel.classList.remove(CONS.show);
             btn.classList.remove(CONS.show);
           }
-        });
+        }, false);
       }
     },
 
@@ -179,6 +179,7 @@ function init() {
       var switchLink = doc.querySelector('.toggle-theme .toggle');
       var currentTheme = '';
 
+      // set default theme
       if (window.localStorage.getItem('theme')) {
         currentTheme = window.localStorage.getItem('theme');
         if (currentTheme === 'default-theme') {
@@ -193,6 +194,7 @@ function init() {
         switchLink.checked = false;
       }
 
+      // toggle theme
       switchLink.addEventListener('click', function() {
         if (this.checked === true) {
           body.classList.add(CONS.lowLight);
@@ -206,33 +208,33 @@ function init() {
 
     toggleVerseNumber: function() {
       var toggleBtn = doc.querySelector('.toggle-verse-number .toggle');
-      var div = null;
-      var state = '';
+      var container = doc.querySelector('#nothing');
+      var currentState = '';
 
       if (window.localStorage.getItem('verse-number')) {
         currentState = window.localStorage.getItem('verse-number');
         if (currentState === 'on') {
           toggleBtn.checked = true;
+          container.classList.remove('no-verse-number');
         } else {
           toggleBtn.checked = false;
+          container.classList.add('no-verse-number');
         }
       } else {
         currentState = 'on';
         window.localStorage.setItem('verse-number', 'on');
         toggleBtn.checked = true;
       }
+      console.log(doc.querySelector('#nothing'));
 
       toggleBtn.addEventListener('click', function(e) {
-        div = doc.querySelector('#nothing > div');
-        if (div) {
           if (this.checked === true) {
-            div.classList.remove('no-verse-number');
+            container.classList.remove('no-verse-number');
             window.localStorage.setItem('verse-number', 'on');
           } else {
-            div.classList.add('no-verse-number');
+            container.classList.add('no-verse-number');
             window.localStorage.setItem('verse-number', 'off');
           }
-        }
       }, false)
 
     },
