@@ -1,11 +1,11 @@
 {
   "name": "Bible",
-  "version": "0.0.0",
+  "version": "1.0",
   "homepage": "https://github.com/konekoya/Bible",
   "authors": [
     "Konekoya <tank158r5155@yahoo.com.tw>"
   ],
-  "description": "",
+  "description": "Offline Bible studying application",
   "main": "",
   "moduleType": [],
   "license": "MIT",

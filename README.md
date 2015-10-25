@@ -19,7 +19,6 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - better UI and how to select/change between chapters
 - zen reading mode
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
-- if needed, loading graphic
 - Google font fallback
 - refactoring the code with OOP method
 - rewrite the JS core

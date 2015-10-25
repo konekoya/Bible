@@ -225,7 +225,6 @@ function init() {
         window.localStorage.setItem('verse-number', 'on');
         toggleBtn.checked = true;
       }
-      console.log(doc.querySelector('#nothing'));
 
       toggleBtn.addEventListener('click', function(e) {
           if (this.checked === true) {
