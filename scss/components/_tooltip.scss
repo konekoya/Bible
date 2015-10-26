@@ -1,1 +1,43 @@
 @charset "UTF-8";
+
+.tooltip-parent {
+  position: relative;
+
+  &:hover {
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  color: $theme-white;
+  background-color: $theme-black;
+  border-radius: $radius-2px;
+  padding: 6px 10px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: $fast all ease 0;
+  transition: $fast all ease 0;
+  white-space: nowrap;
+}
+
+.tooltip-delay {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+  &:hover {
+  }
+}
+
+.tooltip-white {
+  color: $theme-black;
+  background-color: $theme-white;
+}
+
+.tooltip-left-top {
+  left: 0;
+  top: -110%;
+}

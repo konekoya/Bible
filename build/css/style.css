@@ -23,7 +23,7 @@ body {
   font-size: 100%;
   margin: 7.5rem 1rem;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu", 微軟正黑體, sans-serif;
 }
 
 a {
@@ -381,6 +381,43 @@ input[type="range"]:focus::-ms-fill-upper {
 .font-size-control .heading {
   font-size: 0.8125rem;
   color: #fff;
+}
+
+.tooltip-parent {
+  position: relative;
+}
+.tooltip-parent:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip {
+  position: absolute;
+  color: #fff;
+  background-color: #000;
+  border-radius: 0.125rem;
+  padding: 6px 10px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s all ease 0;
+  transition: 0.3s all ease 0;
+  white-space: nowrap;
+}
+
+.tooltip-delay {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.tooltip-white {
+  color: #000;
+  background-color: #fff;
+}
+
+.tooltip-left-top {
+  left: 0;
+  top: -110%;
 }
 
 .setting-wrap {

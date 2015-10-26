@@ -24,3 +24,5 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - music option? for this, I think we can use Youtube API
 - cross-browser testing, modern browses :)
 - add sourcemap and livereload in gulp.js
+- notification pop up
+- toggle tooltip optoins
