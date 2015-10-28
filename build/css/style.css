@@ -405,19 +405,25 @@ input[type="range"]:focus::-ms-fill-upper {
   white-space: nowrap;
 }
 
-.tooltip-delay {
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
-}
-
 .tooltip-white {
   color: #000;
   background-color: #fff;
 }
 
-.tooltip-left-top {
+.tooltip-top {
+  top: calc(-100% - 10px);
+}
+
+.tooltip-left {
   left: 0;
-  top: -110%;
+}
+
+.tooltip-right {
+  left: calc(-100% - 10px);
+}
+
+.tooltip-bottom {
+  top: calc(100% + 10px);
 }
 
 .setting-wrap {
