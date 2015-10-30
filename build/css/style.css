@@ -23,7 +23,7 @@ body {
   font-size: 100%;
   margin: 7.5rem 1rem;
   padding: 0;
-  font-family: "Ubuntu", 微軟正黑體, sans-serif;
+  font-family: "Roboto", "微軟正黑體", sans-serif;
 }
 
 a {
@@ -326,7 +326,7 @@ input[type="range"]:focus::-ms-fill-upper {
   margin: 0 20px 0 0;
   color: #fff;
   text-align: center;
-  font-family: "Ubuntu", 微軟正黑體, sans-serif;
+  font-family: "Ubuntu", "微軟正黑體", sans-serif;
 }
 
 .form-elem {
