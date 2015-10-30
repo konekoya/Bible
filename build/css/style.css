@@ -38,7 +38,6 @@ a:focus {
 }
 
 ol {
-  font-weight: bold;
   margin: 0.3125em 0 0.3125em 2em;
 }
 ol li {
@@ -419,7 +418,7 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .tooltip-right {
-  left: calc(-100% - 10px);
+  right: 0;
 }
 
 .tooltip-bottom {

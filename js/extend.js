@@ -234,7 +234,7 @@ function init() {
             container.classList.add('no-verse-number');
             window.localStorage.setItem('verse-number', 'off');
           }
-      }, false)
+      }, false);
 
     },
 

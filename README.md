@@ -7,6 +7,8 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 #TODOs
 - create a github page for this project
 - handle Gulp errors...
+- move black mode button to bottom bar?
+- tooltip, need to add arrow
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
 - fix theme switch issue with Ordered list
@@ -16,7 +18,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - better UI and how to select/change between chapters
 - better layout solution for mobile devices, mainly, the toggle black mode icon
 - provide higher resolution favicon for Apple products like iPhone and Macbooks
-- tooltip, and I think we should do a tooltip project...
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
 - Google font fallback
 - refactoring the code with OOP method
