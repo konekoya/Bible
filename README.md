@@ -6,6 +6,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 #TODOs
 - handle Gulp errors...
+- 後一章 bug
 - move black mode button to bottom bar?
 - tooltip, need to add arrow
 - need to fix font awesome path problem with gulp
