@@ -5,7 +5,6 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- create a github page for this project
 - handle Gulp errors...
 - move black mode button to bottom bar?
 - tooltip, need to add arrow
