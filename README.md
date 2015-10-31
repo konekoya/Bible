@@ -5,10 +5,10 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
+- tooltip, need to add arrow
 - handle Gulp errors...
 - 後一章 bug
 - move black mode button to bottom bar?
-- tooltip, need to add arrow
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
 - fix theme switch issue with Ordered list
@@ -19,11 +19,11 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - better layout solution for mobile devices, mainly, the toggle black mode icon
 - provide higher resolution favicon for Apple products like iPhone and Macbooks
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
-- Google font fallback
+- Google font fallback, also we need a solution for CDN resouces witout internet connection
 - refactoring the code with OOP method
 - rewrite the JS core
 - music option? for this, I think we can use Youtube API
 - cross-browser testing, modern browses :)
 - add sourcemap and livereload in gulp.js
-- notification pop up
+- notification pop up?
 - toggle tooltip optoins
