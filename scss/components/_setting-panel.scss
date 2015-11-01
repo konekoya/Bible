@@ -1,16 +1,5 @@
 @charset "UTF-8";
 
-.setting-wrap {
-  float: left;
-  line-height: 30px;
-}
-.setting-btn {
-  padding: 13px 17px;
-  font-size: 16px;
-  &.show {
-    background-color: $theme-blue;
-  }
-}
 .setting-panel {
   color: $theme-white;
   position: fixed;

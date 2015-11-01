@@ -1,11 +1,11 @@
-var gulp = require('gulp'),
-    jshint = require('gulp-jshint'),
-    stylish = require('jshint-stylish'),
-    gutil = require('gulp-util'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    sass = require('gulp-ruby-sass'),
-    sourcemaps = require('gulp-sourcemaps');
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var gutil = require('gulp-util');
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+var sass = require('gulp-ruby-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('js', function() {
     return gulp.src('./js/*.js')

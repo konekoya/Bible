@@ -26,6 +26,7 @@
   margin-right: 0.625rem;
   margin-bottom: 8px;
   width: 100%;
+  font-family: inherit;
 }
 .chapter-body {
   float: left;
@@ -37,14 +38,6 @@
   background-color: $theme-red;
 }
 
-// toggle light
-.toggle-light {
-  float: left;
-  color: $theme-white;
-  font-size: 1.4rem;
-  padding: 10px 0;
-  cursor: pointer;
-}
 .cover {
   position: fixed;
   left: 0;
@@ -61,13 +54,5 @@
     white-space: nowrap;
     transform: translate(-50%, -50%);
     font-size: 0.8125rem;
-  }
-}
-.font-size-control {
-  float: right;
-  display: none;
-  .heading {
-    font-size: 0.8125rem;
-    color: $theme-white;
   }
 }

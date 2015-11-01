@@ -6,8 +6,10 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 #TODOs
 - handle Gulp errors...
-- move black mode button to bottom bar?
-- tooltip, need to add arrow
+- fullscreen mode with chrome when click on black mode, check this http://stackoverflow.com/questions/7836204/chrome-fullscreen-api
+- scrollbar improvement
+- reading mode is needed
+- testing on the desktop computer of Church to fix RWD and font face issues
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
 - fix theme switch issue with Ordered list
@@ -25,4 +27,4 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - cross-browser testing, modern browses :)
 - add sourcemap and livereload in gulp.js
 - notification pop up
-- toggle tooltip optoins
+- toggle tooltip optoins?

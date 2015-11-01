@@ -254,16 +254,6 @@
       </select>
       <input class="read-on  btn  form-elem" name="submit1" value="閱讀" type="submit">
     </form>
-    <div class="font-size-control">
-      <span class="heading">字體大小控制：</span>
-      <button class="smaller  btn" data-font-size="smaller">縮小</button>
-      <button class="bigger  btn" data-font-size="bigger">加大</button>
-      <button class="reset  btn" data-font-size="reset">重設</button>
-    </div>
-    <div class="toggle-light  tooltip-parent">
-      <div class="tooltip  tooltip-right  tooltip-bottom">Open black mode</div>
-      <i class="fa  fa-lightbulb-o"></i>
-    </div>
   </div>
   <div class="content-wrap">
     <div class="content-container" id="nothing">
@@ -292,20 +282,31 @@
       </li>
     </ul>
   </div>
+
   <div class="nav-bar">
     <div id="link2" class="chapter-nav  main-chapter-nav">
       <a class="prev  btn  btn-genernal  btn-large" href="" onclick="readchapter(' ', nowbook,--nowchapter); return false;">上一章</a>
       <a class="next  btn  btn-genernal  btn-large" href="" onclick="readchapter(' ', nowbook,++nowchapter); return false;">後一章</a>
     </div>
-    <div class="setting-wrap tooltip-parent">
-      <div class="tooltip tooltip-top">Change settings</div>
+
+    <div class="setting-wrap  tooltip-parent">
+      <div class="tooltip  tooltip-top  tooltip-left">Change settings</div>
       <button class="setting-btn  btn  btn-genernal">
         <i class="fa  fa-cog"></i>
       </button>
     </div>
+
+    <div class="toggle-light-wrap  tooltip-parent">
+      <div class="tooltip  tooltip-left  tooltip-top">Open black mode</div>
+      <button class="toggle-light  btn  btn-genernal">
+        <i class="fa  fa-lightbulb-o"></i>
+      </button>
+    </div>
+
     <button class="top  btn  btn-genernal  btn-large">
       <i class="fa  fa-chevron-up"></i> Top
     </button>
+
   </div>
   <script src="build/js/app.js"></script>
 </body>

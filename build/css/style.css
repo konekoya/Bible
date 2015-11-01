@@ -306,6 +306,31 @@ input[type="range"]:focus::-ms-fill-upper {
   margin-right: 1rem;
 }
 
+.setting-wrap {
+  float: left;
+  line-height: 30px;
+}
+
+.setting-btn {
+  padding: 13px 17px;
+  font-size: 16px;
+  margin-right: .5rem;
+}
+.setting-btn.show {
+  background-color: #1142aa;
+}
+
+.toggle-light-wrap {
+  float: left;
+}
+
+.toggle-light {
+  color: #fff;
+  cursor: pointer;
+  padding: 13px 17px;
+  font-size: 16px;
+}
+
 .toolbar {
   position: fixed;
   top: 0;
@@ -333,6 +358,7 @@ input[type="range"]:focus::-ms-fill-upper {
   margin-right: 0.625rem;
   margin-bottom: 8px;
   width: 100%;
+  font-family: inherit;
 }
 
 .chapter-body {
@@ -344,14 +370,6 @@ input[type="range"]:focus::-ms-fill-upper {
 .read-on {
   margin-right: 0;
   background-color: #da213b;
-}
-
-.toggle-light {
-  float: left;
-  color: #fff;
-  font-size: 1.4rem;
-  padding: 10px 0;
-  cursor: pointer;
 }
 
 .cover {
@@ -373,15 +391,6 @@ input[type="range"]:focus::-ms-fill-upper {
   font-size: 0.8125rem;
 }
 
-.font-size-control {
-  float: right;
-  display: none;
-}
-.font-size-control .heading {
-  font-size: 0.8125rem;
-  color: #fff;
-}
-
 .tooltip-parent {
   position: relative;
 }
@@ -395,47 +404,50 @@ input[type="range"]:focus::-ms-fill-upper {
   color: #fff;
   background-color: #000;
   border-radius: 0.125rem;
-  padding: 6px 10px;
+  padding: 10px 12px;
   font-size: 12px;
   opacity: 0;
+  line-height: 1.6;
   visibility: hidden;
   -webkit-transition: 0.3s all ease 0;
   transition: 0.3s all ease 0;
   white-space: nowrap;
 }
-
-.tooltip-white {
-  color: #000;
-  background-color: #fff;
+.tooltip:before {
+  border: 6px solid transparent;
+  border-top-color: #000;
+  content: '';
+  position: absolute;
 }
 
 .tooltip-top {
   top: calc(-100% - 10px);
 }
+.tooltip-top:before {
+  top: 100%;
+}
 
 .tooltip-left {
+  left: 0;
+}
+.tooltip-left:before {
   left: 0;
 }
 
 .tooltip-right {
   right: 0;
 }
+.tooltip-right:before {
+  right: 0;
+}
 
 .tooltip-bottom {
   top: calc(100% + 10px);
 }
-
-.setting-wrap {
-  float: left;
-  line-height: 30px;
-}
-
-.setting-btn {
-  padding: 13px 17px;
-  font-size: 16px;
-}
-.setting-btn.show {
-  background-color: #1142aa;
+.tooltip-bottom:before {
+  border: 6px solid transparent;
+  border-bottom-color: #000;
+  bottom: 100%;
 }
 
 .setting-panel {

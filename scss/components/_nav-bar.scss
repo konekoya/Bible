@@ -7,7 +7,32 @@
   padding: 1rem 2rem;
   width: 100%;
 }
+
 .chapter-nav {
   float: left;
   margin-right: 1rem;
+}
+
+.setting-wrap {
+  float: left;
+  line-height: 30px;
+}
+.setting-btn {
+  padding: 13px 17px;
+  font-size: 16px;
+  margin-right: .5rem;
+  &.show {
+    background-color: $theme-blue;
+  }
+}
+
+// toggle light
+.toggle-light-wrap {
+  float: left;
+}
+.toggle-light {
+  color: $theme-white;
+  cursor: pointer;
+  padding: 13px 17px;
+  font-size: 16px;
 }
