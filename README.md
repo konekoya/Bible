@@ -5,11 +5,13 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
+- tooltip, need to add arrow
 - handle Gulp errors...
 - fullscreen mode with chrome when click on black mode, check this http://stackoverflow.com/questions/7836204/chrome-fullscreen-api
 - scrollbar improvement
 - reading mode is needed
 - testing on the desktop computer of Church to fix RWD and font face issues
+- 後一章 bug
 - need to fix font awesome path problem with gulp
 - fix classlist error when exit the black screen mode
 - fix theme switch issue with Ordered list
@@ -20,7 +22,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - better layout solution for mobile devices, mainly, the toggle black mode icon
 - provide higher resolution favicon for Apple products like iPhone and Macbooks
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
-- Google font fallback
+- Google font fallback, also we need a solution for CDN resouces witout internet connection
 - refactoring the code with OOP method
 - rewrite the JS core
 - music option? for this, I think we can use Youtube API
