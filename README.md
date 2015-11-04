@@ -10,7 +10,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - scrollbar improvement
 - reading mode is needed
 - testing on the desktop computer of Church to fix RWD and font face issues
-- 後一章 bug
 - need to fix font awesome path problem with gulp, and move font awsome resources to production directory
 - fix classlist error when exiting the black screen mode
 - fix theme switch issue with Ordered list
