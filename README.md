@@ -17,7 +17,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - implement search functionality
 - remove read button and change the select to activate when user finish selecting
 - better UI and how to select/change between chapters
-- better layout solution for mobile devices, mainly, the toggle black mode icon
+- better layout solution for mobile devices - using flex box
 - provide higher resolution favicon for Apple products like iPhone and Macbooks
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
 - Google font fallback, also we need a solution for CDN resouces witout internet connection

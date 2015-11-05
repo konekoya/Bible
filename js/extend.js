@@ -18,19 +18,19 @@ function init() {
   };
 
   // jQuery-free scroll to top snippet
-  function scrollTo(element, to, duration) {
+  function scrollTo(el, to, duration) {
     if (duration < 0) {
       return;
     }
-    var difference = to - element.scrollTop;
+    var difference = to - el.scrollTop;
     var perTick = difference / duration * 10;
 
     setTimeout(function() {
-      element.scrollTop = element.scrollTop + perTick;
-      if (element.scrollTop == to) {
+      el.scrollTop = el.scrollTop + perTick;
+      if (el.scrollTop == to) {
         return;
       }
-      scrollTo(element, to, duration - 10);
+      scrollTo(el, to, duration - 10);
     }, 10);
   }
 
@@ -90,27 +90,36 @@ function init() {
       body.classList.add(CONS.hasCover);
     }
 
+    function clearListener() {
+      window.clearInterval(listener);
+    }
+
+    function addListener() {
+      var listener = window.setInterval(function() {
+        if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
+          toggleTxt(transitionSpeed);
+        }
+      }, transitionSpeed);
+    }
+
     if (el) {
       el.addEventListener('click', function(e) {
         addCover(div);
+        addListener();
       }, false);
 
       // close / remove the cover with mouse click esc key
       div.addEventListener('click', function(e) {
         removeCover(this);
+        clearListener();
       }, false);
 
       doc.onkeydown = function(e) {
         if (e.keyCode === 27) {
           removeCover(div);
+          clearListener();
         }
       };
-
-      window.setInterval(function() {
-        if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
-          toggleTxt(transitionSpeed);
-        }
-      }, transitionSpeed);
     }
   }
 
