@@ -28,3 +28,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - add sourcemap and livereload in gulp.js
 - notification pop up
 - toggle tooltip optoins?
+
+# Browser support
+All modern browser and IE10+
