@@ -26,9 +26,9 @@
     "url": "git+https://github.com/konekoya/Bible.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/konekoya/Bible/issues"
   },
-  "homepage": "https://github.com/konekoya/Bible#readme"
+  "homepage": "https://github.com/konekoya/Bible/index.html"
 }
