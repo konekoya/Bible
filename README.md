@@ -26,6 +26,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - music option? for this, I think we can use Youtube API
 - cross-browser testing, modern browses :)
 - add sourcemap, livereload, HTTP server, autoprefix in gulp.js
+- make sure all of the plugin that we are using in NPM is listing in package.json
 - notification pop up
 - toggle tooltip optoins?
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
