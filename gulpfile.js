@@ -6,9 +6,11 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var sass = require('gulp-ruby-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var plumber = require('gulp-plumber');
 
 gulp.task('js', function() {
     return gulp.src('./js/*.js')
+        .pipe(plumber())
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(uglify())

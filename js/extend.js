@@ -62,11 +62,14 @@ function init() {
 
     function toggleTxt(speed) {
       //  hide cover text with css transition
-      window.setTimeout(function() {
+      var timer = window.setTimeout(function() {
         coverTxt = doc.querySelector('.cover-txt');
         if (coverTxt) {
+          coverTxt.classList.remove(CONS.fadeIn);
           coverTxt.classList.add(CONS.fadeOut);
           body.classList.add(CONS.noCursor);
+
+          console.log('j')
 
           //  detect mouse movement and show the cover text again
           doc.onmousemove = function() {
@@ -77,12 +80,28 @@ function init() {
             }
           };
         }
+
+        clearFn(timer);
+
       }, speed);
+    }
+
+    var intervalTimer = window.setInterval(function() {
+      console.log('g')
+      if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
+        toggleTxt(transitionSpeed);
+      }
+    }, transitionSpeed);
+
+    function clearFn(timer) {
+      clearTimeout(timer);
     }
 
     function removeCover(coverEl) {
       body.removeChild(coverEl);
       body.classList.remove(CONS.hasCover);
+      body.classList.remove(CONS.noCursor);
+      window.clearInterval(intervalTimer);
     }
 
     function addCover(coverEl) {
@@ -90,34 +109,19 @@ function init() {
       body.classList.add(CONS.hasCover);
     }
 
-    function clearListener() {
-      window.clearInterval(listener);
-    }
-
-    function addListener() {
-      var listener = window.setInterval(function() {
-        if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
-          toggleTxt(transitionSpeed);
-        }
-      }, transitionSpeed);
-    }
-
     if (el) {
       el.addEventListener('click', function(e) {
         addCover(div);
-        addListener();
       }, false);
 
       // close / remove the cover with mouse click esc key
       div.addEventListener('click', function(e) {
         removeCover(this);
-        clearListener();
       }, false);
 
       doc.onkeydown = function(e) {
         if (e.keyCode === 27) {
           removeCover(div);
-          clearListener();
         }
       };
     }

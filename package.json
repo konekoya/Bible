@@ -14,7 +14,9 @@
     "jshint-stylish": "^1.0.1",
     "jshint": "^2.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-plumber": "^1.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
