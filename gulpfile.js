@@ -4,9 +4,10 @@ var stylish = require('jshint-stylish');
 var gutil = require('gulp-util');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var sass = require('gulp-ruby-sass');
-var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
+var sourcemaps = require('gulp-sourcemaps');
+var sass = require('gulp-ruby-sass');
+var csslint = require('gulp-csslint');
 
 gulp.task('js', function() {
     return gulp.src('./js/*.js')
@@ -20,6 +21,8 @@ gulp.task('js', function() {
 
 gulp.task('sass', function() {
     return sass('./scss/style.scss', { style: 'expanded'})
+        .pipe(csslint())
+        .pipe(csslint.reporter())
         .pipe(gulp.dest('build/css'));
 
 });
