@@ -30,6 +30,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - notification pop up
 - toggle tooltip optoins?
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
+- remeber last time reading progress
 
 # Browser support
 All modern browser and IE10+
