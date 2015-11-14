@@ -24,7 +24,6 @@ gulp.task('sass', function() {
         .pipe(csslint())
         .pipe(csslint.reporter())
         .pipe(gulp.dest('build/css'));
-
 });
 
 gulp.task('watch', function() {

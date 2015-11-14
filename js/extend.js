@@ -1,4 +1,4 @@
-// Authored by Joshua Lin
+  // Authored by Joshua Lin
 // Staring this project from 2014.11.20
 
 function init() {
@@ -68,8 +68,6 @@ function init() {
           coverTxt.classList.remove(CONS.fadeIn);
           coverTxt.classList.add(CONS.fadeOut);
           body.classList.add(CONS.noCursor);
-
-          console.log('j')
 
           //  detect mouse movement and show the cover text again
           doc.onmousemove = function() {
