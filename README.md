@@ -8,7 +8,8 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers http://stackoverflow.com/questions/7836204/chrome-fullscreen-api
 - scrollbar improvement
 - reading mode is needed
-- fix csslint reports errors in CSS
+- fix csslint reports errors in CSS and we should have something like csslintrc??
+- Google font fallback, also we need a solution for CDN resouces witout internet connection
 - testing on the desktop computer of Church to fix RWD and font face issues
 - need to fix font awesome path problem with gulp, and move font awsome resources to production directory
 - bind the toggle light event on button not on window load
@@ -20,7 +21,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - better layout solution for mobile devices - using flex box
 - provide higher resolution favicon for Apple products like iPhone and Macbooks
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
-- Google font fallback, also we need a solution for CDN resouces witout internet connection
 - refactoring the code with OOP manner
 - rewrite the JS core
 - music option? for this, I think we can use Youtube API
@@ -31,6 +31,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - toggle tooltip optoins?
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
 - remeber progress of last reading 
+- should we use JS testing tools?
 
 # Browser support
 All modern browser and IE10+
