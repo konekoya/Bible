@@ -35,4 +35,4 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - should we offer another language option for the interface?
 
 # Browser support
-All modern browser and IE10+
+All modern browsers and IE10+
