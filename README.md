@@ -33,6 +33,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - remeber progress of last reading 
 - should we use JS testing tools?
 - should we offer another language option for the interface?
+- CSS linting is causing a lot of trobules ... maybe we should look for some other options available in Gulp?
 
 # Browser support
 All modern browsers and IE10+
