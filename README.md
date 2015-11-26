@@ -6,12 +6,12 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 #TODOs
 - fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers http://stackoverflow.com/questions/7836204/chrome-fullscreen-api
-- scrollbar improvement
+- scrollbar improvement - make one with vanilla JavaScript
 - reading mode is needed
-- fix csslint reports errors in CSS and we should have something like csslintrc??
-- Google font fallback, also we need a solution for CDN resouces witout internet connection
+- fix black mode issue... the interval function shouldn't fire
+- Google font fallback, also we need a solution for CDN resources without internet connection
 - testing on the desktop computer of Church to fix RWD and font face issues
-- need to fix font awesome path problem with gulp, and move font awsome resources to production directory
+- need to fix font awesome path problem with gulp, and move font awesome resources to production directory
 - bind the toggle light event on button not on window load
 - fix theme switch issue with Ordered list
 - page navigation on left and right side of the browsers, this should only be showing on desktop not for mobile devices
@@ -30,10 +30,10 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - notification pop up
 - toggle tooltip optoins?
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
-- remeber progress of last reading 
+- remember progress of last reading
 - should we use JS testing tools?
 - should we offer another language option for the interface?
-- CSS linting is causing a lot of trobules ... maybe we should look for some other options available in Gulp?
+- CSS linting is causing a lot of troubles ... maybe we should look for some other options available in Gulp?
 - add different version of Chinese Bibles
 
 # Browser support

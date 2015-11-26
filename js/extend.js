@@ -60,36 +60,36 @@ function init() {
     div.className = 'cover';
     div.innerHTML = '<span class="cover-txt">Press ESC key to leave</span>';
 
-    function toggleTxt(speed) {
-      //  hide cover text with css transition
-      var timer = window.setTimeout(function() {
-        coverTxt = doc.querySelector('.cover-txt');
-        if (coverTxt) {
-          coverTxt.classList.remove(CONS.fadeIn);
-          coverTxt.classList.add(CONS.fadeOut);
-          body.classList.add(CONS.noCursor);
+    // function toggleTxt(speed) {
+    //   //  hide cover text with css transition
+    //   var timer = window.setTimeout(function() {
+    //     coverTxt = doc.querySelector('.cover-txt');
+    //     if (coverTxt) {
+    //       coverTxt.classList.remove(CONS.fadeIn);
+    //       coverTxt.classList.add(CONS.fadeOut);
+    //       body.classList.add(CONS.noCursor);
+    //
+    //       //  detect mouse movement and show the cover text again
+    //       doc.onmousemove = function() {
+    //         if (coverTxt.classList.contains(CONS.fadeOut)) {
+    //           coverTxt.classList.remove(CONS.fadeOut);
+    //           coverTxt.classList.add(CONS.fadeIn);
+    //           body.classList.remove(CONS.noCursor);
+    //         }
+    //       };
+    //     }
+    //
+    //     clearFn(timer);
+    //
+    //   }, speed);
+    // }
 
-          //  detect mouse movement and show the cover text again
-          doc.onmousemove = function() {
-            if (coverTxt.classList.contains(CONS.fadeOut)) {
-              coverTxt.classList.remove(CONS.fadeOut);
-              coverTxt.classList.add(CONS.fadeIn);
-              body.classList.remove(CONS.noCursor);
-            }
-          };
-        }
-
-        clearFn(timer);
-
-      }, speed);
-    }
-
-    var intervalTimer = window.setInterval(function() {
-      console.log('g')
-      if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
-        toggleTxt(transitionSpeed);
-      }
-    }, transitionSpeed);
+    // var intervalTimer = window.setInterval(function() {
+    //   console.log('g');
+    //   if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
+    //     toggleTxt(transitionSpeed);
+    //   }
+    // }, transitionSpeed);
 
     function clearFn(timer) {
       clearTimeout(timer);
@@ -99,7 +99,7 @@ function init() {
       body.removeChild(coverEl);
       body.classList.remove(CONS.hasCover);
       body.classList.remove(CONS.noCursor);
-      window.clearInterval(intervalTimer);
+      // window.clearInterval(intervalTimer);
     }
 
     function addCover(coverEl) {
@@ -258,6 +258,9 @@ function init() {
     }
   };
 
+  var ReadingMode = function(options) {
+
+  };
 
   var panel = new SettingPanel({
     els: {

@@ -7,12 +7,10 @@
   padding: 1rem 2rem;
   width: 100%;
 }
-
 .chapter-nav {
   float: left;
   margin-right: 1rem;
 }
-
 .setting-wrap {
   float: left;
   line-height: 30px;
@@ -20,7 +18,7 @@
 .setting-btn {
   padding: 13px 17px;
   font-size: 16px;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   &.show {
     background-color: $theme-blue;
   }
@@ -31,6 +29,14 @@
   float: left;
 }
 .toggle-light {
+  color: $theme-white;
+  cursor: pointer;
+  padding: 13px 17px;
+  font-size: 16px;
+}
+
+// toggle reading mode
+.toggle-reading-mode {
   color: $theme-white;
   cursor: pointer;
   padding: 13px 17px;
