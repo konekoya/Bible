@@ -7,6 +7,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 #TODOs
 - fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers http://stackoverflow.com/questions/7836204/chrome-fullscreen-api
 - scrollbar improvement - make one with vanilla JavaScript
+- home link for the logo
 - reading mode is needed
 - fix black mode issue... the interval function shouldn't fire
 - Google font fallback, also we need a solution for CDN resources without internet connection
