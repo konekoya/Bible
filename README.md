@@ -5,9 +5,9 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers http://stackoverflow.com/questions/7836204/chrome-fullscreen-api
+- fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers 
+https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - scrollbar improvement - make one with vanilla JavaScript
-- home link for the logo
 - reading mode is needed
 - fix black mode issue... the interval function shouldn't fire
 - Google font fallback, also we need a solution for CDN resources without internet connection
