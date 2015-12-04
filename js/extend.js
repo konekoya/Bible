@@ -107,9 +107,35 @@ function init() {
       body.classList.add(CONS.hasCover);
     }
 
+    function toggleFullScreen() {
+      if (!doc.fullscreenElement &&    // alternative standard method
+          !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement ) {  // current working methods
+        if (html.requestFullscreen) {
+          html.requestFullscreen();
+        } else if (html.msRequestFullscreen) {
+          html.msRequestFullscreen();
+        } else if (html.mozRequestFullScreen) {
+          html.mozRequestFullScreen();
+        } else if (html.webkitRequestFullscreen) {
+          html.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+      } else {
+        if (doc.exitFullscreen) {
+          doc.exitFullscreen();
+        } else if (doc.msExitFullscreen) {
+          doc.msExitFullscreen();
+        } else if (doc.mozCancelFullScreen) {
+          doc.mozCancelFullScreen();
+        } else if (doc.webkitExitFullscreen) {
+          doc.webkitExitFullscreen();
+        }
+      }
+    }
+
     if (el) {
       el.addEventListener('click', function(e) {
         addCover(div);
+        toggleFullScreen();
       }, false);
 
       // close / remove the cover with mouse click esc key
@@ -128,12 +154,12 @@ function init() {
   toggleLight();
 
   // setting panel constructor
-  var SettingPanel = function(options) {
+  var SettingPanel = function(config) {
     if (this === window) {
-      return new SettingPanel(options);
+      return new SettingPanel(config);
     }
-    this.range = doc.querySelector(options.els.range);
-    this.rangeSize = doc.querySelector(options.els.rangeSize);
+    this.range = doc.querySelector(config.els.range);
+    this.rangeSize = doc.querySelector(config.els.rangeSize);
   };
 
   SettingPanel.prototype = {

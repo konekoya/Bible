@@ -391,6 +391,11 @@ input[type="range"]:focus::-ms-fill-upper {
   font-size: 0.8125rem;
 }
 
+html:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+}
+
 .tooltip-parent {
   position: relative;
 }
@@ -448,6 +453,14 @@ input[type="range"]:focus::-ms-fill-upper {
   border: 6px solid transparent;
   border-bottom-color: #000;
   bottom: 100%;
+}
+
+.low-light-theme .tooltip {
+  background-color: #fff;
+  color: #000;
+}
+.low-light-theme .tooltip:before {
+  border-top-color: #fff;
 }
 
 .setting-panel {

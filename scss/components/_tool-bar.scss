@@ -56,3 +56,8 @@
     font-size: 0.8125rem;
   }
 }
+
+html:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+}

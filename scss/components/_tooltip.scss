@@ -61,3 +61,13 @@
     bottom: 100%;
   }
 }
+
+.low-light-theme {
+  .tooltip {
+    background-color: $theme-white;
+    color: $theme-black;
+    &:before {
+      border-top-color: $theme-white;
+    }
+  }
+}
