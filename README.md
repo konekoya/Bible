@@ -5,7 +5,7 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers 
+- fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers - need to think about the mechanism and UX
 https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - scrollbar improvement - make one with vanilla JavaScript
 - reading mode is needed
@@ -35,7 +35,8 @@ https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - should we use JS testing tools?
 - should we offer another language option for the interface?
 - CSS linting is causing a lot of troubles ... maybe we should look for some other options available in Gulp?
-- add different version of Chinese Bibles
+- add different version of Chinese Bibles]
+- We need a better UI theme
 
 # Browser support
 All modern browsers and IE10+
