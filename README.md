@@ -37,6 +37,13 @@ https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - CSS linting is causing a lot of troubles ... maybe we should look for some other options available in Gulp?
 - add different version of Chinese Bibles]
 - We need a better UI theme
+- Remove or hide the scrollbar when in full screen mode
+- Build a simple web base notepad
+- Reading mode...
+- Remove the top button text, it's unecessary
+- Selection with some animation and improvement for that?
+- Search
+- Remove the link of chapter title, unecessary
 
 # Browser support
 All modern browsers and IE10+
