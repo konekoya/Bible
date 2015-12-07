@@ -331,6 +331,10 @@ input[type="range"]:focus::-ms-fill-upper {
   font-size: 16px;
 }
 
+.has-cover {
+  overflow: hidden;
+}
+
 .toolbar {
   position: fixed;
   top: 0;

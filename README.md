@@ -35,9 +35,8 @@ https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - should we use JS testing tools?
 - should we offer another language option for the interface?
 - CSS linting is causing a lot of troubles ... maybe we should look for some other options available in Gulp?
-- add different version of Chinese Bibles]
+- add different version of Chinese Bibles
 - We need a better UI theme
-- Remove or hide the scrollbar when in full screen mode
 - Build a simple web base notepad
 - Reading mode...
 - Selection with some animation and improvement for that?

@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 // Top bar -- Logo, chapter select and font size control panel
+.has-cover {
+  overflow: hidden;
+}
+
 .toolbar {
   position: fixed;
   top: 0;

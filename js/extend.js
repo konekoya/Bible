@@ -144,7 +144,7 @@ function init() {
       }, false);
 
       doc.onkeydown = function(e) {
-        if (e.keyCode === 27) {
+        if (e.keyCode === 27 && body.classList.contains('has-cover')) {
           removeCover(div);
         }
       };
@@ -286,6 +286,15 @@ function init() {
 
   var ReadingMode = function(options) {
 
+  };
+
+  // chapter navigation through keyboard
+  document.onkeydown = function(e) {
+    if (e.keyCode === 37) {
+      readchapter('', nowbook, --nowchapter);
+    } else if (e.keyCode === 39) {
+      readchapter('', nowbook, ++nowchapter);
+    }
   };
 
   var panel = new SettingPanel({
