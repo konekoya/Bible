@@ -4,6 +4,7 @@ This is an application that you can use even when you don't have the Internet co
 
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
+
 #TODOs
 - fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers - need to think about the mechanism and UX
 https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
@@ -20,7 +21,7 @@ https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - remove read button and change the select to activate when user finish selecting
 - better UI and how to select/change between chapters
 - better layout solution for mobile devices - using flex box
-- provide higher resolution favicon for Apple products like iPhone and Macbooks
+- provide higher resolution favicon for Apple products like iPhone and MacBooks
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
 - refactoring the code with OOP manner
 - rewrite the JS core

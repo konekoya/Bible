@@ -1,4 +1,4 @@
-  // Authored by Joshua Lin
+// Authored by Joshua Lin
 // Staring this project from 2014.11.20
 
 function init() {
@@ -108,8 +108,8 @@ function init() {
     }
 
     function toggleFullScreen() {
-      if (!doc.fullscreenElement &&    // alternative standard method
-          !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement ) {  // current working methods
+      if (!doc.fullscreenElement && // alternative standard method
+        !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) { // current working methods
         if (html.requestFullscreen) {
           html.requestFullscreen();
         } else if (html.msRequestFullscreen) {
@@ -264,13 +264,13 @@ function init() {
       }
 
       toggleBtn.addEventListener('click', function(e) {
-          if (this.checked === true) {
-            container.classList.remove('no-verse-number');
-            window.localStorage.setItem('verse-number', 'on');
-          } else {
-            container.classList.add('no-verse-number');
-            window.localStorage.setItem('verse-number', 'off');
-          }
+        if (this.checked === true) {
+          container.classList.remove('no-verse-number');
+          window.localStorage.setItem('verse-number', 'on');
+        } else {
+          container.classList.add('no-verse-number');
+          window.localStorage.setItem('verse-number', 'off');
+        }
       }, false);
 
     },
