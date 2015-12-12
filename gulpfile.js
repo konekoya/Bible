@@ -1,20 +1,16 @@
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
-var gutil = require('gulp-util');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var plumber = require('gulp-plumber');
-var sourcemaps = require('gulp-sourcemaps');
+
+var $ = require('gulp-load-plugins')({lazy: true});
 var sass = require('gulp-ruby-sass');
 
 gulp.task('js', function() {
+    log('Analyzing source with JSHint and JSCS');
     return gulp.src('./js/*.js')
-        .pipe(plumber())
-        .pipe(jshint())
-        .pipe(jshint.reporter(stylish))
-        .pipe(uglify())
-        .pipe(concat('app.js'))
+        .pipe($.plumber())
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('jshint-stylish'))
+        .pipe($.uglify())
+        .pipe($.concat('app.js'))
         .pipe(gulp.dest('build/js'));
 });
 
@@ -29,3 +25,17 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['js', 'sass', 'watch']);
+
+////////////
+
+function log(msg) {
+  if (typeof(msg) === 'object') {
+    for (var item in msg) {
+      if (msg.hasOwnProperty(item)) {
+        $.util.log($.util.colors.green(msg(item)));
+      }
+    }
+  } else {
+    $.util.log($.util.colors.green(msg));
+  }
+}
