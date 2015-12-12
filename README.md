@@ -38,7 +38,6 @@ https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - CSS linting is causing a lot of troubles ... maybe we should look for some other options available in Gulp?
 - add different version of Chinese Bibles
 - We need a better UI theme
-- Build a simple web base notepad
 - Reading mode...
 - Selection with some animation and improvement for that?
 - Search
