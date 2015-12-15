@@ -48,6 +48,11 @@ select {
   border-radius: 0.125rem;
 }
 
+::-moz-selection {
+  color: #fff;
+  background: #f44;
+}
+
 ::selection {
   color: #fff;
   background: #f44;
@@ -64,11 +69,13 @@ select {
 }
 
 .fade-in {
+  -webkit-transition: .6s opacity;
   transition: .6s opacity;
   opacity: 1;
 }
 
 .fade-out {
+  -webkit-transition: .6s opacity;
   transition: .6s opacity;
   opacity: 0;
 }
@@ -346,6 +353,9 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 @media (min-width: 700px) {
   .toolbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
   }
 }
@@ -386,6 +396,9 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 @media (min-width: 700px) {
   .chapter-body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
@@ -393,7 +406,10 @@ input[type="range"]:focus::-ms-fill-upper {
 
 .book-selector,
 .chapter-selector {
-  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .read-on {
@@ -421,7 +437,8 @@ input[type="range"]:focus::-ms-fill-upper {
   top: 50%;
   left: 50%;
   white-space: nowrap;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-size: 0.8125rem;
 }
 
@@ -505,6 +522,7 @@ html:-webkit-full-screen {
   background: #293f62;
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   width: 350px;
   border-top-right-radius: 0.25rem;

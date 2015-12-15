@@ -1,23 +1,26 @@
 var gulp = require('gulp');
 
-var $ = require('gulp-load-plugins')({lazy: true});
+var $ = require('gulp-load-plugins')({
+  lazy: true
+});
 var sass = require('gulp-ruby-sass');
 
 gulp.task('js', function() {
-    log('Analyzing source with JSHint and JSCS');
-    return gulp.src('./js/*.js')
-        .pipe($.plumber())
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish'))
-        .pipe($.uglify())
-        .pipe($.concat('app.js'))
-        .pipe(gulp.dest('build/js'));
+  log('Analyzing source with JSHint and JSCS');
+  return gulp.src('./js/*.js')
+    .pipe($.plumber())
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.uglify())
+    .pipe($.concat('app.js'))
+    .pipe(gulp.dest('build/js'));
 });
 
 gulp.task('sass', function() {
-    log('Compile SCSS to CSS');
-    return sass('./scss/style.scss', { style: 'expanded'})
-        .pipe(gulp.dest('build/css'));
+  log('Compiling SCSS --> CSS');
+  return sass('./scss/style.scss', {style: 'expanded'})
+    .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('watch', function() {
