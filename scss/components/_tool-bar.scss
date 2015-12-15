@@ -6,12 +6,16 @@
 }
 
 .toolbar {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 1em 0.625em;
+  padding: 10px 1em 10px;
   background: $theme-dark-blue;
+  @media (min-width: $screen-md) {
+    display: flex;
+  }
   a {
     font-size: 1em;
     color: $theme-white;
@@ -19,27 +23,42 @@
 }
 .logo {
   font-size: 1.5em;
-  padding: 10px 0 0;
-  margin: 0 20px 0 0;
   color: $theme-white;
   text-align: center;
   font-family: $main-font;
+  @media (min-width: $screen-md) {
+    padding: 5px 0 0;
+    margin: 0 20px 0 0;
+  }
 }
 .form-elem {
   height: 30px;
   margin-right: 0.625rem;
   margin-bottom: 8px;
-  width: 100%;
   font-family: inherit;
+  width: 100%;
+  @media (min-width: $screen-md) {
+    width: auto;
+  }
 }
 .chapter-body {
-  float: left;
-  padding: 10px 0;
-  width: 100%;
+  padding: 5px 0 0;
+  display: block;
+  @media (min-width: $screen-md) {
+    display: flex;
+    width: 100%;
+  }
+}
+.book-selector,
+.chapter-selector {
+  flex: 1 0 auto;
 }
 .read-on {
   margin-right: 0;
   background-color: $theme-red;
+  @media (min-width: $screen-md) {
+    width: 200px;
+  }
 }
 
 .cover {

@@ -15,6 +15,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('sass', function() {
+    log('Compile SCSS to CSS');
     return sass('./scss/style.scss', { style: 'expanded'})
         .pipe(gulp.dest('build/css'));
 });

@@ -19,7 +19,7 @@ button:focus {
 
 body {
   font-size: 100%;
-  margin: 7.5rem 1rem;
+  margin: 5.5rem 1rem;
   padding: 0;
   font-family: "Roboto", "微軟正黑體", sans-serif;
 }
@@ -336,12 +336,18 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .toolbar {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 1em 0.625em;
+  padding: 10px 1em 10px;
   background: #1a283e;
+}
+@media (min-width: 700px) {
+  .toolbar {
+    display: flex;
+  }
 }
 .toolbar a {
   font-size: 1em;
@@ -350,30 +356,54 @@ input[type="range"]:focus::-ms-fill-upper {
 
 .logo {
   font-size: 1.5em;
-  padding: 10px 0 0;
-  margin: 0 20px 0 0;
   color: #fff;
   text-align: center;
   font-family: "Ubuntu", "微軟正黑體", sans-serif;
+}
+@media (min-width: 700px) {
+  .logo {
+    padding: 5px 0 0;
+    margin: 0 20px 0 0;
+  }
 }
 
 .form-elem {
   height: 30px;
   margin-right: 0.625rem;
   margin-bottom: 8px;
-  width: 100%;
   font-family: inherit;
+  width: 100%;
+}
+@media (min-width: 700px) {
+  .form-elem {
+    width: auto;
+  }
 }
 
 .chapter-body {
-  float: left;
-  padding: 10px 0;
-  width: 100%;
+  padding: 5px 0 0;
+  display: block;
+}
+@media (min-width: 700px) {
+  .chapter-body {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.book-selector,
+.chapter-selector {
+  flex: 1 0 auto;
 }
 
 .read-on {
   margin-right: 0;
   background-color: #da213b;
+}
+@media (min-width: 700px) {
+  .read-on {
+    width: 200px;
+  }
 }
 
 .cover {
@@ -536,49 +566,6 @@ html:-webkit-full-screen {
   padding: 0;
 }
 
-@media screen and (min-width: 460px) {
-  .form-elem {
-    float: left;
-    margin-bottom: 0;
-  }
-
-  .book-selector {
-    width: 30%;
-  }
-
-  .chapter-selector {
-    width: 45%;
-  }
-
-  .read-on {
-    width: 20%;
-    margin-right: 0;
-    background-color: #da213b;
-  }
-}
-@media screen and (min-width: 768px) {
-  body {
-    margin-top: 5.5rem;
-  }
-
-  .toolbar {
-    padding: 0.5em;
-  }
-
-  .logo {
-    padding-left: 10px;
-    float: left;
-  }
-
-  .read-on {
-    width: 100px;
-  }
-
-  .chapter-body {
-    float: left;
-    width: 80%;
-  }
-}
 .low-light-theme {
   background-color: #000;
   color: #fff;
