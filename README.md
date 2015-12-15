@@ -27,7 +27,7 @@ https://developer.mozilla.org/zh-TW/docs/Web/API/Element/requestFullScreen
 - rewrite the JS core
 - music option? for this, I think we can use Youtube API
 - cross-browser testing, modern browses :)
-- add sourcemap, livereload, HTTP server, autoprefix in gulp.js
+- add sourcemap, livereload, HTTP server, autoprefix in gulp.js - follow along the Gulp tutorial and improve the development setup
 - make sure all of the plugin that we are using in NPM is listing in package.json
 - notification pop up
 - toggle tooltip optoins?
