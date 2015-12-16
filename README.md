@@ -2,6 +2,8 @@
 
 This is an application that you can use even when you don't have the Internet connection, for now, we only provide Chinese version. Maybe we will add more languages support down the road.
 
+Some of the features in this application are designed specifically for our Church use.
+
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 
