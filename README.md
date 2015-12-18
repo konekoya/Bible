@@ -24,9 +24,8 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - chapter field(select) should reflect the current chapter even when user has changed the chapter
 - refactoring the code with OOP manner
 - rewrite the JS core
-- music option? for this, I think we can use Youtube API
 - cross-browser testing, modern browses :)
-- add sourcemap, livereload, HTTP server in gulp.js - follow along the Gulp tutorial and improve the development setup
+- add sourcemap, livereload, HTTP server(using Node.js?) in gulp.js - follow along the Gulp tutorial and improve the development setup
 - notification pop up
 - toggle tooltip optoins?
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
@@ -35,9 +34,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - CSS linting is causing a lot of troubles ... maybe we should look for some other options available in Gulp?
 - add different version of Chinese Bibles
 - We need a better UI theme
-- Reading mode...
 - Selection with some animation and improvement for that?
-- Search
 - Remove the link of chapter title, unnecessary
 
 # Browser support
