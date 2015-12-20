@@ -40,6 +40,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - highlight when click on text
 - Scrollbar improvement
 - bottom padding for #nothing
+- take a look at this nice browser support chart https://github.com/mzabriskie/axios
 
 
 # Browser support
