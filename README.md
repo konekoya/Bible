@@ -37,6 +37,10 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - We need a better UI theme
 - Selection with some animation and improvement for that?
 - Remove the link of chapter title, unnecessary
+- highlight when click on text
+- Scrollbar improvement
+- bottom padding for #nothing
+
 
 # Browser support
 All modern browsers and IE10+
