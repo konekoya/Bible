@@ -1,9 +1,5 @@
 var gulp = require('gulp');
-
-var $ = require('gulp-load-plugins')({
-  lazy: true
-});
-var sass = require('gulp-ruby-sass');
+var $ = require('gulp-load-plugins')({lazy: true});
 
 gulp.task('js', function() {
   log('Analyzing source with JSHint and JSCS');
@@ -18,7 +14,8 @@ gulp.task('js', function() {
 
 gulp.task('sass', function() {
   log('Compiling SCSS --> CSS');
-  return sass('./scss/style.scss', {style: 'expanded'})
+  return gulp.src('./scss/style.scss')
+    .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
     .pipe(gulp.dest('build/css'));
 });
