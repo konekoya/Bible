@@ -8,7 +8,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 
 #TODOs
-- fullscreen mode with chrome when click on black mode, check this and see if we can implement this in major browsers - need to think about the mechanism and UX
+- remove fullscreen event
 - scrollbar improvement - make one with vanilla JavaScript, or using plugins for now
 - flexbox for the entire layout
 - reading mode is needed
