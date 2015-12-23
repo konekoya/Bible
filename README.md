@@ -9,6 +9,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 #TODOs
 - scrollbar improvement - make one with vanilla JavaScript, or using plugins for now
+- change title with name like Manna?
 - flexbox for the entire layout
 - reading mode is needed
 - fix black mode issue... the interval function shouldn't fire
