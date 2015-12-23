@@ -8,7 +8,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 
 #TODOs
-- remove fullscreen event
 - scrollbar improvement - make one with vanilla JavaScript, or using plugins for now
 - flexbox for the entire layout
 - reading mode is needed
@@ -38,8 +37,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Selection with some animation and improvement for that?
 - Remove the link of chapter title, unnecessary
 - highlight when click on text
-- Scrollbar improvement
-- bottom padding for #nothing
 - take a look at this nice browser support chart https://github.com/mzabriskie/axios
 
 

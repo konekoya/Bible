@@ -107,35 +107,9 @@ function init() {
       body.classList.add(CONS.hasCover);
     }
 
-    function toggleFullScreen() {
-      if (!doc.fullscreenElement && // alternative standard method
-        !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) { // current working methods
-        if (html.requestFullscreen) {
-          html.requestFullscreen();
-        } else if (html.msRequestFullscreen) {
-          html.msRequestFullscreen();
-        } else if (html.mozRequestFullScreen) {
-          html.mozRequestFullScreen();
-        } else if (html.webkitRequestFullscreen) {
-          html.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-        }
-      } else {
-        if (doc.exitFullscreen) {
-          doc.exitFullscreen();
-        } else if (doc.msExitFullscreen) {
-          doc.msExitFullscreen();
-        } else if (doc.mozCancelFullScreen) {
-          doc.mozCancelFullScreen();
-        } else if (doc.webkitExitFullscreen) {
-          doc.webkitExitFullscreen();
-        }
-      }
-    }
-
     if (el) {
       el.addEventListener('click', function(e) {
         addCover(div);
-        toggleFullScreen();
       }, false);
 
       // close / remove the cover with mouse click esc key
@@ -143,11 +117,11 @@ function init() {
         removeCover(this);
       }, false);
 
-      doc.onkeydown = function(e) {
+      doc.addEventListener('keydown', function(e) {
         if (e.keyCode === 27 && body.classList.contains('has-cover')) {
           removeCover(div);
         }
-      };
+      });
     }
   }
 
@@ -289,13 +263,13 @@ function init() {
   };
 
   // chapter navigation through keyboard
-  document.onkeydown = function(e) {
+  doc.addEventListener('keydown', function(e) {
     if (e.keyCode === 37) {
       readchapter('', nowbook, --nowchapter);
     } else if (e.keyCode === 39) {
       readchapter('', nowbook, ++nowchapter);
     }
-  };
+  });
 
   var panel = new SettingPanel({
     els: {
