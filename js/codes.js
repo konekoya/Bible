@@ -51,10 +51,10 @@ function readchapter(opstr, bnum, cnum) {
   out1 = document.getElementById("nothing");
   if (books[bnum] != "詩篇") {
     out1.innerHTML = '<a href="" onClick="readchapter(\'' + opstr + '\',' + bnum + ',' + cnum + '); return false;">' + books[bnum] + '第' + numbers[cnum] + '章</a><br>\n';
-    document.title = '閱讀經文─' + books[bnum] + '第' + numbers[cnum] + '章';
+    document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '章';
   } else {
     out1.innerHTML = '<a href="" onClick="readchapter(\'' + opstr + '\',' + bnum + ',' + cnum + '); return false;">' + books[bnum] + '第' + numbers[cnum] + '篇</a><br>\n';
-    document.title = '閱讀經文─' + books[bnum] + '第' + numbers[cnum] + '篇';
+    document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '篇';
   }
   out2 = document.createElement("DIV");
   out1.appendChild(out2);

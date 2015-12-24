@@ -9,14 +9,11 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 #TODOs
 - scrollbar improvement - make one with vanilla JavaScript, or using plugins for now
-- change title with name like Manna?
 - flexbox for the entire layout
 - reading mode is needed
-- fix black mode issue... the interval function shouldn't fire
 - Google font fallback, also we need a solution for CDN resources without internet connection
 - testing on the desktop computer of Church to fix RWD and font face issues
 - need to fix font awesome path problem with gulp, and move font awesome resources to production directory
-- bind the toggle light event on button not on window load
 - fix theme switch issue with Ordered list
 - implement search functionality
 - remove read button and change the select to activate when user finish selecting
@@ -32,9 +29,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
 - remember progress of last reading
 - should we use JS testing tools?
-- CSS linting is causing a lot of troubles ... maybe we should look for some other options available in Gulp?
 - add different version of Chinese Bibles
-- We need a better UI theme
 - Selection with some animation and improvement for that?
 - Remove the link of chapter title, unnecessary
 - highlight when click on text
