@@ -12,6 +12,7 @@ function init() {
     fadeOut: 'fade-out',
     noCursor: 'no-cursor',
     hasCover: 'has-cover',
+    reading: 'reading-mode',
     lowLight: 'low-light-theme',
     show: 'show',
     fontSize: 'font-size'
@@ -118,10 +119,10 @@ function init() {
       }, false);
 
       doc.addEventListener('keydown', function(e) {
-        if (e.keyCode === 27 && body.classList.contains('has-cover')) {
+        if (e.keyCode === 27 && body.classList.contains(CONS.hasCover)) {
           removeCover(div);
         }
-      });
+      }, false);
     }
   }
 
@@ -152,7 +153,7 @@ function init() {
           e.stopPropagation();
         }, false);
 
-        document.addEventListener('click', function(e) {
+        doc.addEventListener('click', function(e) {
           if (panel.classList.contains(CONS.show)) {
             panel.classList.remove(CONS.show);
             btn.classList.remove(CONS.show);
@@ -178,7 +179,6 @@ function init() {
 
     changeFontSize: function() {
       var that = this;
-
       this.range.addEventListener('change', function() {
         that.rangeSize.textContent = this.value + 'px';
         nothing.style.fontSize = this.value + 'px';
@@ -259,7 +259,31 @@ function init() {
   };
 
   var ReadingMode = function(options) {
+    if (this === window) {
+      return new ReadingMode(config);
+    }
+    this.toggle = options.els.toggle;
+  };
 
+  ReadingMode.prototype = {
+    setReadingMode: function() {
+      var toggle = doc.querySelector(this.toggle);
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          body.classList.add(CONS.reading);
+        }, false);
+      }
+
+      doc.addEventListener('keydown', function(e) {
+        if (e.keyCode === 27 && body.classList.contains(CONS.reading)) {
+          body.classList.remove(CONS.reading);
+        }
+      }, false);
+    },
+
+    initialize: function() {
+      this.setReadingMode();
+    }
   };
 
   // chapter navigation through keyboard
@@ -280,6 +304,13 @@ function init() {
 
   panel.initialize();
 
+  var readingMode = new ReadingMode({
+    els: {
+      toggle: '.toggle-reading-mode'
+    }
+  });
+
+  readingMode.initialize();
 }
 
 window.addEventListener('load', function() {

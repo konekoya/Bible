@@ -15,6 +15,7 @@ gulp.task('js', function() {
 gulp.task('sass', function() {
   log('Compiling SCSS --> CSS');
   return gulp.src('./scss/style.scss')
+    .pipe($.sassGlob())
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
     .pipe(gulp.dest('build/css'));

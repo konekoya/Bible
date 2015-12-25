@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.reading-mode {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  .toolbar {
+    top: -100%;
+  }
+  .nav-bar {
+    bottom: -100%;
+  }
+}

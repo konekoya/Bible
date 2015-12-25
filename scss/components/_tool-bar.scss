@@ -13,6 +13,7 @@
   width: 100%;
   padding: 10px 1em 10px;
   background: $theme-dark-blue;
+  transition: $fast top;
   @media (min-width: $screen-md) {
     display: flex;
   }
