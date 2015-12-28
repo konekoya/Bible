@@ -262,23 +262,34 @@ function init() {
     if (this === window) {
       return new ReadingMode(config);
     }
-    this.toggle = options.els.toggle;
+    this.toggle = doc.querySelector(options.els.toggle);
+    this.controls = doc.querySelector(options.els.controls);
   };
 
   ReadingMode.prototype = {
     setReadingMode: function() {
-      var toggle = doc.querySelector(this.toggle);
-      if (toggle) {
-        toggle.addEventListener('click', function() {
+      var destroy = function() {
+        body.classList.remove(CONS.reading);
+      };
+
+      if (this.toggle) {
+        this.toggle.addEventListener('click', function() {
           body.classList.add(CONS.reading);
         }, false);
       }
 
       doc.addEventListener('keydown', function(e) {
         if (e.keyCode === 27 && body.classList.contains(CONS.reading)) {
-          body.classList.remove(CONS.reading);
+          destroy();
         }
       }, false);
+
+      if (this.controls) {
+        this.controls.addEventListener('click', function(e) {
+          destroy();
+        });
+      }
+
     },
 
     initialize: function() {
@@ -306,7 +317,8 @@ function init() {
 
   var readingMode = new ReadingMode({
     els: {
-      toggle: '.toggle-reading-mode'
+      toggle: '.toggle-reading-mode',
+      controls: '.reading-mode-controls'
     }
   });
 

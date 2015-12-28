@@ -89,7 +89,21 @@ select {
     background-color: #1142aa; }
 
 .btn-large {
-  padding: 14px 16px; }
+  padding: 14px 1rem; }
+
+.content-container {
+  font-size: 24px;
+  color: #000; }
+
+.no-verse-number ol {
+  list-style: none;
+  margin-left: 0;
+  padding: 0; }
+
+.chapter-title {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #1142aa; }
 
 .nav-bar {
   background: #1a283e;
@@ -99,7 +113,8 @@ select {
   padding: 1rem 2rem;
   width: 100%;
   -webkit-transition: 0.3s bottom;
-  transition: 0.3s bottom; }
+  transition: 0.3s bottom;
+  z-index: 110; }
 
 .chapter-nav {
   float: left;
@@ -478,27 +493,40 @@ html:-webkit-full-screen {
   .low-light-theme .tooltip:before {
     border-top-color: #fff; }
 
-.content-container {
-  font-size: 24px;
-  color: #000; }
-
-.no-verse-number ol {
-  list-style: none;
-  margin-left: 0;
-  padding: 0; }
-
 .low-light-theme {
   background-color: #000;
   color: #fff; }
+  .low-light-theme .chapter-title {
+    color: #fff; }
   .low-light-theme .content-container {
     color: #fff; }
     .low-light-theme .content-container a {
       color: #fff; }
 
 .reading-mode {
-  margin-top: 0.5rem;
+  margin-top: 1.2rem;
   margin-bottom: 1rem; }
   .reading-mode .toolbar {
     top: -100%; }
   .reading-mode .nav-bar {
     bottom: -100%; }
+  .reading-mode .reading-mode-controls {
+    bottom: 50px; }
+
+.reading-mode-controls {
+  visibility: visible;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  height: 50px;
+  width: 50px;
+  font-size: 1rem;
+  border-radius: 50%;
+  -webkit-transition: 0.3s bottom;
+  transition: 0.3s bottom;
+  background-color: rgba(218, 33, 59, 0.5);
+  z-index: 100; }
+  .reading-mode-controls:hover {
+    -webkit-transition: 0.3s bottom;
+    transition: 0.3s bottom;
+    background-color: #da213b; }

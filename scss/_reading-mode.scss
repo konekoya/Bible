@@ -1,12 +1,34 @@
 @charset "UTF-8";
 
 .reading-mode {
-  margin-top: 0.5rem;
+  margin-top: 1.2rem;
   margin-bottom: 1rem;
   .toolbar {
     top: -100%;
   }
   .nav-bar {
     bottom: -100%;
+  }
+  .reading-mode-controls {
+    bottom: 50px;
+  }
+}
+
+// reading-mode controls
+.reading-mode-controls {
+  visibility: visible;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  height: 50px;
+  width: 50px;
+  font-size: 1rem;
+  border-radius: 50%;
+  transition: $fast bottom;
+  background-color: rgba($theme-red, .5);
+  z-index: 100;
+  &:hover {
+  transition: $fast bottom;
+    background-color: rgba($theme-red, 1);
   }
 }

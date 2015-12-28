@@ -3,6 +3,9 @@
 .low-light-theme {
   background-color: $theme-black;
   color: $theme-white;
+  .chapter-title {
+    color: $theme-white;
+  }
   .content-container {
     color: $theme-white;
     a {

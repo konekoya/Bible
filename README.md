@@ -31,7 +31,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - should we use JS testing tools?
 - add different version of Chinese Bibles
 - Selection with some animation and improvement for that?
-- Remove the link of chapter title, unnecessary
 - highlight when click on text
 - take a look at this nice browser support chart https://github.com/mzabriskie/axios
 
