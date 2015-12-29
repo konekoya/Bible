@@ -1,24 +1,39 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({lazy: true});
 
-gulp.task('js', function() {
+var config = {
+  build: './build/',
+  bowerDir: './bower_components',
+  fonts: './bower_components/font-awesome/fonts/**/*.*'
+};
+
+gulp.task('scripts', function() {
   log('Analyzing source with JSHint and JSCS');
-  return gulp.src('./js/*.js')
+  return gulp
+    .src('./js/*.js')
     .pipe($.plumber())
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.uglify())
-    .pipe($.concat('app.js'))
-    .pipe(gulp.dest('build/js'));
+    .pipe($.concat('bible.js'))
+    .pipe(gulp.dest(config.build + 'js'));
 });
 
-gulp.task('sass', function() {
+gulp.task('styles', function() {
   log('Compiling SCSS --> CSS');
-  return gulp.src('./scss/style.scss')
+  return gulp
+    .src('./scss/style.scss')
     .pipe($.sassGlob())
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
-    .pipe(gulp.dest('build/css'));
+    .pipe(gulp.dest(config.build + 'css'));
+});
+
+gulp.task('fonts', function() {
+  log('Copying fonts');
+  return gulp
+    .src(config.fonts)
+    .pipe(gulp.dest(config.build + 'fonts'));
 });
 
 gulp.task('watch', function() {
@@ -26,7 +41,7 @@ gulp.task('watch', function() {
   gulp.watch('./scss/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['js', 'sass', 'watch']);
+gulp.task('default', ['fonts', 'scripts', 'styles', 'watch']);
 
 ////////////
 

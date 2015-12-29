@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "font-awesome": "fontawesome#~4.4.0"
+    "font-awesome": "fontawesome#~4.4.0",
+    "jquery": "git://github.com/jquery/jquery.git#~2.1.4"
   }
 }

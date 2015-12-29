@@ -12,7 +12,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - flexbox for the entire layout
 - enhancements for reading mode, we should at have a floating menu for controling
 - Google font fallback, also we need a solution for CDN resources without internet connection
-- testing on the desktop computer of Church to fix RWD and font face issues
 - need to fix font awesome path problem with gulp, and move font awesome resources to production directory
 - fix theme switch issue with Ordered list
 - implement search functionality
