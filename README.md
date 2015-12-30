@@ -8,9 +8,10 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 
 #TODOs
-- scrollbar improvement - make one with vanilla JavaScript, or using plugins for now
+- scrollbar improvement - will be using jQuery plugin to tackle this one
 - flexbox for the entire layout
-- enhancements for reading mode, we should at have a floating menu for controling
+- reading mode enhancement ideas
+- add sourcemap, livereload, HTTP server(using Node.js?) in gulp.js - follow along the Gulp tutorial and improve the development setup
 - Google font fallback, also we need a solution for CDN resources without internet connection
 - need to fix font awesome path problem with gulp, and move font awesome resources to production directory
 - fix theme switch issue with Ordered list
@@ -22,7 +23,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - refactoring the code with OOP manner
 - rewrite the JS core
 - cross-browser testing, modern browses :)
-- add sourcemap, livereload, HTTP server(using Node.js?) in gulp.js - follow along the Gulp tutorial and improve the development setup
 - notification pop up
 - toggle tooltip optoins?
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
