@@ -23,13 +23,11 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - refactoring the code with OOP manner
 - rewrite the JS core
 - cross-browser testing, modern browses :)
-- notification pop up
-- toggle tooltip optoins?
 - can we use testling? that way we will get a browser testing pass image and then we can put that in the README.md
 - remember progress of last reading
 - should we use JS testing tools?
 - add different version of Chinese Bibles
-- Selection with some animation and improvement for that?
+- selection with some animation and improvement for that?
 - highlight when click on text
 - take a look at this nice browser support chart https://github.com/mzabriskie/axios
 
