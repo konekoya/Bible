@@ -20,17 +20,19 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-  log('Compiling SCSS --> CSS');
+  log('Compiling SCSS --> CSS and CSS linting');
   return gulp
     .src('./scss/style.scss')
     .pipe($.sassGlob())
     .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.csslint('./csslintrc.json'))
+    .pipe($.csslint.reporter())
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
     .pipe(gulp.dest(config.build + 'css'));
 });
 
 gulp.task('fonts', function() {
-  log('Copying fonts');
+  log('Copying fonts to build directory');
   return gulp
     .src(config.fonts)
     .pipe(gulp.dest(config.build + 'fonts'));
