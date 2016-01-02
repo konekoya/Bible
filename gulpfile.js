@@ -1,16 +1,13 @@
 var gulp = require('gulp');
+var args = require('yargs').argv;
+var config = require('./gulp.config')();
 var $ = require('gulp-load-plugins')({lazy: true});
-
-var config = {
-  build: './build/',
-  bowerDir: './bower_components',
-  fonts: './bower_components/font-awesome/fonts/**/*.*'
-};
 
 gulp.task('scripts', function() {
   log('Analyzing source with JSHint and JSCS');
   return gulp
     .src('./js/*.js')
+    .pipe($.if(args.verbose, $.print()))
     .pipe($.plumber())
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -20,9 +17,9 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-  log('Compiling SCSS --> CSS and CSS linting');
+  log('Compiling SCSS --> CSS');
   return gulp
-    .src('./scss/style.scss')
+    .src('./scss/**/*.scss')
     .pipe($.sassGlob())
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.csslint('./csslintrc.json'))
@@ -40,7 +37,7 @@ gulp.task('fonts', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./js/*.js', ['js']);
-  gulp.watch('./scss/**/*.scss', ['sass']);
+  gulp.watch('./scss/**/*.scss', ['styles']);
 });
 
 gulp.task('default', ['fonts', 'scripts', 'styles', 'watch']);
