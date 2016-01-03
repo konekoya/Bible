@@ -8,7 +8,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 
 #TODOs
-- scrollbar improvement - will be using jQuery plugin to tackle this one
+- scrollbar improvement - will be using jQuery plugin to tackle this one or try a more difficult path, vanilla JS
 - flexbox for the entire layout
 - reading mode enhancement ideas
 - add sourcemap, livereload, HTTP server(using Node.js?) in gulp.js - follow along the Gulp tutorial and improve the development setup
@@ -27,7 +27,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - remember progress of last reading
 - should we use JS testing tools?
 - add different version of Chinese Bibles
-- selection with some animation and improvement for that?
+- selection with some animation and improvement for that? 
 - highlight when click on text
 - take a look at this nice browser support chart https://github.com/mzabriskie/axios
 
