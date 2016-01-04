@@ -11,7 +11,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - scrollbar improvement - will be using jQuery plugin to tackle this one or try a more difficult path, vanilla JS
 - flexbox for the entire layout
 - reading mode enhancement ideas
-- add sourcemap, livereload, HTTP server(using Node.js?) in gulp.js - follow along the Gulp tutorial and improve the development setup
+- add sourcemap, livereload(but then we cannot host this site on github...), HTTP server(using Node.js?) in gulp.js - follow along the Gulp tutorial and improve the development setup
 - Google font fallback, also we need a solution for CDN resources without internet connection
 - need to fix font awesome path problem with gulp, and move font awesome resources to production directory
 - fix theme switch issue with Ordered list
