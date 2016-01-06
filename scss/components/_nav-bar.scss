@@ -8,9 +8,9 @@
   width: 100%;
   transition: $fast bottom;
   z-index: 110;
+  display: flex;
 }
 .chapter-nav {
-  float: left;
   margin-right: 1rem;
 }
 .setting-wrap {

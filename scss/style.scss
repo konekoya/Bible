@@ -6,7 +6,15 @@
 @import "base/helpers";
 @import "base/animation";
 
-@import "components/*";
+@import "components/btn";
+@import "components/range";
+@import "components/tooltip";
+@import "components/toggle-btn";
+@import "components/back-to-top";
+@import "components/tool-bar";
+@import "components/contents";
+@import "components/setting-panel";
+@import "components/nav-bar";
 
 @import "low-light-theme";
 @import "reading-mode";

@@ -1,7 +1,13 @@
 @charset "UTF-8";
 
 .top {
-    float: right;
-    cursor: pointer;
-    text-transform: uppercase;
+    display: none;
+    @media (min-width: $screen-sm) {
+      display: block;
+      position: absolute;
+      right: 2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+
+    }
 }
