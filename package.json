@@ -1,7 +1,7 @@
 {
   "name": "bible",
   "version": "1.0.0",
-  "description": "This is an application that you can use even when you don't have the Internet connection, for now, we only provide Chinese version. Maybe we will add more languages support down the road.",
+  "description": "Offline Bible studying application",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -30,7 +30,7 @@
     "type": "git",
     "url": "git+https://github.com/konekoya/Bible.git"
   },
-  "author": "",
+  "author": "Joshun Lin",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/konekoya/Bible/issues"
