@@ -2,8 +2,7 @@
 node_modules
 bower_components
 
-npm-debug.log
-
 # Files
 .sass-cache
 .Ds_Store
+npm-debug.log
