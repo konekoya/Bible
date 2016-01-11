@@ -19,7 +19,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Chapter field(select) should reflect the current chapter even when user has changed the chapter
 - Refactoring the code with OOP manner
 - Rewrite the JS core
-- Cross-browser testing, modern browses :)
+- Cross-browser testing, modern browsers :^)
 - Remember progress of last reading
 - Should we use JS testing tools?
 - Add different version of Chinese Bibles
@@ -28,6 +28,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Take a look at this nice browser support chart https://github.com/mzabriskie/axios
 - Keyboard shortcut for triggering major features
 - Go back to top button is currently not working in IEs
+- Should we replace SASS with PostCSS(preCSS plugin)?
 
 # Browser support
 All modern browsers and IE10+
