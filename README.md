@@ -17,7 +17,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Better UI and how to select/change between chapters
 - Provide higher resolution favicon for Apple products like iPhone and MacBooks
 - Chapter field(select) should reflect the current chapter even when user has changed the chapter
-- Refactoring the code with OOP manner
+- Refactoring the code with OOP manner, and remove inline event binding in index.html
 - Rewrite the JS core
 - Cross-browser testing, modern browsers :^)
 - Remember progress of last reading
