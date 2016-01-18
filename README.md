@@ -7,6 +7,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 #TODOs
 - Scrollbar improvement - will be using jQuery plugin to tackle this one or try a more difficult path, vanilla JS
 - Reading mode enhancement ideas
+- Should have default chapter when opening the app
 - Change directories structure
 - Add sourcemap, livereload(or browserSync) HTTP server(using Node.js?) and JS linting in gulp.js - follow along the Gulp tutorial and improve the development setup
 - Google font fallback, also we need a solution for CDN resources without internet connection
