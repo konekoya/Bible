@@ -3,6 +3,8 @@ var args = require('yargs').argv;
 var config = require('./gulp.config')();
 var $ = require('gulp-load-plugins')({lazy: true});
 
+gulp.task('help',$.taskListing);
+
 gulp.task('scripts', function() {
   log('Analyzing source with JSHint and JSCS');
   return gulp
