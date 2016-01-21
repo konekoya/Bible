@@ -31,6 +31,7 @@ gulp.task('styles', ['clean-styles'], function() {
     .pipe(gulp.dest(config.build + 'css'));
 });
 
+
 gulp.task('fonts', ['clean-fonts'], function() {
   log('Copying fonts to build directory');
   return gulp
