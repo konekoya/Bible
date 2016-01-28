@@ -3,13 +3,14 @@ var args = require('yargs').argv;
 var config = require('./gulp.config')();
 var $ = require('gulp-load-plugins')({lazy: true});
 var del = require('del');
+var cssnano = require('cssnano');
 
 gulp.task('help',$.taskListing);
 
 gulp.task('scripts', ['clean-scripts'], function() {
   log('Analyzing source with JSHint and JSCS');
   return gulp
-    .src('./js/*.js')
+    .src(config.js)
     .pipe($.if(args.verbose, $.print()))
     .pipe($.plumber())
     .pipe($.jshint())
@@ -22,12 +23,15 @@ gulp.task('scripts', ['clean-scripts'], function() {
 gulp.task('styles', ['clean-styles'], function() {
   log('Compiling SCSS --> CSS');
   return gulp
-    .src('./scss/**/*.scss')
+    .src(config.scss)
     .pipe($.sassGlob())
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.csslint('./csslintrc.json'))
     .pipe($.csslint.reporter())
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe($.postcss([
+      cssnano()
+    ]))
     .pipe(gulp.dest(config.build + 'css'));
 });
 
@@ -61,12 +65,27 @@ gulp.task('clean-images', function() {
   clean(config.build + 'images');
 });
 
-gulp.task('watch', function() {
-  gulp.watch('./js/*.js', ['js']);
-  gulp.watch('./scss/**/*.scss', ['styles']);
+gulp.task('webserver', function() {
+  log('Starting webserver at port ' + config.port );
+  return gulp
+    .src('./')
+    .pipe($.webserver({
+      port: config.port,
+      livereload: true,
+      directoryListing: {
+        enable: true,
+        path: 'app'
+      },
+      open: true
+    }));
 });
 
-gulp.task('default', ['fonts', 'scripts', 'styles', 'watch']);
+gulp.task('watch', function() {
+  gulp.watch(config.js, ['scripts']);
+  gulp.watch(config.scss, ['styles']);
+});
+
+gulp.task('default', ['fonts', 'scripts', 'styles', 'watch', 'webserver']);
 
 ////////////
 
