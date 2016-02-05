@@ -85,7 +85,7 @@ gulp.task('watch', function() {
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('default', ['fonts', 'scripts', 'styles', 'watch', 'webserver']);
+gulp.task('default', ['fonts', 'scripts', 'styles', 'webserver', 'watch']);
 
 ////////////
 
