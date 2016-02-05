@@ -54,62 +54,53 @@ function init() {
   scrollTopWhenHashChange();
 
   function toggleLight() {
-    var el = doc.querySelector('.toggle-light');
+    var toggleLightBtn = doc.querySelector('.toggle-light');
     var div = doc.createElement('div');
     var coverTxt = null;
-    var transitionSpeed = 7000;
+    var timer = null;
     div.className = 'cover';
     div.innerHTML = '<span class="cover-txt">Press ESC key to leave</span>';
 
-    // function toggleTxt(speed) {
-    //   //  hide cover text with css transition
-    //   var timer = window.setTimeout(function() {
-    //     coverTxt = doc.querySelector('.cover-txt');
-    //     if (coverTxt) {
-    //       coverTxt.classList.remove(CONS.fadeIn);
-    //       coverTxt.classList.add(CONS.fadeOut);
-    //       body.classList.add(CONS.noCursor);
-    //
-    //       //  detect mouse movement and show the cover text again
-    //       doc.onmousemove = function() {
-    //         if (coverTxt.classList.contains(CONS.fadeOut)) {
-    //           coverTxt.classList.remove(CONS.fadeOut);
-    //           coverTxt.classList.add(CONS.fadeIn);
-    //           body.classList.remove(CONS.noCursor);
-    //         }
-    //       };
-    //     }
-    //
-    //     clearFn(timer);
-    //
-    //   }, speed);
-    // }
+    function toggleTxt(time) {
+      if (body.classList.contains(CONS.hasCover)) {
+        coverTxt = doc.querySelector('.cover-txt');
 
-    // var intervalTimer = window.setInterval(function() {
-    //   console.log('g');
-    //   if (!body.classList.contains(CONS.noCursor) && body.classList.contains(CONS.hasCover)) {
-    //     toggleTxt(transitionSpeed);
-    //   }
-    // }, transitionSpeed);
+        //  detect mouse movement and show the cover text again
+        doc.addEventListener('mousemove', function() {
+          console.log('mouse is moving!');
+          if (coverTxt.classList.contains(CONS.fadeOut)) {
+            coverTxt.classList.remove(CONS.fadeOut);
+            coverTxt.classList.add(CONS.fadeIn);
+            body.classList.remove(CONS.noCursor);
+          }
 
-    function clearFn(timer) {
-      clearTimeout(timer);
+          clearTimeout(timer);
+
+          timer = window.setTimeout(function() {
+            if (coverTxt) {
+              coverTxt.classList.remove(CONS.fadeIn);
+              coverTxt.classList.add(CONS.fadeOut);
+              body.classList.add(CONS.noCursor);
+            }
+          }, time);
+        });
+      }
     }
 
     function removeCover(coverEl) {
       body.removeChild(coverEl);
       body.classList.remove(CONS.hasCover);
       body.classList.remove(CONS.noCursor);
-      // window.clearInterval(intervalTimer);
     }
 
     function addCover(coverEl) {
       body.appendChild(coverEl);
       body.classList.add(CONS.hasCover);
+      toggleTxt(7000);
     }
 
-    if (el) {
-      el.addEventListener('click', function(e) {
+    if (toggleLightBtn) {
+      toggleLightBtn.addEventListener('click', function(e) {
         addCover(div);
       }, false);
 
@@ -327,4 +318,19 @@ function init() {
 
 window.addEventListener('load', function() {
   init();
+
+  // var waitTime = 3000;
+  // var currentTime = 0;
+  // var waitIntervel = 500;
+  //
+  // var interval = setInterval(function() {
+  //   currentTime += waitIntervel;
+  //   console.log('waiting ' + currentTime / 1000 + ' seconds...');
+  // }, waitIntervel);
+  //
+  // setTimeout(function() {
+  //     clearInterval(interval);
+  //     console.log('DONE');
+  // }, waitTime);
+
 });
