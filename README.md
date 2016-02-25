@@ -30,6 +30,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Keyboard shortcut for triggering major features, then we should have a shortcut list or doc for user
 - Go back to top button is currently not working in IEs... but does it matter?
 - Should we replace SASS with PostCSS(preCSS plugin)?
+- Think about SMACSS and implement it in the current CSS structure
 
 # Browser support
 All modern browsers and IE10+
