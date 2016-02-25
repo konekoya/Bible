@@ -19,7 +19,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Provide higher resolution favicon for Apple products like iPhone and MacBooks
 - Chapter field(select) should reflect the current chapter even when user has changed the chapter
 - Refactoring the code with OOP manner, and remove inline event binding in index.html
-- Rewrite the JS core and remove legacy code which is using old fashion DOM event binding
+- Rewrite the JS core and remove legacy code which is using old-fashion DOM event binding
 - Cross-browser testing, only targeting modern browsers :^)
 - Remember progress of last reading
 - Should we use JS testing tools?
@@ -28,7 +28,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Highlight when click on text -- We can do this like a block or paragraph.. when users click on the paragraph.
 - Take a look at this nice browser support chart https://github.com/mzabriskie/axios
 - Keyboard shortcut for triggering major features, then we should have a shortcut list or doc for user
-- Go back to top button is currently not working in IEs... but does it matter?
+- Go back to top button doesn't in IEs...?
 - Should we replace SASS with PostCSS(preCSS plugin)?
 - Think about SMACSS and implement it in the current CSS structure
 
