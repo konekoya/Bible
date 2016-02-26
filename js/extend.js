@@ -290,11 +290,27 @@ function init() {
 
   // chapter navigation through keyboard
   doc.addEventListener('keydown', function(e) {
+    var select = doc.querySelector('.chapter-selector');
+    var value = select.options[select.selectedIndex].text;
+
     if (e.keyCode === 37) {
       readchapter('', nowbook, --nowchapter);
     } else if (e.keyCode === 39) {
       readchapter('', nowbook, ++nowchapter);
     }
+
+    console.log(value);
+
+    function parseURL(url) {
+      if (url) {
+        url = url.split('_')[1];
+        // select.value = Number(url);
+        console.log(url);
+      }
+    }
+
+    parseURL(window.location.hash);
+
   });
 
   var panel = new SettingPanel({
@@ -318,19 +334,4 @@ function init() {
 
 window.addEventListener('load', function() {
   init();
-
-  // var waitTime = 3000;
-  // var currentTime = 0;
-  // var waitIntervel = 500;
-  //
-  // var interval = setInterval(function() {
-  //   currentTime += waitIntervel;
-  //   console.log('waiting ' + currentTime / 1000 + ' seconds...');
-  // }, waitIntervel);
-  //
-  // setTimeout(function() {
-  //     clearInterval(interval);
-  //     console.log('DONE');
-  // }, waitTime);
-
 });
