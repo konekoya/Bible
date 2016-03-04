@@ -290,26 +290,35 @@ function init() {
 
   // chapter navigation through keyboard
   doc.addEventListener('keydown', function(e) {
-    var select = doc.querySelector('.chapter-selector');
-    var value = select.options[select.selectedIndex].text;
-
     if (e.keyCode === 37) {
       readchapter('', nowbook, --nowchapter);
     } else if (e.keyCode === 39) {
       readchapter('', nowbook, ++nowchapter);
     }
 
-    console.log(value);
-
     function parseURL(url) {
       if (url) {
         url = url.split('_')[1];
-        // select.value = Number(url);
-        console.log(url);
+        url = String(url++); // we need the length property from String object not Number
+
+console.log('url: ' + url);
+console.log(typeof url);
+
+        if (url === 0) {
+          return;
+        }
+
+        if (url.length === 1 ) {
+          url = '00' + url;
+        } else if (url.length === 2 ) {
+          url = '0' + url;
+        }
+        doc.querySelector('.chapter-selector [value="' + url + '"]').selected = true;
+console.log(url);
       }
     }
 
-    parseURL(window.location.hash);
+    // parseURL(window.location.hash);
 
   });
 
