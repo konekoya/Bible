@@ -8,7 +8,16 @@ var mainBowerFiles = require('main-bower-files');
 
 gulp.task('help',$.taskListing);
 
-gulp.task('scripts', ['clean-scripts'], function() {
+gulp.task('bower-scripts', function(){
+  return gulp
+    .src(mainBowerFiles('**/*.js'))
+    .pipe($.plumber())
+    .pipe($.uglify())
+    .pipe($.concat('lib.js'))
+    .pipe(gulp.dest(config.build + 'js'));
+});
+
+gulp.task('scripts', function() {
   log('Analyzing source with JSHint and JSCS');
   return gulp
     .src(config.js)
@@ -86,7 +95,7 @@ gulp.task('watch', function() {
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('default', ['fonts', 'scripts', 'styles', 'webserver', 'watch']);
+gulp.task('default', ['fonts', 'bower-scripts', 'scripts', 'styles', 'webserver', 'watch']);
 
 ////////////
 
