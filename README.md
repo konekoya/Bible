@@ -6,12 +6,11 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 
 #TODOs
 - Scrollbar improvement on Reading mode - jQuery plugin, vanilla JS
-- Reading mode enhancement ideas -- We should work on cancel button(x), it's kind of a distraction when reading mode is on. 
+- Reading mode enhancement ideas -- We should work on cancel button(x), it's kind of a distraction when reading mode is on.
 - Should have default chapter when opening the app
 - Change directories structure, I think we should have a src dir?
-- Add sourcemap, livereload(or browserSync) HTTP server(using Node.js?) and JS linting in gulp.js - follow along the Gulp tutorial and improve the development setup
+- Add sourcemap and JS linting in gulp.js - follow along the Gulp tutorial and improve the development setup
 - Google font fallback if there's no Internet connection
-- Need to fix font awesome path problem with gulp, and move font awesome resources to production directory
 - Fix theme switch issue with Ordered list
 - Implement search functionality -- We should come up with something better like built in search feature in browsers
 - Remove read button and change the select to activate when user finish selecting
@@ -29,7 +28,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Take a look at this nice browser support chart https://github.com/mzabriskie/axios
 - Keyboard shortcut for triggering major features, then we should have a shortcut list or doc for user
 - Go back to top button doesn't in IEs...?
-- Should we replace SASS with PostCSS(preCSS plugin)?
 - Think about SMACSS and implement it in the current CSS structure
 
 # Browser support

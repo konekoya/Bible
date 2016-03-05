@@ -8,7 +8,7 @@ var mainBowerFiles = require('main-bower-files');
 
 gulp.task('help',$.taskListing);
 
-gulp.task('bower-scripts', function(){
+gulp.task('bower-scripts', ['clean-scripts'], function(){
   return gulp
     .src(mainBowerFiles('**/*.js'))
     .pipe($.plumber())
@@ -17,7 +17,7 @@ gulp.task('bower-scripts', function(){
     .pipe(gulp.dest(config.build + 'js'));
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', ['bower-scripts'], function() {
   log('Analyzing source with JSHint and JSCS');
   return gulp
     .src(config.js)
@@ -30,7 +30,22 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(config.build + 'js'));
 });
 
-gulp.task('styles', ['clean-styles'], function() {
+gulp.task('bower-styles', ['clean-styles'], function(){
+  return gulp
+    .src(mainBowerFiles('**/*.scss'))
+    .pipe($.sassGlob())
+    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.csslint('./csslintrc.json'))
+    .pipe($.csslint.reporter())
+    .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe($.postcss([
+      cssnano()
+    ]))
+    .pipe($.concat('lib.css'))
+    .pipe(gulp.dest(config.build + 'css'));
+});
+
+gulp.task('styles', ['bower-styles'], function() {
   log('Compiling SCSS --> CSS');
   return gulp
     .src(config.scss)
@@ -42,6 +57,7 @@ gulp.task('styles', ['clean-styles'], function() {
     .pipe($.postcss([
       cssnano()
     ]))
+    .pipe($.concat('bible.css'))
     .pipe(gulp.dest(config.build + 'css'));
 });
 
@@ -95,13 +111,13 @@ gulp.task('watch', function() {
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('default', ['fonts', 'bower-scripts', 'scripts', 'styles', 'webserver', 'watch']);
+gulp.task('default', ['fonts', 'bower-scripts', 'scripts', 'styles', 'watch', 'webserver']);
 
-////////////
+//////////// helper functions
 
 function clean(path) {
   log('Cleaning ' + $.util.colors.green(path));
-  del(path);
+  del.sync(path);
 }
 
 function log(msg) {
