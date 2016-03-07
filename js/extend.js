@@ -275,6 +275,10 @@ function init() {
         }
       }, false);
 
+      // $(document).on('keydown', null, 'ctrl+r', function() {
+      //   console.log('hotkey');
+      // });
+
       if (this.controls) {
         this.controls.addEventListener('click', function(e) {
           destroy();
