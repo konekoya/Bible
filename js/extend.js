@@ -158,12 +158,13 @@ function init() {
 
       if (window.localStorage.getItem(CONS.fontSize)) {
         storeFontSize = window.localStorage.getItem(CONS.fontSize);
+        console.log('getting fontsize');
       } else {
         storeFontSize = 24;
         window.localStorage.setItem(CONS.fontSize, 24);
       }
 
-      nothing.style.fontSize = storeFontSize;
+      nothing.style.fontSize = storeFontSize + 'px';
       this.range.value = storeFontSize;
       this.rangeSize.textContent = storeFontSize + 'px';
     },

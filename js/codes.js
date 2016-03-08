@@ -57,6 +57,7 @@ function readchapter(opstr, bnum, cnum) {
     document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '篇';
   }
   out2 = document.createElement("DIV");
+  out2.className += 'verse-container';
   out1.appendChild(out2);
   for (var i = line1; i < line2; i++) {
     var oneline = profiles[i].substring(profiles[i].indexOf(" "));

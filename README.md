@@ -7,6 +7,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 #TODOs
 - Scrollbar improvement on Reading mode - jQuery plugin, vanilla JS
 - Reading mode enhancement ideas -- We should work on cancel button(x), it's kind of a distraction when reading mode is on.
+- Problem with verse list item, try a different approach to display the verse number. 
 - Should have default chapter when opening the app
 - Change directories structure, I think we should have a src dir?
 - Add sourcemap and JS linting in gulp.js - follow along the Gulp tutorial and improve the development setup

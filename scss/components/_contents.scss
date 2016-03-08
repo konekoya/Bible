@@ -16,3 +16,10 @@
   font-weight: normal;
   color: $theme-blue;
 }
+.verse-container {
+  > ol {
+    list-style-position: outside;
+    margin: 0.3125em 0;
+    padding: 0 0 0 4rem;
+  }
+}

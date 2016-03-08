@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
-// General
+// General styles for HTML elements, no ID or class selectors here
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
 body {
   font-size: 100%;
   margin: 5.5rem 1rem 6.5rem;
@@ -8,26 +14,31 @@ body {
   font-family: $sub-font;
   transition: $fast margin;
 }
+
 a {
   text-decoration: none;
   color: $theme-blue;
-}
-a:hover,
-a:active,
-a:focus {
-  color: #4573d5;
-}
-ol {
-  margin: 0.3125em 0 0.3125em 2em;
-  li {
-    font-size: 1em;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #4573d5;
   }
 }
+
+// Remove chrome outline style
+a:focus,
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
 select {
   padding: 5px 0.3125rem;
   border: none;
   border-radius: $radius-2px;
 }
+
  ::selection {
   color: $theme-white;
   background: $theme-bright-red;
