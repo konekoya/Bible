@@ -12,7 +12,7 @@ gulp.task('bower-scripts', ['clean-scripts'], function(){
   return gulp
     .src(mainBowerFiles('**/*.js'))
     .pipe($.plumber())
-    .pipe($.uglify())
+    // .pipe($.uglify())
     .pipe($.concat('lib.js'))
     .pipe(gulp.dest(config.build + 'js'));
 });
