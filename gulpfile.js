@@ -5,6 +5,7 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var del = require('del');
 var cssnano = require('cssnano');
 var mainBowerFiles = require('main-bower-files');
+var runSequence = require('run-sequence');
 
 gulp.task('help',$.taskListing);
 
@@ -111,7 +112,9 @@ gulp.task('watch', function() {
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('default', ['fonts', 'bower-scripts', 'scripts', 'styles', 'watch', 'webserver']);
+gulp.task('default', function() {
+  runSequence('fonts', 'bower-scripts', 'scripts', 'styles', 'watch', 'webserver');
+});
 
 //////////// helper functions
 

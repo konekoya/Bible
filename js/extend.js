@@ -267,6 +267,8 @@ function init() {
         this.toggle.addEventListener('click', function() {
           body.classList.add(CONS.reading);
         }, false);
+
+        // $('html').perfectScrollbar();
       }
 
       doc.addEventListener('keydown', function(e) {
