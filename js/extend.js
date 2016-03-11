@@ -261,6 +261,7 @@ function init() {
     setReadingMode: function() {
       var destroy = function() {
         body.classList.remove(CONS.reading);
+        $('.content-wrap').perfectScrollbar('destroy');
       };
 
       if (this.toggle) {
@@ -268,7 +269,7 @@ function init() {
           body.classList.add(CONS.reading);
         }, false);
 
-        // $('html').perfectScrollbar();
+        $('.content-wrap').perfectScrollbar();
       }
 
       doc.addEventListener('keydown', function(e) {

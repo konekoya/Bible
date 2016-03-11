@@ -5,6 +5,8 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var del = require('del');
 var cssnano = require('cssnano');
 var mainBowerFiles = require('main-bower-files');
+
+// Temporary fix, remove this plugin after upgrade to Gulp 4
 var runSequence = require('run-sequence');
 
 gulp.task('help',$.taskListing);
@@ -13,7 +15,7 @@ gulp.task('bower-scripts', ['clean-scripts'], function(){
   return gulp
     .src(mainBowerFiles('**/*.js'))
     .pipe($.plumber())
-    // .pipe($.uglify())
+    .pipe($.uglify())
     .pipe($.concat('lib.js'))
     .pipe(gulp.dest(config.build + 'js'));
 });
@@ -33,9 +35,7 @@ gulp.task('scripts', ['bower-scripts'], function() {
 
 gulp.task('bower-styles', ['clean-styles'], function(){
   return gulp
-    .src(mainBowerFiles('**/*.scss'))
-    .pipe($.sassGlob())
-    .pipe($.sass().on('error', $.sass.logError))
+    .src(mainBowerFiles('**/*.css'))
     .pipe($.csslint('./csslintrc.json'))
     .pipe($.csslint.reporter())
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
@@ -113,7 +113,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', function() {
-  runSequence('fonts', 'bower-scripts', 'scripts', 'styles', 'watch', 'webserver');
+  runSequence('fonts', 'scripts', 'styles', 'watch', 'webserver');
 });
 
 //////////// helper functions

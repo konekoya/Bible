@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 .reading-mode {
-  margin-top: 1.2rem;
-  margin-bottom: 10rem;
+  height: 100%;
+  margin: 0;
   .toolbar {
     top: -100%;
   }
@@ -11,6 +11,11 @@
   }
   .reading-mode-controls {
     bottom: 50px;
+  }
+  .content-wrap {
+    position: relative;
+    height: 100%;
+    padding: 1.5rem 1.5rem 16rem 1.5rem;
   }
 }
 

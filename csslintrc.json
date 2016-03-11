@@ -6,5 +6,6 @@
   "compatible-vendor-prefixes": false,
   "box-model": false,
   "fallback-colors": false,
-  "font-sizes": false
+  "font-sizes": false,
+  "important": false
 }

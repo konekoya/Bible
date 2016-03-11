@@ -25,6 +25,9 @@
   "overrides": {
     "jquery.hotkeys": {
       "main": "./jquery.hotkeys.js"
+    },
+    "font-awesome": {
+      "main": "./css/font-awesome.css"
     }
   }
 }
