@@ -251,25 +251,26 @@ function init() {
 
   var ReadingMode = function(options) {
     if (this === window) {
-      return new ReadingMode(config);
+      return new ReadingMode(options);
     }
     this.toggle = doc.querySelector(options.els.toggle);
     this.controls = doc.querySelector(options.els.controls);
+    this.content = doc.querySelector(options.els.content);
   };
 
   ReadingMode.prototype = {
     setReadingMode: function() {
+      var that = this;
       var destroy = function() {
         body.classList.remove(CONS.reading);
-        $('.content-wrap').perfectScrollbar('destroy');
+        $(that.content).perfectScrollbar('destroy');
       };
 
-      if (this.toggle) {
-        this.toggle.addEventListener('click', function() {
+      if (that.toggle) {
+        that.toggle.addEventListener('click', function() {
           body.classList.add(CONS.reading);
+          $(that.content).perfectScrollbar();
         }, false);
-
-        $('.content-wrap').perfectScrollbar();
       }
 
       doc.addEventListener('keydown', function(e) {
@@ -341,7 +342,8 @@ console.log(url);
   var readingMode = new ReadingMode({
     els: {
       toggle: '.toggle-reading-mode',
-      controls: '.reading-mode-controls'
+      controls: '.reading-mode-controls',
+      content: '.content-wrap'
     }
   });
 
