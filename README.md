@@ -5,7 +5,7 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- Scrollbar improvement on Reading mode - jQuery plugin, vanilla JS
+- Only activate the perfect scrollbar when running on PCs
 - Reading mode enhancement ideas -- We should work on cancel button(x), it's kind of a distraction when reading mode is on.
 - Problem with verse list item, try a different approach to display the verse number. 
 - Should have default chapter when opening the app

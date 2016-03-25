@@ -83,7 +83,7 @@ function init() {
               body.classList.add(CONS.noCursor);
             }
           }, time);
-        });
+        }, false);
       }
     }
 
@@ -297,7 +297,7 @@ function init() {
       if (this.controls) {
         this.controls.addEventListener('click', function(e) {
           destroy();
-        });
+        }, false);
       }
 
     },
@@ -339,7 +339,7 @@ console.log(url);
 
     // parseURL(window.location.hash);
 
-  });
+  }, false);
 
   var panel = new SettingPanel({
     els: {
@@ -363,4 +363,4 @@ console.log(url);
 
 window.addEventListener('load', function() {
   init();
-});
+}, false);
