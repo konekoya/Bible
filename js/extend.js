@@ -261,6 +261,12 @@ function init() {
   ReadingMode.prototype = {
     setReadingMode: function() {
       var that = this;
+      
+      var activate = function() {
+        body.classList.add(CONS.reading);
+        $(that.content).perfectScrollbar();
+      };
+
       var destroy = function() {
         body.classList.remove(CONS.reading);
         $(that.content).perfectScrollbar('destroy');
@@ -268,8 +274,7 @@ function init() {
 
       if (that.toggle) {
         that.toggle.addEventListener('click', function() {
-          body.classList.add(CONS.reading);
-          $(that.content).perfectScrollbar();
+          activate();
         }, false);
       }
 
@@ -279,9 +284,15 @@ function init() {
         }
       }, false);
 
-      // $(document).on('keydown', null, 'ctrl+r', function() {
-      //   console.log('hotkey');
-      // });
+      doc.addEventListener('keydown', function(e) {
+        if(e.ctrlKey && e.altKey && e.keyCode === 82) {
+          if (body.classList.contains(CONS.reading)) {
+            destroy();
+          } else {
+            activate();
+          }
+        }
+      }, false);
 
       if (this.controls) {
         this.controls.addEventListener('click', function(e) {
