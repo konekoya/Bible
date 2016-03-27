@@ -107,7 +107,7 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['webserver'], function() {
   gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
 });
