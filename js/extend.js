@@ -119,7 +119,24 @@ function init() {
 
   toggleLight();
 
-  // setting panel constructor
+
+  function detectOSName() {
+    var OSName = '';
+
+    if (navigator.appVersion.indexOf('Win') != -1) {
+      OSName = 'windows';
+    }
+
+    if (navigator.appVersion.indexOf('Mac') != -1) {
+      OSName = 'mac';
+    }
+
+    body.classList.add(OSName);
+  }
+
+  detectOSName();
+
+  // Setting panel constructor
   var SettingPanel = function(config) {
     if (this === window) {
       return new SettingPanel(config);
@@ -249,6 +266,7 @@ function init() {
     }
   };
 
+  // Reading mode constructor
   var ReadingMode = function(options) {
     if (this === window) {
       return new ReadingMode(options);
