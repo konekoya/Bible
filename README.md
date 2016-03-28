@@ -5,7 +5,6 @@ This is an application that you can use even when you don't have the Internet co
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
-- Only activate the perfect scrollbar when running on PCs
 - Reading mode enhancement ideas -- We should work on cancel button(x), it's kind of a distraction when reading mode is on.
 - Problem with verse list item, try a different approach to display the verse number. 
 - Should have default chapter when opening the app
@@ -24,8 +23,6 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 - Remember progress of last reading
 - Should we use JS testing tools?
 - Add different version of Chinese Bibles
-- Selection with some animation and improvement for that?
-- Highlight when click on text -- We can do this like a block or paragraph.. when users click on the paragraph.
 - Take a look at this nice browser support chart https://github.com/mzabriskie/axios
 - Keyboard shortcut for triggering major features, then we should have a shortcut list or doc for user
 - Go back to top button doesn't in IEs...?
