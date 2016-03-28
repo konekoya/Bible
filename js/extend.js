@@ -15,7 +15,8 @@ function init() {
     reading: 'reading-mode',
     lowLight: 'low-light-theme',
     show: 'show',
-    fontSize: 'font-size'
+    fontSize: 'font-size',
+    mac: 'mac'
   };
 
   // jQuery-free scroll to top snippet
@@ -282,7 +283,9 @@ function init() {
       
       var activate = function() {
         body.classList.add(CONS.reading);
-        $(that.content).perfectScrollbar();
+        if (!body.classList.contains(CONS.mac)) {
+          $(that.content).perfectScrollbar();
+        }
       };
 
       var destroy = function() {
