@@ -62,42 +62,39 @@ function init() {
     div.className = 'cover';
     div.innerHTML = '<span class="cover-txt">Press ESC key to leave</span>';
 
-    function toggleTxt(time) {
-      if (body.classList.contains(CONS.hasCover)) {
-        coverTxt = doc.querySelector('.cover-txt');
+    function toggleCoverTxt() {
+      coverTxt = doc.querySelector('.cover-txt');
 
-        //  detect mouse movement and show the cover text again
-        doc.addEventListener('mousemove', function() {
-          console.log('mouse is moving!');
-          if (coverTxt.classList.contains(CONS.fadeOut)) {
-            coverTxt.classList.remove(CONS.fadeOut);
-            coverTxt.classList.add(CONS.fadeIn);
-            body.classList.remove(CONS.noCursor);
-          }
-
-          clearTimeout(timer);
-
-          timer = window.setTimeout(function() {
-            if (coverTxt) {
-              coverTxt.classList.remove(CONS.fadeIn);
-              coverTxt.classList.add(CONS.fadeOut);
-              body.classList.add(CONS.noCursor);
-            }
-          }, time);
-        }, false);
+      console.log('mouse is moving!');
+      if (coverTxt.classList.contains(CONS.fadeOut)) {
+        coverTxt.classList.remove(CONS.fadeOut);
+        coverTxt.classList.add(CONS.fadeIn);
+        body.classList.remove(CONS.noCursor);
       }
+
+      clearTimeout(timer);
+
+      timer = window.setTimeout(function() {
+        if (coverTxt) {
+          coverTxt.classList.remove(CONS.fadeIn);
+          coverTxt.classList.add(CONS.fadeOut);
+          body.classList.add(CONS.noCursor);
+        }
+      }, 7000);
+
     }
 
     function removeCover(coverEl) {
       body.removeChild(coverEl);
       body.classList.remove(CONS.hasCover);
       body.classList.remove(CONS.noCursor);
+      doc.removeEventListener('mousemove', toggleCoverTxt, false);
     }
 
     function addCover(coverEl) {
       body.appendChild(coverEl);
       body.classList.add(CONS.hasCover);
-      toggleTxt(7000);
+      doc.addEventListener('mousemove', toggleCoverTxt, false);
     }
 
     if (toggleLightBtn) {
