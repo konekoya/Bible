@@ -1,6 +1,6 @@
-#An offline Bible study application
+#Bible study application
 
-This is an application that you can use even when you don't have the Internet connection, for now, we only provide Chinese version. Maybe we will add more languages support down the road.
+This application is designed specifically for New City Church Sunday gathering.
 
 The original Bible content and codes are from http://springbible.fhl.net/OfflineBible/offline.html
 

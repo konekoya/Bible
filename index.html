@@ -14,7 +14,6 @@
 </head>
 
 <body>
-  <a name="top"></a>
   <div class="toolbar">
     <div class="logo">Manna</div>
     <form class="chapter-body" method="post" name="Reading" onsubmit="readchapter(' ', document.Reading.na.selectedIndex, document.Reading.chap.selectedIndex); return false;" action="">
@@ -257,7 +256,7 @@
       <input class="read-on  btn  form-elem" name="submit1" value="閱讀" type="submit">
     </form>
   </div>
-  <div class="content-wrap">
+  <div class="layout-content">
     <div class="content-container" id="content">
     </div>
   </div>
@@ -287,39 +286,39 @@
 
   <div class="nav-bar">
     <div id="link2" class="chapter-nav  main-chapter-nav">
-      <a class="prev  btn  btn-genernal  btn-large" href="" onclick="readchapter(' ', nowbook,--nowchapter); return false;">上一章</a>
-      <a class="next  btn  btn-genernal  btn-large" href="" onclick="readchapter(' ', nowbook,++nowchapter); return false;">下一章</a>
+      <a class="prev  btn  btn-primary  btn-large" href="" onclick="readchapter(' ', nowbook,--nowchapter); return false;">上一章</a>
+      <a class="next  btn  btn-primary  btn-large" href="" onclick="readchapter(' ', nowbook,++nowchapter); return false;">下一章</a>
     </div>
 
     <div class="setting-wrap  tooltip-parent">
       <div class="tooltip  tooltip-top  tooltip-left">Change settings</div>
-      <button class="setting-btn  btn  btn-genernal">
+      <button class="setting-btn  btn  btn-primary">
         <i class="fa  fa-cog"></i>
       </button>
     </div>
 
     <div class="toggle-light-wrap  tooltip-parent">
       <div class="tooltip  tooltip-left  tooltip-top">Open black mode</div>
-      <button class="toggle-light  btn  btn-genernal">
+      <button class="toggle-light  btn  btn-primary">
         <i class="fa  fa-lightbulb-o"></i>
       </button>
     </div>
 
     <div class="toggle-light-wrap  tooltip-parent">
       <div class="tooltip  tooltip-left  tooltip-top">Toggle reading mode</div>
-      <button class="toggle-reading-mode  btn  btn-genernal">
+      <button class="toggle-reading-mode  btn  btn-primary">
         <i class="fa  fa-newspaper-o"></i>
       </button>
     </div>
 
-    <button class="top  btn  btn-genernal  btn-large">
+    <button class="top  btn  btn-primary  btn-large">
       <i class="fa  fa-chevron-up"></i>
     </button>
 
   </div>
 
   <div class="reading-mode-controls">
-    <button class="reading-mode-controls  btn  btn-genernal"><i class="fa fa-times"></i></button>
+    <button class="reading-mode-controls  btn  btn-primary"><i class="fa fa-times"></i></button>
   </div>
   <script src="build/js/lib.js"></script>
   <script src="build/js/bible.js"></script>

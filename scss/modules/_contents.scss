@@ -1,9 +1,5 @@
 @charset "UTF-8";
-// Content body
-.content-container {
-  font-size: 24px;
-  color: $theme-black;
-}
+
 .no-verse-number {
   ol {
     list-style: none;
@@ -11,11 +7,13 @@
     padding: 0;
   }
 }
+
 .chapter-title {
   font-size: 1.6rem;
   font-weight: normal;
   color: $theme-blue;
 }
+
 .verse-container {
   > ol {
     list-style-position: outside;

@@ -81,8 +81,8 @@ function readchapter(opstr, bnum, cnum) {
     out3.appendChild(tempNode1);
     tempNode1.setAttribute('value', value1++);
   }
-  temp1 = '<a href="" class="prev-btn  btn  btn-genernal  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,--nowchapter); return false;">上一章</a>\n';
-  temp2 = '<a href="" class="next-btn  btn  btn-genernal  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,++nowchapter); return false;">下一章</a>\n';
+  temp1 = '<a href="" class="prev-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,--nowchapter); return false;">上一章</a>\n';
+  temp2 = '<a href="" class="next-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,++nowchapter); return false;">下一章</a>\n';
 
   nowbook = bnum;
   nowchapter = cnum;

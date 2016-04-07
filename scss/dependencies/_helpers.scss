@@ -1,0 +1,20 @@
+.js-no-cursor {
+  cursor: none;
+}
+
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Animation helpers
+.fade-in {
+    transition: .6s opacity;
+    opacity: 1;
+}
+
+.fade-out {
+    transition: .6s opacity;
+    opacity: 0;
+}

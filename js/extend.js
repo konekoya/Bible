@@ -10,13 +10,13 @@ function init() {
   var CONS = {
     fadeIn: 'fade-in',
     fadeOut: 'fade-out',
-    noCursor: 'no-cursor',
-    hasCover: 'has-cover',
+    noCursor: 'js-no-cursor',
+    hasCover: 'js-has-cover',
     reading: 'reading-mode',
-    lowLight: 'low-light-theme',
+    themeLowLight: 'theme--low-light',
+    themeDefault: 'theme--default',
     show: 'show',
     fontSize: 'font-size',
-    mac: 'mac'
   };
 
   // jQuery-free scroll to top snippet
@@ -122,11 +122,11 @@ function init() {
     var OSName = '';
 
     if (navigator.appVersion.indexOf('Win') != -1) {
-      OSName = 'windows';
+      OSName = 'js-windows';
     }
 
     if (navigator.appVersion.indexOf('Mac') != -1) {
-      OSName = 'mac';
+      OSName = 'js-mac';
     }
 
     body.classList.add(OSName);
@@ -199,26 +199,27 @@ function init() {
       // set default theme
       if (window.localStorage.getItem('theme')) {
         currentTheme = window.localStorage.getItem('theme');
-        if (currentTheme === 'default-theme') {
+        if (currentTheme === CONS.themeDefault) {
           switchLink.checked = false;
         } else {
           switchLink.checked = true;
-          body.classList.add(CONS.lowLight);
+          body.classList.add(CONS.themeLowLight);
         }
       } else {
-        currentTheme = 'default-theme';
-        window.localStorage.setItem('theme', 'default-theme');
+        currentTheme = CONS.themeDefault;
+        window.localStorage.setItem('theme', CONS.themeDefault);
         switchLink.checked = false;
       }
 
       // toggle theme
       switchLink.addEventListener('click', function() {
         if (this.checked === true) {
-          body.classList.add(CONS.lowLight);
-          window.localStorage.setItem('theme', 'low-light-theme');
+          body.classList.add(CONS.themeLowLight);
+          window.localStorage.setItem('theme', CONS.themeLowLight);
+          console.log(CONS.themeLowLight);
         } else {
-          body.classList.remove(CONS.lowLight);
-          window.localStorage.setItem('theme', 'default-theme');
+          body.classList.remove(CONS.themeLowLight);
+          window.localStorage.setItem('theme', CONS.themeDefault);
         }
       }, false);
     },
