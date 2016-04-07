@@ -13,19 +13,20 @@ var findchapter = [];
 var operators = new Array("#", "*", "&", "|", "+", "!", "-", "(", ")");
 var icp = new Array(3, 2, 2, 2, 2, 1, 1, 0, 3);
 var isp = new Array(3, 2, 2, 2, 2, 1, 1, 3, 3);
+var doc = document;
 
 function readchapter(opstr, bnum, cnum) {
   var out1 = null;
   var out2 = null;
   var out3 = null;
   var k = -1;
-  var operand = "";
+  var operand = '';
 
   while (opstr.charAt(opstr.length - 1) == ' ') //清掉結尾的空格
     opstr = opstr.substring(0, opstr.length - 1);
 
   if (opstr.length > 0)
-    operand = opstr.split(" ");
+    operand = opstr.split(' ');
 
 
   if ((bnum - 0 < 0) || (bnum - 0 >= 66))
@@ -48,28 +49,28 @@ function readchapter(opstr, bnum, cnum) {
   var value1 = 1;
 
 
-  out1 = document.getElementById("nothing");
+  out1 = doc.getElementById("content");
   if (books[bnum] != "詩篇") {
     out1.innerHTML = '<h2 class="chapter-title">' + books[bnum] + '第' + numbers[cnum] + '章</h2>';
-    document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '章';
+    doc.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '章';
   } else {
     out1.innerHTML = '<h2 class="chapter-title">' + books[bnum] + '第' + numbers[cnum] + '篇</h2>';
-    document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '篇';
+    doc.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '篇';
   }
-  out2 = document.createElement("DIV");
+  out2 = doc.createElement('div');
   out2.className += 'verse-container';
   out1.appendChild(out2);
   for (var i = line1; i < line2; i++) {
     var oneline = profiles[i].substring(profiles[i].indexOf(" "));
-    out3 = document.createElement("OL");
+    out3 = doc.createElement('ol');
     out2.appendChild(out3);
-    tempNode1 = document.createElement("LI");
+    tempNode1 = doc.createElement('li');
     k = 0;
     while (k < operand.length && opstr.length > 0) {
       var temp = "";
       var compareString = operand[k];
       while (oneline.indexOf(compareString) != -1) {
-        temp += oneline.substring(0, oneline.indexOf(compareString)) + compareString.fontcolor("red");
+        temp += oneline.substring(0, oneline.indexOf(compareString)) + compareString.fontcolor('red');
         oneline = oneline.substring(oneline.indexOf(compareString) + compareString.length);
       }
       temp += oneline;
@@ -78,7 +79,7 @@ function readchapter(opstr, bnum, cnum) {
     }
     tempNode1.innerHTML = oneline;
     out3.appendChild(tempNode1);
-    tempNode1.setAttribute("value", value1++);
+    tempNode1.setAttribute('value', value1++);
   }
   temp1 = '<a href="" class="prev-btn  btn  btn-genernal  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,--nowchapter); return false;">上一章</a>\n';
   temp2 = '<a href="" class="next-btn  btn  btn-genernal  btn-large" onClick="readchapter(\'' + opstr + '\', nowbook,++nowchapter); return false;">下一章</a>\n';
@@ -88,7 +89,7 @@ function readchapter(opstr, bnum, cnum) {
 
   var ua = navigator.userAgent.toLowerCase();
 
-  tempNode1 = document.getElementById("link2");
+  tempNode1 = doc.getElementById("link2");
   tempNode1.innerHTML = "";
   tempNode1.innerHTML += temp1;
   tempNode1.innerHTML += temp2;
@@ -133,11 +134,11 @@ function validate(entry, begin1, end1) {
 
   while (entry.charAt(0) == ' ') { //清掉開頭的空格
     entry = entry.substring(1, entry.length);
-    document.search.query.value = entry;
+    doc.search.query.value = entry;
   }
   while (entry.charAt(entry.length - 1) == ' ') { //清掉結尾的空格
     entry = entry.substring(0, entry.length - 1);
-    document.search.query.value = entry;
+    doc.search.query.value = entry;
   }
 
   convertString(entry, begin1, end1);
@@ -319,8 +320,8 @@ function verifyManage(operand, resultSet) {
 function noMatch() {
   var out, out2, out3;
 
-  out3 = document.getElementById("nothing");
-  out3.innerHTML = '<HR NOSHADE WIDTH=100%>"' + document.search.query.value +
+  out3 = doc.getElementById("content");
+  out3.innerHTML = '<HR NOSHADE WIDTH=100%>"' + doc.search.query.value +
     '" returned no results.<HR NOSHADE WIDTH=100%></TD></TR></TABLE>';
 }
 
@@ -329,35 +330,35 @@ function formatResults(operand, results, reference, offset) {
   var currentRecord = (results.length < reference + offset ? results.length : reference + offset);
   var out, out1, out2, out3, tempNode1, tempoperand;
 
-  document.title = '搜尋經文─' + document.search.query.value;
+  doc.title = '搜尋經文─' + doc.search.query.value;
   tempoperand = "";
   for (var j = 0; j < operand.length; j++)
     tempoperand += operand[j] + ' ';
 
-  out = document.getElementById("nothing");
-  out.innerHTML = 'Search Query: <i>' + document.search.query.value + '</i><br>\n';
+  out = doc.getElementById("content");
+  out.innerHTML = 'Search Query: <i>' + doc.search.query.value + '</i><br>\n';
   out.innerHTML += 'Search Results: <i>' + (reference + 1) + ' - ' +
     currentRecord + ' of ' + results.length + '</i><br>' +
     '\n\n<!-- Begin result set //-->\n\n\t';
-  out2 = document.createElement("OL");
+  out2 = doc.createElement("OL");
   out.appendChild(out2);
 
   var value1 = 1;
   if (searchType == SEARCHURL) {
     for (var i = reference; i < currentRecord; i++) {
-      tempNode1 = document.createElement("LI");
+      tempNode1 = doc.createElement("LI");
       tempNode1.innerHTML = results[i];
       out2.appendChild(tempNode1);
       tempNode1.setAttribute("value", value1++);
     }
   } else {
-    for (var i = reference; i < currentRecord; i++) {
-      var oneline = results[i].substring(results[i].indexOf(" "), results[i].length);
-      var temp = results[i].substring(0, results[i].indexOf(" "));
-      //	out3 = document.createElement("OL");
+    for (var k = reference; k < currentRecord; k++) {
+      var oneline = results[k].substring(results[k].indexOf(" "), results[k].length);
+      var temp = results[k].substring(0, results[k].indexOf(" "));
+      //	out3 = doc.createElement("OL");
       //	out2.appendChild(out3);
-      tempNode1 = document.createElement("LI");
-      tempNode1.innerHTML = '<a href="" onClick="readchapter(\'' + tempoperand + '\', ' + findbook[i] + ', ' + findchapter[i] + '); return false;">' + temp + '</a> ' + oneline + '\n';
+      tempNode1 = doc.createElement("LI");
+      tempNode1.innerHTML = '<a href="" onClick="readchapter(\'' + tempoperand + '\', ' + findbook[k] + ', ' + findchapter[k] + '); return false;">' + temp + '</a> ' + oneline + '\n';
       //	out3.appendChild(tempNode1);
       out2.appendChild(tempNode1);
       tempNode1.setAttribute("value", value1++);
@@ -366,25 +367,28 @@ function formatResults(operand, results, reference, offset) {
 }
 
 function setachap() {
-  var bnum, cnum, hh;
-  setchap(document.Reading, document.Reading.na.selectedIndex, document.Reading.chap.selectedIndex);
+  var bnum = '';
+  var cnum = '';
+  var hash = '';
 
-  ua = navigator.userAgent.toLowerCase();
-  hh = location.hash;
+  setchap(doc.Reading, doc.Reading.na.selectedIndex, doc.Reading.chap.selectedIndex);
+
+  hash = window.location.hash;
   if (location.hash.length > 1) {
-    //  if((ua.indexOf("firefox") !=-1) && (location.hash.length > 1)) {
-    bnum = hh.substring(1, hh.indexOf("_"));
-    cnum = hh;
-    while (cnum.indexOf("_") != -1)
-      cnum = cnum.substring(cnum.indexOf("_") + 1);
+    bnum = hash.substring(1, hash.indexOf('_'));
+    cnum = hash;
+    while (cnum.indexOf('_') != -1)
+      cnum = cnum.substring(cnum.indexOf('_') + 1);
     readchapter(' ', bnum, cnum);
   }
-
 }
 
 
 function setchap(f, index, s1) {
-  var i, j, k, txt;
+  var i;
+  var j;
+  var k;
+  var txt;
   var cnum = new Array(50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29, 36, 10, 13, 10, 42, 150, 31, 12, 8, 66, 52, 5, 48, 12, 14, 3, 9, 1, 4, 7, 3, 3, 3, 2, 14, 4, 28, 16, 24, 21, 28, 16, 16, 13, 6, 6, 4, 4, 5, 3, 6, 4, 3, 1, 13, 5, 5, 3, 5, 1, 1, 1, 22);
   i = cnum[index];
   var currentchapters = f.chap.options.length;

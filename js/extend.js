@@ -5,7 +5,7 @@ function init() {
   var doc = document;
   var html = document.documentElement;
   var body = doc.body;
-  var nothing = doc.getElementById('nothing');
+  var content = doc.getElementById('content');
 
   var CONS = {
     fadeIn: 'fade-in',
@@ -178,7 +178,7 @@ function init() {
         window.localStorage.setItem(CONS.fontSize, 24);
       }
 
-      nothing.style.fontSize = storeFontSize + 'px';
+      content.style.fontSize = storeFontSize + 'px';
       this.range.value = storeFontSize;
       this.rangeSize.textContent = storeFontSize + 'px';
     },
@@ -187,7 +187,7 @@ function init() {
       var that = this;
       this.range.addEventListener('change', function() {
         that.rangeSize.textContent = this.value + 'px';
-        nothing.style.fontSize = this.value + 'px';
+        content.style.fontSize = this.value + 'px';
         window.localStorage.setItem(CONS.fontSize, this.value);
       }, false);
     },
@@ -225,7 +225,7 @@ function init() {
 
     toggleVerseNumber: function() {
       var toggleBtn = doc.querySelector('.toggle-verse-number .toggle');
-      var container = doc.querySelector('#nothing');
+      var container = doc.querySelector('#content');
       var currentState = '';
 
       if (window.localStorage.getItem('verse-number')) {
