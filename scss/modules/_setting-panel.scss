@@ -6,35 +6,43 @@
   left: 0;
   bottom: 0;
   background: lighten($theme-dark-blue, 10%);
-  visibility: hidden;
-  opacity: 0;
   transition: $fast all;
   width: 350px;
   border-top-right-radius: $radius-4px;
-  &.show {
-    visibility: visible;
-    opacity: 1;
-    bottom: 75px;
-  }
+
   .range {
     padding: 30px 20px 18px;
   }
+
   .range-slide {
     display: inline-block;
     width: 80%;
     margin-right: 10px;
   }
+
   .range-size {
     display: inline-block;
   }
 }
 
+.setting-panel-is-disabled {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.setting-panel-is-active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 75px;
+}
 
 .setting-item {
   padding: 18px 20px;
+
   &:nth-child(odd) {
     background-color: lighten($theme-dark-blue, 15%);
   }
+
   .toggle-btn {
     display: inline-block;
     vertical-align: top;
@@ -45,6 +53,7 @@
   letter-spacing: .5px;
   font-size: 16px;
   margin-bottom: 10px;
+
   > i {
     margin-right: 8px;
     padding: 6px;
@@ -52,6 +61,7 @@
     background-color: $theme-dark-blue;
   }
 }
+
 .setting-desc {
   color: lighten($theme-dark-blue, 50%);
   margin-left: 8px;

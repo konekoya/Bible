@@ -12,10 +12,11 @@ function init() {
     fadeOut: 'fade-out',
     noCursor: 'js-no-cursor',
     hasCover: 'js-has-cover',
-    reading: 'reading-mode',
-    themeLowLight: 'theme--low-light',
-    themeDefault: 'theme--default',
-    show: 'show',
+    reading: 'is-reading-mode',
+    themeLowLight: 'theme-low-light',
+    themeDefault: 'theme-default',
+    panelIsDisabled: 'setting-panel-is-disabled',
+    panelIsActive: 'setting-panel-is-active',
     fontSize: 'font-size',
   };
 
@@ -150,8 +151,14 @@ function init() {
 
       if (btn && panel) {
         btn.addEventListener('click', function(e) {
-          panel.classList.toggle(CONS.show);
-          btn.classList.toggle(CONS.show);
+          if (panel.classList.contains(CONS.panelIsDisabled)) {
+            panel.classList.remove(CONS.panelIsDisabled);
+            panel.classList.add(CONS.panelIsActive);
+          } else {
+            panel.classList.remove(CONS.panelIsActive);
+            panel.classList.add(CONS.panelIsDisabled);
+          }
+          btn.classList.toggle(CONS.panelIsActive);
           e.stopPropagation();
         }, false);
 
@@ -160,9 +167,9 @@ function init() {
         }, false);
 
         doc.addEventListener('click', function(e) {
-          if (panel.classList.contains(CONS.show)) {
-            panel.classList.remove(CONS.show);
-            btn.classList.remove(CONS.show);
+          if (panel.classList.contains(CONS.panelIsActive)) {
+            panel.classList.remove(CONS.panelIsActive);
+            btn.classList.remove(CONS.panelIsActive);
           }
         }, false);
       }
@@ -203,6 +210,7 @@ function init() {
           switchLink.checked = false;
         } else {
           switchLink.checked = true;
+          body.classList.remove(CONS.themeDefault);
           body.classList.add(CONS.themeLowLight);
         }
       } else {
@@ -214,11 +222,12 @@ function init() {
       // toggle theme
       switchLink.addEventListener('click', function() {
         if (this.checked === true) {
+          body.classList.remove(CONS.themeDefault);
           body.classList.add(CONS.themeLowLight);
           window.localStorage.setItem('theme', CONS.themeLowLight);
-          console.log(CONS.themeLowLight);
         } else {
           body.classList.remove(CONS.themeLowLight);
+          body.classList.add(CONS.themeDefault);
           window.localStorage.setItem('theme', CONS.themeDefault);
         }
       }, false);

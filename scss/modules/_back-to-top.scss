@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+// no prefix like module for module, since most of classes in 
+// your project will be modules, it's just too verbose
 .top {
     display: none;
     @media (min-width: $screen-sm) {
