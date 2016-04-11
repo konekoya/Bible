@@ -17,6 +17,8 @@ function init() {
     themeDefault: 'theme-default',
     panelIsDisabled: 'setting-panel-is-disabled',
     panelIsActive: 'setting-panel-is-active',
+    settingBtnIsDisabled: 'setting-btn-is-disabled',
+    settingBtnIsActive: 'setting-btn-is-active',
     fontSize: 'font-size',
   };
 
@@ -149,16 +151,27 @@ function init() {
       var btn = doc.querySelector('.setting-btn');
       var panel = doc.querySelector('.setting-panel');
 
+      var activate = function() {
+        btn.classList.remove(CONS.settingBtnIsDisabled);
+        btn.classList.add(CONS.settingBtnIsActive);
+        panel.classList.remove(CONS.panelIsDisabled);
+        panel.classList.add(CONS.panelIsActive);
+      };
+
+      var deactivate = function() {
+        btn.classList.remove(CONS.settingBtnIsActive);
+        btn.classList.add(CONS.settingBtnIsDisabled);
+        panel.classList.remove(CONS.panelIsActive);
+        panel.classList.add(CONS.panelIsDisabled);
+      };
+
       if (btn && panel) {
         btn.addEventListener('click', function(e) {
           if (panel.classList.contains(CONS.panelIsDisabled)) {
-            panel.classList.remove(CONS.panelIsDisabled);
-            panel.classList.add(CONS.panelIsActive);
+            activate();
           } else {
-            panel.classList.remove(CONS.panelIsActive);
-            panel.classList.add(CONS.panelIsDisabled);
+            deactivate();
           }
-          btn.classList.toggle(CONS.panelIsActive);
           e.stopPropagation();
         }, false);
 
@@ -168,8 +181,7 @@ function init() {
 
         doc.addEventListener('click', function(e) {
           if (panel.classList.contains(CONS.panelIsActive)) {
-            panel.classList.remove(CONS.panelIsActive);
-            btn.classList.remove(CONS.panelIsActive);
+            deactivate();
           }
         }, false);
       }
@@ -287,7 +299,6 @@ function init() {
   ReadingMode.prototype = {
     setReadingMode: function() {
       var that = this;
-      
       var activate = function() {
         body.classList.add(CONS.reading);
         if (!body.classList.contains(CONS.mac)) {
@@ -295,7 +306,7 @@ function init() {
         }
       };
 
-      var destroy = function() {
+      var deactivate = function() {
         body.classList.remove(CONS.reading);
         $(that.content).perfectScrollbar('destroy');
       };
@@ -308,14 +319,14 @@ function init() {
 
       doc.addEventListener('keydown', function(e) {
         if (e.keyCode === 27 && body.classList.contains(CONS.reading)) {
-          destroy();
+          deactivate();
         }
       }, false);
 
       doc.addEventListener('keydown', function(e) {
         if(e.ctrlKey && e.altKey && e.keyCode === 82) {
           if (body.classList.contains(CONS.reading)) {
-            destroy();
+            deactivate();
           } else {
             activate();
           }
@@ -324,7 +335,7 @@ function init() {
 
       if (this.controls) {
         this.controls.addEventListener('click', function(e) {
-          destroy();
+          deactivate();
         }, false);
       }
 

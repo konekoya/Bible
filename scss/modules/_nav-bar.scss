@@ -21,9 +21,14 @@
   padding: 13px 17px;
   font-size: 16px;
   margin-right: 0.5rem;
-  &.show {
-    background-color: $theme-blue;
-  }
+}
+
+.setting-btn-is-disabled {
+
+}
+
+.setting-btn-is-active {
+   background-color: $theme-blue;
 }
 
 // toggle light
