@@ -23,7 +23,7 @@ function init() {
   };
 
   // jQuery-free scroll to top snippet
-  function scrollTo(el, to, duration) {
+  var scrollTo = function(el, to, duration) {
     if (duration < 0) {
       return;
     }
@@ -37,27 +37,27 @@ function init() {
       }
       scrollTo(el, to, duration - 10);
     }, 10);
-  }
+  };
 
-  function runScroll() {
+  var runScroll = function() {
     scrollTo(doc.body, 0, 300);
-  }
+  };
 
   var scrollme = doc.querySelector(".top");
   scrollme.addEventListener("click", runScroll, false);
 
   // Detect and scroll to the top when user change chapter
-  function scrollTopWhenHashChange() {
+  var scrollTopWhenHashChange = function() {
     window.onhashchange = function() {
       if (scrollY !== 0) {
         runScroll();
       }
     };
-  }
+  };
 
   scrollTopWhenHashChange();
 
-  function toggleLight() {
+  var toggleLight = function() {
     var toggleLightBtn = doc.querySelector('.toggle-light');
     var div = doc.createElement('div');
     var coverTxt = null;
@@ -68,7 +68,6 @@ function init() {
     function toggleCoverTxt() {
       coverTxt = doc.querySelector('.cover-txt');
 
-      console.log('mouse is moving!');
       if (coverTxt.classList.contains(CONS.fadeOut)) {
         coverTxt.classList.remove(CONS.fadeOut);
         coverTxt.classList.add(CONS.fadeIn);
@@ -116,12 +115,12 @@ function init() {
         }
       }, false);
     }
-  }
+  };
 
   toggleLight();
 
 
-  function detectOSName() {
+  var detectOSName = function() {
     var OSName = '';
 
     if (navigator.appVersion.indexOf('Win') != -1) {
@@ -133,7 +132,7 @@ function init() {
     }
 
     body.classList.add(OSName);
-  }
+  };
 
   detectOSName();
 
@@ -348,13 +347,8 @@ function init() {
 
   // chapter navigation through keyboard
   doc.addEventListener('keydown', function(e) {
-    if (e.keyCode === 37) {
-      readchapter('', nowbook, --nowchapter);
-    } else if (e.keyCode === 39) {
-      readchapter('', nowbook, ++nowchapter);
-    }
 
-    function parseURL(url) {
+    var parseURL = function(url) {
       if (url) {
         url = url.split('_')[1];
         url = String(url++); // we need the length property from String object not Number
@@ -374,9 +368,16 @@ console.log(typeof url);
         doc.querySelector('.chapter-selector [value="' + url + '"]').selected = true;
 console.log(url);
       }
-    }
+    };
 
     // parseURL(window.location.hash);
+
+    if (e.keyCode === 37) {
+      readchapter('', nowbook, --nowchapter);
+    } else if (e.keyCode === 39) {
+      readchapter('', nowbook, ++nowchapter);
+    }
+
 
   }, false);
 
