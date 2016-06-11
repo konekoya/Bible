@@ -7,6 +7,7 @@ The original Bible content and codes are from http://springbible.fhl.net/Offline
 #TODOs
 - Reading mode enhancement ideas -- We should work on cancel button(x), it's kind of a distraction when reading mode is on.
 - Problem with verse list item, try a different approach to display the verse number. 
+- a) Remove verse number when copying b) It would be better to have a little icon as a hint for copying
 - Should have default chapter when opening the app
 - Change directories structure, I think we should have a src dir?
 - Add sourcemap and JS linting in gulp.js - follow along the Gulp tutorial and improve the development setup
