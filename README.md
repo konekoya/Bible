@@ -5,6 +5,7 @@ This application is designed specifically for New City Church Sunday gathering.
 The original Bible content and code are from http://springbible.fhl.net/OfflineBible/offline.html
 
 #TODOs
+- Set up Babel and write ES6!
 - Reading mode enhancement ideas -- We should work on cancel button(x), it's kind of a distraction when enable reading mode.
 - Problem with verse number wrapping with list element, try a different approach to display the verse number. 
 - a) Remove verse number when copying, this is really annoying b) It would be nice to have a little icon as a hint for copying verses from the page.
