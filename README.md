@@ -25,6 +25,7 @@ The original Bible content and code are from http://springbible.fhl.net/OfflineB
 - Take a look at this nice browser support chart https://github.com/mzabriskie/axios
 - back to top button is broken in IEs...?
 - Think about SMACSS and implement it in the current CSS structure
+- Weird undefined text is showing when app initializing
 
 # Browser support
 All modern browsers and IE10+
