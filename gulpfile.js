@@ -15,15 +15,28 @@ gulp.task('bower-scripts', ['clean-scripts'], function(){
   return gulp
     .src(mainBowerFiles('**/*.js'))
     .pipe($.plumber())
-    .pipe($.uglify())
-    .pipe($.concat('lib.js'))
-    .pipe(gulp.dest(config.build + 'js'));
+    // .pipe($.uglify())
+    // .pipe($.concat('lib.js'))
+    .pipe(gulp.dest(config.build + 'js/libs/'));
 });
 
 gulp.task('scripts', ['bower-scripts'], function() {
   log('Analyzing source with JSHint and JSCS');
   return gulp
-    .src(config.js)
+    .src(config.jsAll)
+    .pipe($.if(args.verbose, $.print()))
+    .pipe($.plumber())
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    // .pipe($.uglify())
+    // .pipe($.concat('bible.js'))
+    .pipe(gulp.dest(config.build + 'js/'));
+});
+
+gulp.task('scripts:full', ['bower-scripts'], function() {
+  log('Analyzing source with JSHint and JSCS');
+  return gulp
+    .src([config.scripture, config.js])
     .pipe($.if(args.verbose, $.print()))
     .pipe($.plumber())
     .pipe($.jshint())
@@ -39,11 +52,11 @@ gulp.task('bower-styles', ['clean-styles'], function(){
     .pipe($.csslint('./csslintrc.json'))
     .pipe($.csslint.reporter())
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
-    .pipe($.postcss([
-      cssnano()
-    ]))
-    .pipe($.concat('lib.css'))
-    .pipe(gulp.dest(config.build + 'css'));
+    // .pipe($.postcss([
+    //   cssnano()
+    // ]))
+    // .pipe($.concat('lib.css'))
+    .pipe(gulp.dest(config.build + 'css/'));
 });
 
 gulp.task('styles', ['bower-styles'], function() {
@@ -55,11 +68,17 @@ gulp.task('styles', ['bower-styles'], function() {
     .pipe($.csslint('./csslintrc.json'))
     .pipe($.csslint.reporter())
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
-    .pipe($.postcss([
-      cssnano()
-    ]))
-    .pipe($.concat('bible.css'))
-    .pipe(gulp.dest(config.build + 'css'));
+    // .pipe($.postcss([
+    //   cssnano()
+    // ]))
+    // .pipe($.concat('bible.css'))
+    .pipe(gulp.dest(config.build + 'css/'));
+});
+
+gulp.task('html', () => {
+  return gulp
+    .src('./index.html')
+    .pipe(gulp.dest(config.build));
 });
 
 
@@ -113,7 +132,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', function() {
-  runSequence('fonts', 'scripts', 'styles', 'watch', 'webserver');
+  runSequence('html', 'fonts', 'scripts', 'styles', 'watch', 'webserver');
 });
 
 //////////// helper functions

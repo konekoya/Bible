@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Manna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="./build/css/lib.css">
+  <link rel="stylesheet" href="./build/css/bible.css">
+</head>
+
+<body class="theme-default">
+  <div class="toolbar">
+    <div class="logo">Manna</div>
+    <form class="chapter-body" method="post" name="Reading" onsubmit="readchapter(' ', document.Reading.na.selectedIndex, document.Reading.chap.selectedIndex); return false;" action="">
+      <select class="book-selector form-elem" name="na" onchange="setchap(Reading, this.selectedIndex, 1)">
+        <option value="0" selected="selected">創世記
+        </option>
+        <option value="1">出埃及記
+        </option>
+        <option value="2">利未記
+        </option>
+        <option value="3">民數記
+        </option>
+        <option value="4">申命記
+        </option>
+        <option value="5">約書亞記
+        </option>
+        <option value="6">士師記
+        </option>
+        <option value="7">路得記
+        </option>
+        <option value="8">撒母耳記上
+        </option>
+        <option value="9">撒母耳記下
+        </option>
+        <option value="10">列王紀上
+        </option>
+        <option value="11">列王紀下
+        </option>
+        <option value="12">歷代志上
+        </option>
+        <option value="13">歷代志下
+        </option>
+        <option value="14">以斯拉記
+        </option>
+        <option value="15">尼希米記
+        </option>
+        <option value="16">以斯帖記
+        </option>
+        <option value="17">約伯記
+        </option>
+        <option value="18">詩篇
+        </option>
+        <option value="19">箴言
+        </option>
+        <option value="20">傳道書
+        </option>
+        <option value="21">雅歌
+        </option>
+        <option value="22">以賽亞書
+        </option>
+        <option value="23">耶利米書
+        </option>
+        <option value="24">耶利米哀歌
+        </option>
+        <option value="25">以西結書
+        </option>
+        <option value="26">但以理書
+        </option>
+        <option value="27">何西阿書
+        </option>
+        <option value="28">約珥書
+        </option>
+        <option value="29">阿摩司書
+        </option>
+        <option value="30">俄巴底亞書
+        </option>
+        <option value="31">約拿書
+        </option>
+        <option value="32">彌迦書
+        </option>
+        <option value="33">那鴻書
+        </option>
+        <option value="34">哈巴谷書
+        </option>
+        <option value="35">西番雅書
+        </option>
+        <option value="36">哈該書
+        </option>
+        <option value="37">撒迦利亞書
+        </option>
+        <option value="38">瑪拉基書
+        </option>
+        <option value="39">馬太福音
+        </option>
+        <option value="40">馬可福音
+        </option>
+        <option value="41">路加福音
+        </option>
+        <option value="42">約翰福音
+        </option>
+        <option value="43">使徒行傳
+        </option>
+        <option value="44">羅馬書
+        </option>
+        <option value="45">哥林多前書
+        </option>
+        <option value="46">哥林多後書
+        </option>
+        <option value="47">加拉太書
+        </option>
+        <option value="48">以弗所書
+        </option>
+        <option value="49">腓利比書
+        </option>
+        <option value="50">歌羅西書
+        </option>
+        <option value="51">帖撒羅尼迦前書
+        </option>
+        <option value="52">帖撒羅尼迦後書
+        </option>
+        <option value="53">提摩太前書
+        </option>
+        <option value="54">提摩太後書
+        </option>
+        <option value="55">提多書
+        </option>
+        <option value="56">腓利門書
+        </option>
+        <option value="57">希伯來書
+        </option>
+        <option value="58">雅各書
+        </option>
+        <option value="59">彼得前書
+        </option>
+        <option value="60">彼得後書
+        </option>
+        <option value="61">約翰壹書
+        </option>
+        <option value="62">約翰貳書
+        </option>
+        <option value="63">約翰參書
+        </option>
+        <option value="64">猶大書
+        </option>
+        <option value="65">啟示錄
+        </option>
+      </select>
+      <select class="chapter-selector form-elem" name="chap">
+        <option value="001" selected="selected">第 1 章
+        </option>
+        <option value="002">第 2 章
+        </option>
+        <option value="003">第 3 章
+        </option>
+        <option value="004">第 4 章
+        </option>
+        <option value="005">第 5 章
+        </option>
+        <option value="006">第 6 章
+        </option>
+        <option value="007">第 7 章
+        </option>
+        <option value="008">第 8 章
+        </option>
+        <option value="009">第 9 章
+        </option>
+        <option value="010">第 10 章
+        </option>
+        <option value="011">第 11 章
+        </option>
+        <option value="012">第 12 章
+        </option>
+        <option value="013">第 13 章
+        </option>
+        <option value="014">第 14 章
+        </option>
+        <option value="015">第 15 章
+        </option>
+        <option value="016">第 16 章
+        </option>
+        <option value="017">第 17 章
+        </option>
+        <option value="018">第 18 章
+        </option>
+        <option value="019">第 19 章
+        </option>
+        <option value="020">第 20 章
+        </option>
+        <option value="021">第 21 章
+        </option>
+        <option value="022">第 22 章
+        </option>
+        <option value="023">第 23 章
+        </option>
+        <option value="024">第 24 章
+        </option>
+        <option value="025">第 25 章
+        </option>
+        <option value="026">第 26 章
+        </option>
+        <option value="027">第 27 章
+        </option>
+        <option value="028">第 28 章
+        </option>
+        <option value="029">第 29 章
+        </option>
+        <option value="030">第 30 章
+        </option>
+        <option value="031">第 31 章
+        </option>
+        <option value="032">第 32 章
+        </option>
+        <option value="033">第 33 章
+        </option>
+        <option value="034">第 34 章
+        </option>
+        <option value="035">第 35 章
+        </option>
+        <option value="036">第 36 章
+        </option>
+        <option value="037">第 37 章
+        </option>
+        <option value="038">第 38 章
+        </option>
+        <option value="039">第 39 章
+        </option>
+        <option value="040">第 40 章
+        </option>
+        <option value="041">第 41 章
+        </option>
+        <option value="042">第 42 章
+        </option>
+        <option value="043">第 43 章
+        </option>
+        <option value="044">第 44 章
+        </option>
+        <option value="045">第 45 章
+        </option>
+        <option value="046">第 46 章
+        </option>
+        <option value="047">第 47 章
+        </option>
+        <option value="048">第 48 章
+        </option>
+        <option value="049">第 49 章
+        </option>
+        <option value="050">第 50 章
+        </option>
+      </select>
+      <input class="read-on  btn  form-elem" name="submit1" value="閱讀" type="submit">
+    </form>
+  </div>
+  <div class="layout-content">
+    <div class="content-container" id="content">
+    </div>
+  </div>
+  <div class="setting-panel setting-panel-is-disabled">
+    <div class="range">
+      <h4 class="range-title setting-title"><i class="fa fa-font"></i>Change font size</h4>
+      <div class="range-control">
+        <input class="range-slide" type="range" min="10" max="80">
+        <span class="range-size">20px</span>
+      </div>
+    </div>
+    <ul class="setting-list  list-unstyled">
+      <li class="setting-item toggle-theme">
+        <h4 class="theme-title setting-title" href="#"><i class="fa fa-exchange"></i>Switch theme</h4>
+        <input class="toggle toggle-default" id="toggle-theme-btn" type="checkbox">
+        <label class="toggle-btn" for="toggle-theme-btn"></label>
+        <span class="setting-desc">Light text on a dark background</span>
+      </li>
+      <li class="setting-item toggle-verse-number">
+        <h4 class="verse-title setting-title" href="#"><i class="fa fa-list"></i>Toggle verse number</h4>
+        <input class="toggle toggle-default" id="toggle-verse-number-btn" type="checkbox">
+        <label class="toggle-btn" for="toggle-verse-number-btn"></label>
+        <span class="setting-desc">Verse number on</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-bar">
+    <div id="link2" class="chapter-nav  main-chapter-nav">
+      <a class="prev  btn  btn-primary  btn-large" href="" onclick="readchapter(' ', nowbook,--nowchapter); return false;">上一章</a>
+      <a class="next  btn  btn-primary  btn-large" href="" onclick="readchapter(' ', nowbook,++nowchapter); return false;">下一章</a>
+    </div>
+
+    <div class="setting-wrap  tooltip-parent">
+      <div class="tooltip  tooltip-top  tooltip-left">Change settings</div>
+      <button class="setting-btn  setting-btn-is-disabled  btn  btn-primary">
+        <i class="fa  fa-cog"></i>
+      </button>
+    </div>
+
+    <div class="toggle-light-wrap  tooltip-parent">
+      <div class="tooltip  tooltip-left  tooltip-top">Open black mode</div>
+      <button class="toggle-light  btn  btn-primary">
+        <i class="fa  fa-lightbulb-o"></i>
+      </button>
+    </div>
+
+    <div class="toggle-light-wrap  tooltip-parent">
+      <div class="tooltip  tooltip-left  tooltip-top">Toggle reading mode</div>
+      <button class="toggle-reading-mode  btn  btn-primary">
+        <i class="fa  fa-newspaper-o"></i>
+      </button>
+    </div>
+
+    <button class="top  btn  btn-primary  btn-large">
+      <i class="fa  fa-chevron-up"></i>
+    </button>
+
+  </div>
+
+  <div class="reading-mode-controls">
+    <button class="reading-mode-controls  btn  btn-primary"><i class="fa fa-times"></i></button>
+  </div>
+  <script src="./build/js/lib.js"></script>
+  <script src="./build/js/bible.js"></script>
+</body>
+
+</html>

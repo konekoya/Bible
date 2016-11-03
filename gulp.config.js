@@ -1,7 +1,8 @@
 module.exports = function() {
-  var build = './build/';
+  const build = './build/';
+  const src = './src/'
 
-  var config = {
+  const config = {
     // webserver port
     port: 8000,
 
@@ -9,8 +10,10 @@ module.exports = function() {
     build: build,
     bowerDir: './bower_components',
     fonts: './bower_components/font-awesome/fonts/**/*.*',
-    scss: './scss/**/*.scss',
-    js: './js/**/*.js'
+    scss: `${src}scss/**/*.scss`,
+    jsAll: `${src}js/**/*.js`,
+    js: `${src}js/*.js`,
+    scripture: `${src}js/scripture/*.js`
   };
 
   return config;
