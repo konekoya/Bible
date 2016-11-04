@@ -2,7 +2,6 @@
 // Staring this project from 2014.11.20
 
 var EXTEND = (function() {
-
   function init() {
     var doc = document;
     var html = document.documentElement;

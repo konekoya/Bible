@@ -11,16 +11,16 @@ var runSequence = require('run-sequence');
 
 gulp.task('help',$.taskListing);
 
-gulp.task('bower-scripts', ['clean-scripts'], function(){
+gulp.task('bower-scripts', ['clean-scripts'], () =>{
   return gulp
     .src(mainBowerFiles('**/*.js'))
     .pipe($.plumber())
     // .pipe($.uglify())
     // .pipe($.concat('lib.js'))
-    .pipe(gulp.dest(config.build + 'js/libs/'));
+    .pipe(gulp.dest(config.temp + 'js/libs/'));
 });
 
-gulp.task('scripts', ['bower-scripts'], function() {
+gulp.task('scripts', ['bower-scripts'], () => {
   log('Analyzing source with JSHint and JSCS');
   return gulp
     .src(config.jsAll)
@@ -30,10 +30,10 @@ gulp.task('scripts', ['bower-scripts'], function() {
     .pipe($.jshint.reporter('jshint-stylish'))
     // .pipe($.uglify())
     // .pipe($.concat('bible.js'))
-    .pipe(gulp.dest(config.build + 'js/'));
+    .pipe(gulp.dest(config.temp + 'js/'));
 });
 
-gulp.task('scripts:full', ['bower-scripts'], function() {
+gulp.task('scripts:full', ['bower-scripts'], () => {
   log('Analyzing source with JSHint and JSCS');
   return gulp
     .src([config.scripture, config.js])
@@ -46,7 +46,7 @@ gulp.task('scripts:full', ['bower-scripts'], function() {
     .pipe(gulp.dest(config.build + 'js'));
 });
 
-gulp.task('bower-styles', ['clean-styles'], function(){
+gulp.task('bower-styles', ['clean-styles'], () =>{
   return gulp
     .src(mainBowerFiles('**/*.css'))
     .pipe($.csslint('./csslintrc.json'))
@@ -56,10 +56,10 @@ gulp.task('bower-styles', ['clean-styles'], function(){
     //   cssnano()
     // ]))
     // .pipe($.concat('lib.css'))
-    .pipe(gulp.dest(config.build + 'css/'));
+    .pipe(gulp.dest(config.temp + 'css/'));
 });
 
-gulp.task('styles', ['bower-styles'], function() {
+gulp.task('styles', ['bower-styles'], () => {
   log('Compiling SCSS --> CSS');
   return gulp
     .src(config.scss)
@@ -72,7 +72,7 @@ gulp.task('styles', ['bower-styles'], function() {
     //   cssnano()
     // ]))
     // .pipe($.concat('bible.css'))
-    .pipe(gulp.dest(config.build + 'css/'));
+    .pipe(gulp.dest(config.temp + 'css/'));
 });
 
 gulp.task('html', () => {
@@ -81,40 +81,43 @@ gulp.task('html', () => {
     .pipe(gulp.dest(config.build));
 });
 
+// gulp.task('images', () => {
+// });
 
-gulp.task('fonts', ['clean-fonts'], function() {
+
+gulp.task('fonts', ['clean-fonts'], () => {
   log('Copying fonts to build directory');
   return gulp
     .src(config.fonts)
-    .pipe(gulp.dest(config.build + 'fonts'));
+    .pipe(gulp.dest(config.temp + 'fonts/'));
 });
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
   var delconfig = [].concat(config.build);
   log('Cleaning: ' + $.util.colors.green(delconfig));
   del(delconfig);
 });
 
-gulp.task('clean-scripts', function() {
+gulp.task('clean-scripts', () => {
   clean(config.build + 'js');
 });
 
-gulp.task('clean-styles', function() {
+gulp.task('clean-styles', () => {
   clean(config.build + 'css');
 });
 
-gulp.task('clean-fonts', function() {
+gulp.task('clean-fonts', () => {
   clean(config.build + 'fonts');
 });
 
-gulp.task('clean-images', function() {
+gulp.task('clean-images', () => {
   clean(config.build + 'images');
 });
 
-gulp.task('webserver', function() {
+gulp.task('webserver', () => {
   log('Starting webserver at port ' + config.port );
   return gulp
-    .src('./')
+    .src(config.src)
     .pipe($.webserver({
       port: config.port,
       livereload: true,
@@ -126,12 +129,12 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('default', function() {
+gulp.task('default', () => {
   runSequence('html', 'fonts', 'scripts', 'styles', 'watch', 'webserver');
 });
 

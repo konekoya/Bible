@@ -316,7 +316,6 @@ input[type="range"]:focus::-ms-fill-upper {
   @media (min-width: 700px) {
     .toolbar {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; } }
   .toolbar a {
@@ -349,7 +348,6 @@ input[type="range"]:focus::-ms-fill-upper {
   @media (min-width: 700px) {
     .chapter-body {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       width: 100%; } }
@@ -357,7 +355,6 @@ input[type="range"]:focus::-ms-fill-upper {
 .book-selector,
 .chapter-selector {
   -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto; }
 
@@ -466,7 +463,6 @@ input[type="range"]:focus::-ms-fill-upper {
   transition: 0.3s bottom;
   z-index: 110;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 

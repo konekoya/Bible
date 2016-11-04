@@ -8,6 +8,8 @@ module.exports = function() {
 
     // Files paths
     build: build,
+    src: src,
+    temp: `${src}temp/`,
     bowerDir: './bower_components',
     fonts: './bower_components/font-awesome/fonts/**/*.*',
     scss: `${src}scss/**/*.scss`,
