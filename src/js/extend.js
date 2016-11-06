@@ -409,6 +409,8 @@ var EXTEND = (function() {
 }());
 
 
-window.addEventListener('load', function() {
-  EXTEND.init();
-}, false);
+export default EXTEND;
+
+// window.addEventListener('load', function() {
+//   EXTEND.init();
+// }, false);
