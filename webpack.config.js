@@ -1,7 +1,10 @@
+const path = require('path');
+
 module.exports = {
   entry: ['./src/js/app.js'],
   output: {
-    path: __dirname + '/build',
+    path: path.resolve('build/js'),
+    publicPath: '/build/assets/js/',
     filename: 'bundle.js'
   },
 
@@ -15,7 +18,12 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: "style!css"
+        loader: 'style!css'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: 'style-loader!css-loader!sass-loader'
       }
     ]
   },
