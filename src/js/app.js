@@ -1,5 +1,5 @@
-import { books } from './scripture/helpers';
-import { profiles } from './scripture/contents';
+// import { books } from './scripture/helpers';
+// import { profiles } from './scripture/contents';
 
 require('./components/chapter-navigation');
 require('./core');

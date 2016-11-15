@@ -1,9 +1,13 @@
+const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
-  entry: ['./src/js/app.js'],
+  entry: {
+    app: "./src/js/app.js",
+    vendor: ["jquery", './src/js/scripture/contents', './src/js/scripture/helpers']
+  },
   output: {
     path: path.resolve('build/'),
     publicPath: '/build/assets/',
@@ -11,7 +15,8 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin('bundle.css'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ],
 
   module: {
