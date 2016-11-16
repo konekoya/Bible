@@ -3,6 +3,8 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
+// Try this solution
+// http://stackoverflow.com/questions/35908253/webpack-how-to-bundle-entries-to-multiple-common-chunks-with-commonschunkplugin
 module.exports = {
   entry: {
     app: "./src/js/app.js",
