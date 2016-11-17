@@ -8,7 +8,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     app: "./src/js/app.js",
-    vendor: ["jquery", './src/js/scripture/contents', './src/js/scripture/helpers']
+    bible: ['./src/js/scripture/app'],
+    vendor: ['jquery']
   },
   output: {
     path: path.resolve('build/'),
@@ -18,6 +19,7 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin('bundle.css'),
+    new webpack.optimize.CommonsChunkPlugin('bible', 'bible.bundle.js'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ],
 
