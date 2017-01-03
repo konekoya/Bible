@@ -4,11 +4,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 // Try this solution
-// http://stackoverflow.com/questions/35908253/webpack-how-to-bundle-entries-to-multiple-common-chunks-with-commonschunkplugin
+// https://github.com/webpack/webpack/issues/1016#issuecomment-182093533
 module.exports = {
   entry: {
     app: "./src/js/app.js",
-    bible: ['./src/js/scripture/app'],
+    bible: './src/js/scripture/app',
     vendor: ['jquery']
   },
   output: {
@@ -19,8 +19,8 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin('bundle.css'),
-    new webpack.optimize.CommonsChunkPlugin('bible', 'bible.bundle.js'),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('bible', 'bible.bundle.js')
   ],
 
   module: {
