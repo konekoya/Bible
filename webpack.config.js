@@ -7,20 +7,23 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // https://github.com/webpack/webpack/issues/1016#issuecomment-182093533
 module.exports = {
   entry: {
-    app: "./src/js/app.js",
-    bible: './src/js/scripture/app',
-    vendor: ['jquery']
+    vendor: ['jquery'],
+    bible: './src/js/scripture/app.js',
+    app: "./src/js/app.js"
   },
   output: {
     path: path.resolve('build/'),
     publicPath: '/build/assets/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
 
   plugins: [
     new ExtractTextPlugin('bundle.css'),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-    new webpack.optimize.CommonsChunkPlugin('bible', 'bible.bundle.js')
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'bible'],
+      minChunks: Infinity
+    })
+    // new webpack.optimize.CommonsChunkPlugin('bible', 'bible.bundle.js')
   ],
 
   module: {
