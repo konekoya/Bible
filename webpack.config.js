@@ -20,7 +20,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('bundle.css'),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'bible'],
+      name: ['bible', 'vendor'],
       minChunks: Infinity
     })
     // new webpack.optimize.CommonsChunkPlugin('bible', 'bible.bundle.js')
