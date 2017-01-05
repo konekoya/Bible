@@ -2,9 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
 // Try this solution
-// https://github.com/webpack/webpack/issues/1016#issuecomment-182093533
 module.exports = {
   entry: {
     vendor: ['jquery'],

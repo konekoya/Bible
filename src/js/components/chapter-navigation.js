@@ -1,12 +1,12 @@
 import $ from 'jquery';
 
 function readchapter(opstr, bnum, cnum) {
-  var out1 = null;
   var out2 = null;
   var out3 = null;
   var k = -1;
   var operand = '';
 
+  debugger;
   while (opstr.charAt(opstr.length - 1) == ' ') //清掉結尾的空格
     opstr = opstr.substring(0, opstr.length - 1);
 
@@ -34,7 +34,7 @@ function readchapter(opstr, bnum, cnum) {
   var value1 = 1;
 
 
-  out1 = doc.getElementById("content");
+  const content = doc.getElementById("content");
   if (books[bnum] != "詩篇") {
     out1.innerHTML = '<h2 class="chapter-title">' + books[bnum] + '第' + numbers[cnum] + '章</h2>';
     doc.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '章';
@@ -87,6 +87,8 @@ function readchapter(opstr, bnum, cnum) {
 
 $('.read-on').on('click', (e) => {
   e.preventDefault();
+
+  console.log('oh, clicked!');
 
   readchapter();
   console.log('log something out!');
