@@ -1,18 +1,22 @@
+import { books, book_chapters, numbers, chapter_lines } from '../scripture/helpers';
+
 import $ from 'jquery';
 
 function readchapter(opstr, bnum, cnum) {
-  var out2 = null;
-  var out3 = null;
-  var k = -1;
-  var operand = '';
+  let out1 = null;
+  let out2 = null;
+  let out3 = null;
+  let k = -1;
+  let operand = '';
 
-  debugger;
-  while (opstr.charAt(opstr.length - 1) == ' ') //清掉結尾的空格
+  //清掉結尾的空格
+  while (opstr.charAt(opstr.length - 1) == ' ') {
     opstr = opstr.substring(0, opstr.length - 1);
+  }
 
-  if (opstr.length > 0)
+  if (opstr.length > 0) {
     operand = opstr.split(' ');
-
+  }
 
   if ((bnum - 0 < 0) || (bnum - 0 >= 66))
     bnum = 0;
@@ -28,28 +32,29 @@ function readchapter(opstr, bnum, cnum) {
     bnum++;
     cnum = 0;
   }
+
   var line1 = chapter_lines[book_chapters[bnum] + cnum];
   var line2 = chapter_lines[book_chapters[bnum] + cnum + 1];
   var tempNode1, tempNode2;
   var value1 = 1;
 
 
-  const content = doc.getElementById("content");
+  const content = document.getElementById("content");
   if (books[bnum] != "詩篇") {
     out1.innerHTML = '<h2 class="chapter-title">' + books[bnum] + '第' + numbers[cnum] + '章</h2>';
-    doc.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '章';
+    document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '章';
   } else {
     out1.innerHTML = '<h2 class="chapter-title">' + books[bnum] + '第' + numbers[cnum] + '篇</h2>';
-    doc.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '篇';
+    document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '篇';
   }
-  out2 = doc.createElement('div');
+  out2 = document.createElement('div');
   out2.className += 'verse-container';
   out1.appendChild(out2);
   for (var i = line1; i < line2; i++) {
     var oneline = profiles[i].substring(profiles[i].indexOf(" "));
-    out3 = doc.createElement('ol');
+    out3 = document.createElement('ol');
     out2.appendChild(out3);
-    tempNode1 = doc.createElement('li');
+    tempNode1 = document.createElement('li');
     k = 0;
     while (k < operand.length && opstr.length > 0) {
       var temp = "";
@@ -74,7 +79,7 @@ function readchapter(opstr, bnum, cnum) {
 
   var ua = navigator.userAgent.toLowerCase();
 
-  tempNode1 = doc.getElementById("link2");
+  tempNode1 = document.getElementById("link2");
   tempNode1.innerHTML = "";
   tempNode1.innerHTML += temp1;
   tempNode1.innerHTML += temp2;
@@ -89,7 +94,6 @@ $('.read-on').on('click', (e) => {
   e.preventDefault();
 
   console.log('oh, clicked!');
-
-  readchapter();
+  readchapter(' ', document.Reading.na.selectedIndex, document.Reading.chap.selectedIndex);
   console.log('log something out!');
 });

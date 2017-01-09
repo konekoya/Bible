@@ -1,7 +1,7 @@
 // Authored by Joshua Lin
 // Staring this project from 2014.11.20
 
-var EXTEND = (function() {
+const EXTEND = (function() {
   function init() {
     var doc = document;
     var html = document.documentElement;
@@ -401,16 +401,12 @@ var EXTEND = (function() {
 
     readingMode.initialize();
   }
-
   return {
     init: init
   };
+
 
 }());
 
 
 export default EXTEND;
-
-// window.addEventListener('load', function() {
-//   EXTEND.init();
-// }, false);
