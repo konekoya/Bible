@@ -18,16 +18,20 @@ function readchapter(opstr, bnum, cnum) {
     operand = opstr.split(' ');
   }
 
-  if ((bnum - 0 < 0) || (bnum - 0 >= 66))
+  if ((bnum - 0 < 0) || (bnum - 0 >= 66)) {
     bnum = 0;
-  if ((bnum - 0 <= 0) && (cnum - 0 < 0))
+  }
+  if ((bnum - 0 <= 0) && (cnum - 0 < 0)) {
     cnum = 0;
-  if ((bnum - 0 >= 65) && (cnum - 0 >= 22))
+  }
+  if ((bnum - 0 >= 65) && (cnum - 0 >= 22)) {
     cnum = 21;
+  }
   if (cnum - 0 < 0) {
     bnum--;
     cnum = book_chapters[bnum + 1] - book_chapters[bnum] - 1;
   }
+
   if (cnum - 0 >= book_chapters[bnum + 1] - book_chapters[bnum]) {
     bnum++;
     cnum = 0;
@@ -38,7 +42,6 @@ function readchapter(opstr, bnum, cnum) {
   var tempNode1, tempNode2;
   var value1 = 1;
 
-
   const content = document.getElementById("content");
   if (books[bnum] != "詩篇") {
     out1.innerHTML = '<h2 class="chapter-title">' + books[bnum] + '第' + numbers[cnum] + '章</h2>';
@@ -47,9 +50,11 @@ function readchapter(opstr, bnum, cnum) {
     out1.innerHTML = '<h2 class="chapter-title">' + books[bnum] + '第' + numbers[cnum] + '篇</h2>';
     document.title = 'Manna - ' + books[bnum] + '第' + numbers[cnum] + '篇';
   }
+
   out2 = document.createElement('div');
   out2.className += 'verse-container';
   out1.appendChild(out2);
+
   for (var i = line1; i < line2; i++) {
     var oneline = profiles[i].substring(profiles[i].indexOf(" "));
     out3 = document.createElement('ol');
@@ -90,10 +95,7 @@ function readchapter(opstr, bnum, cnum) {
 
 }
 
-$('.read-on').on('click', (e) => {
+document.querySelector('.read-on').addEventListener('click', (e) => {
   e.preventDefault();
-
-  console.log('oh, clicked!');
   readchapter(' ', document.Reading.na.selectedIndex, document.Reading.chap.selectedIndex);
-  console.log('log something out!');
 });
