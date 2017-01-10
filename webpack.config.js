@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
-// Try this solution
+
 module.exports = {
   entry: {
     vendor: ['jquery'],
@@ -17,11 +18,11 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin('bundle.css'),
+    new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['bible', 'vendor'],
       minChunks: Infinity
     })
-    // new webpack.optimize.CommonsChunkPlugin('bible', 'bible.bundle.js')
   ],
 
   module: {
