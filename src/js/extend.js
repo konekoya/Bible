@@ -1,5 +1,6 @@
 // Authored by Joshua Lin
 // Staring this project from 2014.11.20
+// Rewritten with ES6, webpack from 2017
 
 const EXTEND = (function() {
   function init() {
@@ -401,10 +402,10 @@ const EXTEND = (function() {
 
     readingMode.initialize();
   }
+
   return {
     init: init
   };
-
 
 }());
 

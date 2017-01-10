@@ -5,6 +5,7 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 
 module.exports = {
+  devtool: '#inline-source-map',
   entry: {
     vendor: ['jquery'],
     bible: './src/js/scripture/app.js',
@@ -15,7 +16,6 @@ module.exports = {
     publicPath: '/build/assets/',
     filename: '[name].js'
   },
-
   plugins: [
     new ExtractTextPlugin('bundle.css'),
     new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
@@ -24,7 +24,6 @@ module.exports = {
       minChunks: Infinity
     })
   ],
-
   module: {
     loaders: [
       {
@@ -44,7 +43,6 @@ module.exports = {
       }
     ]
   },
-
   resolve: {
     extensions: ['', '.js', '.es6']
   }
