@@ -85,7 +85,6 @@ function readchapter(opstr, bookNumber, chapterNumber) {
   window.location.hash = '#top';
   window.location = location;
   window.location.hash = '#' + bookNumber + '_' + chapterNumber;
-
 }
 
 document.querySelector('.read-on').addEventListener('click', (e) => {

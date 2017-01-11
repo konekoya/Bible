@@ -1,6 +1,7 @@
 // import { books } from './scripture/helpers';
 // import { profiles } from './scripture/contents';
-import EXTEND from './extend.js';
+import EXTEND from './extend';
+import './components/chapter-navigator';
 
 require('./components/chapter-navigation');
 require('./core');
