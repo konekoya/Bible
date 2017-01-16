@@ -1,7 +1,9 @@
 import { books, book_chapters, numbers, chapter_lines } from '../scripture/helpers';
 import { profiles } from '../scripture/contents';
 
-export default function readchapter(opstr, bookNumber, chapterNumber) {
+import chapterNavigator from './chapter-navigator';
+
+export default function readChapter(opstr, bookNumber, chapterNumber) {
   //清掉結尾的空格
   while (opstr.charAt(opstr.length - 1) == ' ') {
     opstr = opstr.substring(0, opstr.length - 1);
@@ -73,18 +75,19 @@ export default function readchapter(opstr, bookNumber, chapterNumber) {
     verses.appendChild(tempNode1);
     tempNode1.setAttribute('value', value1++);
   }
-  const temp1 = '<a href="" class="prev-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', currentBook,--currentChapter); return false;">上一章</a>';
-  const temp2 = '<a href="" class="next-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', currentBook,++currentChapter); return false;">下一章</a>';
 
-  const currentBook = bookNumber;
-  const currentChapter = chapterNumber;
+
+  // const temp1 = '<a href="" class="prev-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', currentBook,--currentChapter); return false;">上一章</a>';
+  // const temp2 = '<a href="" class="next-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', currentBook,++currentChapter); return false;">下一章</a>';
+
+  chapterNavigator(opstr, bookNumber, chapterNumber);
 
   const ua = navigator.userAgent.toLowerCase();
 
-  tempNode1 = document.getElementById('link2');
-  tempNode1.innerHTML = '';
-  tempNode1.innerHTML += temp1;
-  tempNode1.innerHTML += temp2;
+  // tempNode1 = document.getElementById('link2');
+  // tempNode1.innerHTML = '';
+  // tempNode1.innerHTML += temp1;
+  // tempNode1.innerHTML += temp2;
   window.location.hash = '#top';
   window.location = location;
   window.location.hash = '#' + bookNumber + '_' + chapterNumber;
