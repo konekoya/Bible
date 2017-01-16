@@ -8,7 +8,7 @@ module.exports = {
   devtool: '#inline-source-map',
   entry: {
     vendor: ['jquery'],
-    bible: './src/js/scripture/app.js',
+    // bible: './src/js/scripture/app.js',
     app: "./src/js/app.js"
   },
   output: {
@@ -20,7 +20,7 @@ module.exports = {
     new ExtractTextPlugin('bundle.css'),
     new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['bible', 'vendor'],
+      name: ['vendor'],
       minChunks: Infinity
     })
   ],

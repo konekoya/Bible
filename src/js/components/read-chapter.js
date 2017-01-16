@@ -1,7 +1,7 @@
 import { books, book_chapters, numbers, chapter_lines } from '../scripture/helpers';
 import { profiles } from '../scripture/contents';
 
-function readchapter(opstr, bookNumber, chapterNumber) {
+export default function readchapter(opstr, bookNumber, chapterNumber) {
   //清掉結尾的空格
   while (opstr.charAt(opstr.length - 1) == ' ') {
     opstr = opstr.substring(0, opstr.length - 1);
@@ -15,12 +15,15 @@ function readchapter(opstr, bookNumber, chapterNumber) {
   if ((bookNumber - 0 < 0) || (bookNumber - 0 >= 66)) {
     bookNumber = 0;
   }
+
   if ((bookNumber - 0 <= 0) && (chapterNumber - 0 < 0)) {
     chapterNumber = 0;
   }
+
   if ((bookNumber - 0 >= 65) && (chapterNumber - 0 >= 22)) {
     chapterNumber = 21;
   }
+
   if (chapterNumber - 0 < 0) {
     bookNumber--;
     chapterNumber = book_chapters[bookNumber + 1] - book_chapters[bookNumber] - 1;
@@ -46,7 +49,7 @@ function readchapter(opstr, bookNumber, chapterNumber) {
 
   const verseContainer = document.createElement('div');
   let tempNode1 = null;
-  verseContainer.className += 'verse-container';
+  verseContainer.classList.add('verse-container');
   content.appendChild(verseContainer);
 
   for (let i = line1; i < line2; i++) {
@@ -86,8 +89,3 @@ function readchapter(opstr, bookNumber, chapterNumber) {
   window.location = location;
   window.location.hash = '#' + bookNumber + '_' + chapterNumber;
 }
-
-document.querySelector('.read-on').addEventListener('click', (e) => {
-  e.preventDefault();
-  readchapter(' ', document.Reading.na.selectedIndex, document.Reading.chap.selectedIndex);
-});
