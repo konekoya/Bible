@@ -1,6 +1,6 @@
 import EXTEND from './extend';
 import readChapter from './components/read-chapter';
-import './components/chapter-navigator';
+import chapterNavigator from './components/chapter-navigator';
 
 require('./components/read-chapter');
 require('./core');

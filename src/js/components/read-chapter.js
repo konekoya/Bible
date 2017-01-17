@@ -1,8 +1,6 @@
 import { books, book_chapters, numbers, chapter_lines } from '../scripture/helpers';
 import { profiles } from '../scripture/contents';
 
-import chapterNavigator from './chapter-navigator';
-
 export default function readChapter(opstr, bookNumber, chapterNumber) {
   //清掉結尾的空格
   while (opstr.charAt(opstr.length - 1) == ' ') {
@@ -80,8 +78,6 @@ export default function readChapter(opstr, bookNumber, chapterNumber) {
   // const temp1 = '<a href="" class="prev-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', currentBook,--currentChapter); return false;">上一章</a>';
   // const temp2 = '<a href="" class="next-btn  btn  btn-primary  btn-large" onClick="readchapter(\'' + opstr + '\', currentBook,++currentChapter); return false;">下一章</a>';
 
-  chapterNavigator(opstr, bookNumber, chapterNumber);
-
   const ua = navigator.userAgent.toLowerCase();
 
   // tempNode1 = document.getElementById('link2');
@@ -91,4 +87,9 @@ export default function readChapter(opstr, bookNumber, chapterNumber) {
   window.location.hash = '#top';
   window.location = location;
   window.location.hash = '#' + bookNumber + '_' + chapterNumber;
+
+  window.BIBLE_PROPS = {
+    currentBook: bookNumber,
+    currentChapter: chapterNumber
+  };
 }
