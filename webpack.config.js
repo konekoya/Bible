@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('bundle.css'),
     new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
+    new DashboardPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor'],
       minChunks: Infinity
