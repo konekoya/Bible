@@ -1,4 +1,4 @@
-#Bible study application
+# Bible study application
 
 This application is designed specifically for New City Church Sunday gathering.
 
